@@ -1,104 +1,178 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="author" content="手撕包菜"><meta name="renderer" content="webkit"><meta name="copyright" content="手撕包菜"><meta name="keywords" content="手撕包菜"><meta name="description" content=""><meta name="Cache-Control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>MySQL基础 · Baocai's Blog</title><link rel="stylesheet" href="/css/style.css?v=2018.7.9"><link rel="stylesheet" href="/css/animation.css?v=2018.7.9"><link rel="icon" href="/img/assets/myfavicon.ico"><link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.6"><!-- scripts--><script>(function( w ){
-  "use strict";
-  // rel=preload support test
-  if( !w.loadCSS ){
-    w.loadCSS = function(){};
-  }
-  // define on the loadCSS obj
-  var rp = loadCSS.relpreload = {};
-  // rel=preload feature support test
-  // runs once and returns a function for compat purposes
-  rp.support = (function(){
-    var ret;
-    try {
-      ret = w.document.createElement( "link" ).relList.supports( "preload" );
-    } catch (e) {
-      ret = false;
-    }
-    return function(){
-      return ret;
-    };
-  })();
-
-  // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-  // then change that media back to its intended value on load
-  rp.bindMediaToggle = function( link ){
-    // remember existing media attr for ultimate state, or default to 'all'
-    var finalMedia = link.media || "all";
-
-    function enableStylesheet(){
-      link.media = finalMedia;
-    }
-
-    // bind load handlers to enable media
-    if( link.addEventListener ){
-      link.addEventListener( "load", enableStylesheet );
-    } else if( link.attachEvent ){
-      link.attachEvent( "onload", enableStylesheet );
-    }
-
-    // Set rel and non-applicable media type to start an async request
-    // note: timeout allows this to happen async to let rendering continue in IE
-    setTimeout(function(){
-      link.rel = "stylesheet";
-      link.media = "only x";
-    });
-    // also enable media after 3 seconds,
-    // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-    setTimeout( enableStylesheet, 3000 );
-  };
-
-  // loop through link elements in DOM
-  rp.poly = function(){
-    // double check this to prevent external calls from running
-    if( rp.support() ){
-      return;
-    }
-    var links = w.document.getElementsByTagName( "link" );
-    for( var i = 0; i < links.length; i++ ){
-      var link = links[ i ];
-      // qualify links to those with rel=preload and as=style attrs
-      if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
-        // prevent rerunning on link
-        link.setAttribute( "data-loadcss", true );
-        // bind listeners to toggle media back
-        rp.bindMediaToggle( link );
-      }
-    }
-  };
-
-  // if unsupported, run the polyfill
-  if( !rp.support() ){
-    // run once at least
-    rp.poly();
-
-    // rerun poly on an interval until onload
-    var run = w.setInterval( rp.poly, 500 );
-    if( w.addEventListener ){
-      w.addEventListener( "load", function(){
-        rp.poly();
-        w.clearInterval( run );
-      } );
-    } else if( w.attachEvent ){
-      w.attachEvent( "onload", function(){
-        rp.poly();
-        w.clearInterval( run );
-      } );
-    }
-  }
 
 
-  // commonjs
-  if( typeof exports !== "undefined" ){
-    exports.loadCSS = loadCSS;
-  }
-  else {
-    w.loadCSS = loadCSS;
-  }
-}( typeof global !== "undefined" ? global : this ) );</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script><script src="/js/main.js?v=2018.7.9" defer></script><!-- fancybox--><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script><!-- busuanzi--><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="手撕包菜" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><section class="profile-close" id="cxo-profile"><div class="profile-avatar"><i class="fa fa-caret-left"></i><img src="/img/assets/avatar.jpg"></div><!--.profile-saying
-  i.fa.fa-comment
-  .saying--><div class="cxo-profile-inner"><div class="profile-name">手撕包菜</div><div class="profile-signature">for me</div><div class="friends"><div>FRIENDS</div><span><a href="//github.com/Longlongyu" target="_black">friendA</a></span><span><a href="//github.com/" target="_black">friendB</a></span><span><a href="//github.com/" target="_black">friendC</a></span></div><div class="read-progress"></div></div></section><header id="cxo-intro" style="height: 70vh;background-image: url(/img/intro/index-bg.png);"><nav id="cxo-intro-nav"><section><div class="intro-nav-title"><a href="/">Baocai's Blog</a></div><div class="intro-nav-label-box"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div><i class="fa fa-bars intro-nav-menu"><div class="intro-nav-drop"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div></i><div class="clear"></div></section></nav><h1 class="post-title">MySQL基础</h1><div class="post-intros"><div class="post-intro-meta"><span class="post-intro-time"><i class="post-intro-calendar fa fa-edit"></i><span>2020-10-03 10:57:43</span></span><span class="post-intro-tags"><a class="intro-tag fa fa-tag" href="javascript:void(0)" date-tags="MySQL"> MySQL</a></span></div><div class="post-intro-read"><span> Word count: <span class="post-count">2k</span> | Reading time: <span class="post-count">8</span>min</span></div></div></header><article class="cxo-up" id="cxo-content-outer"><section id="cxo-content-inner"><article class="article-entry" id="post"><h1 id="目录"><a class="markdownIt-Anchor" href="#目录">#</a> 目录</h1>
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="手撕包菜" href="https://www.baocai-blog.cn/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="手撕包菜" href="https://www.baocai-blog.cn/atom.xml" />
+<link rel="alternate" type="application/json" title="手撕包菜" href="https://www.baocai-blog.cn/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2">
+
+  
+  <meta name="keywords" content="MySQL" />
+
+
+
+<meta name="description" content="" >
+
+
+<link rel="canonical" href="https://www.baocai-blog.cn/2020/09/30/MySQL%E5%9F%BA%E7%A1%80/">
+
+
+
+  <title>
+MySQL基础 - 数据库 |
+手撕包菜 = 手撕包菜 = 手撕包菜</title>
+<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">MySQL基础
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2020-09-30 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2020-09-30T00:00:00+08:00">2020-09-30</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>4.1k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>4 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">手撕包菜</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicitcxhpij20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipevo9j1jj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclfb3vzhj20zk0m8wny.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipexoj0moj20zk0m8kgu.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclgrvbd6j20zk0m8qv5.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main id="main">
+      <div class="inner">
+        <div id="content" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="item" rel="index" title="分类于 数据库"><span itemprop="name">数据库</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://www.baocai-blog.cn/2020/09/30/MySQL%E5%9F%BA%E7%A1%80/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="手撕包菜">
+    <meta itemprop="description" content="手撕包菜, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="手撕包菜">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="目录"><a class="anchor" href="#目录">#</a> 目录</h1>
 <ol>
 <li>
 <p>数据库的基本概念</p>
@@ -115,7 +189,7 @@
 <p>SQL</p>
 </li>
 </ol>
-<h2 id="数据库的基本概念"><a class="markdownIt-Anchor" href="#数据库的基本概念">#</a> 数据库的基本概念</h2>
+<h2 id="数据库的基本概念"><a class="anchor" href="#数据库的基本概念">#</a> 数据库的基本概念</h2>
 <ol>
 <li>
 <p>数据库的英文单词： DataBase 简称 ： DB</p>
@@ -131,14 +205,14 @@
 <ol>
 <li>持久化存储数据的。其实数据库就是一个文件系统</li>
 <li>方便存储和管理数据</li>
-<li>使用了统一的方式操作数据库 – SQL</li>
+<li>使用了统一的方式操作数据库 -- SQL</li>
 </ol>
 </li>
 </ol>
 <p>​	<br>
 4. 常见的数据库软件<br>
  * 参见《MySQL 基础.pdf》</p>
-<h2 id="mysql数据库软件"><a class="markdownIt-Anchor" href="#mysql数据库软件">#</a> MySQL 数据库软件</h2>
+<h2 id="mysql数据库软件"><a class="anchor" href="#mysql数据库软件">#</a> MySQL 数据库软件</h2>
 <ol>
 <li>
 <p>安装</p>
@@ -151,7 +225,7 @@
 <ol>
 <li>去 mysql 的安装目录找到 my.ini 文件
 <ul>
-<li>复制 datadir=“C:/ProgramData/MySQL/MySQL Server 5.5/Data/”</li>
+<li>复制 datadir="C:/ProgramData/MySQL/MySQL Server 5.5/Data/"</li>
 </ul>
 </li>
 <li>卸载 MySQL</li>
@@ -165,7 +239,7 @@
 <p>MySQL 服务启动</p>
 <ol>
 <li>手动。</li>
-<li>cmd–&gt; services.msc 打开服务的窗口</li>
+<li>cmd--&gt; services.msc 打开服务的窗口</li>
 <li>使用管理员打开 cmd
 <ul>
 <li>net start mysql : 启动 mysql 的服务</li>
@@ -192,12 +266,12 @@
 <li>
 <p>MySQL 目录结构</p>
 <ol>
-<li>MySQL 安装目录：basedir=“D:/develop/MySQL/”
+<li>MySQL 安装目录：basedir="D:/develop/MySQL/"
 <ul>
 <li>配置文件 my.ini</li>
 </ul>
 </li>
-<li>MySQL 数据目录：datadir=“C:/ProgramData/MySQL/MySQL Server 5.5/Data/”
+<li>MySQL 数据目录：datadir="C:/ProgramData/MySQL/MySQL Server 5.5/Data/"
 <ul>
 <li>几个概念
 <ul>
@@ -213,7 +287,7 @@
 </ul>
 </li>
 </ol>
-<h2 id="sql"><a class="markdownIt-Anchor" href="#sql">#</a> SQL</h2>
+<h2 id="sql"><a class="anchor" href="#sql">#</a> SQL</h2>
 <p>1. 什么是 SQL？<br>
 Structured Query Language：结构化查询语言<br>
 其实就是定义了操作所有关系型数据库的规则。每一种数据库操作的方式存在不一样的地方，称为 “方言”。</p>
@@ -231,7 +305,7 @@ Structured Query Language：结构化查询语言<br>
 <li>
 <p>3 种注释</p>
 <ul>
-<li>单行注释: – 注释内容 或 # 注释内容 (mysql 特有)</li>
+<li>单行注释: -- 注释内容 或 # 注释内容 (mysql 特有)</li>
 <li>多行注释: /* 注释 */</li>
 </ul>
 </li>
@@ -249,7 +323,7 @@ Structured Query Language：结构化查询语言<br>
 </ol>
 </li>
 </ol>
-<h2 id="ddl操作数据库-表"><a class="markdownIt-Anchor" href="#ddl操作数据库-表">#</a> DDL: 操作数据库、表</h2>
+<h2 id="ddl操作数据库-表"><a class="anchor" href="#ddl操作数据库-表">#</a> DDL: 操作数据库、表</h2>
 <ol>
 <li>
 <p>操作数据库：CRUD</p>
@@ -345,7 +419,7 @@ Structured Query Language：结构化查询语言<br>
 create table 表名 (<br>
 列名 1 数据类型 1,<br>
  列名 2 数据类型 2,<br>
-…<br>
+....<br>
  列名 n 数据类型 n<br>
 );
 <ul>
@@ -449,20 +523,20 @@ alter table 表名 modify 列名 新数据类型；</li>
 <ul>
 <li>客户端图形化工具：SQLYog</li>
 </ul>
-<h2 id="dml增删改表中数据"><a class="markdownIt-Anchor" href="#dml增删改表中数据">#</a> DML：增删改表中数据</h2>
+<h2 id="dml增删改表中数据"><a class="anchor" href="#dml增删改表中数据">#</a> DML：增删改表中数据</h2>
 <ol>
 <li>添加数据：
 <ul>
 <li>语法：
 <ul>
-<li>insert into 表名 (列名 1, 列名 2,… 列名 n) values (值 1, 值 2,… 值 n);</li>
+<li>insert into 表名 (列名 1, 列名 2,... 列名 n) values (值 1, 值 2,... 值 n);</li>
 </ul>
 </li>
 <li>注意：
 <ol>
 <li>列名和值要一一对应。</li>
 <li>如果表名后，不定义列名，则默认给所有列添加值<br>
- insert into 表名 values (值 1, 值 2,… 值 n);</li>
+ insert into 表名 values (值 1, 值 2,... 值 n);</li>
 <li>除了数字类型，其他类型需要使用引号 (单双都可以) 引起来</li>
 </ol>
 </li>
@@ -480,8 +554,8 @@ alter table 表名 modify 列名 新数据类型；</li>
 <li>如果不加条件，则删除表中所有记录。</li>
 <li>如果要删除所有记录
 <ol>
-<li>delete from 表名；– 不推荐使用。有多少条记录就会执行多少次删除操作</li>
-<li>TRUNCATE TABLE 表名；– 推荐使用，效率更高 先删除表，然后再创建一张一样的表。</li>
+<li>delete from 表名；-- 不推荐使用。有多少条记录就会执行多少次删除操作</li>
+<li>TRUNCATE TABLE 表名；-- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。</li>
 </ol>
 </li>
 </ol>
@@ -493,7 +567,7 @@ alter table 表名 modify 列名 新数据类型；</li>
 <li>
 <p>语法：</p>
 <ul>
-<li>update 表名 set 列名 1 = 值 1, 列名 2 = 值 2,… [where 条件];</li>
+<li>update 表名 set 列名 1 = 值 1, 列名 2 = 值 2,... [where 条件];</li>
 </ul>
 </li>
 <li>
@@ -505,7 +579,7 @@ alter table 表名 modify 列名 新数据类型；</li>
 </ul>
 </li>
 </ol>
-<h2 id="dql查询表中的记录"><a class="markdownIt-Anchor" href="#dql查询表中的记录">#</a> DQL：查询表中的记录</h2>
+<h2 id="dql查询表中的记录"><a class="anchor" href="#dql查询表中的记录">#</a> DQL：查询表中的记录</h2>
 <ul>
 <li>select * from 表名；</li>
 </ul>
@@ -531,7 +605,7 @@ select<br>
 <p>基础查询</p>
 <ol>
 <li>多个字段的查询<br>
- select 字段名 1，字段名 2… from 表名；
+ select 字段名 1，字段名 2... from 表名；
 <ul>
 <li>注意：
 <ul>
@@ -575,7 +649,7 @@ select<br>
 </blockquote>
 </li>
 <li>
-<p>BETWEEN…AND</p>
+<p>BETWEEN...AND</p>
 </li>
 <li>
 <p>IN (集合)</p>
@@ -602,25 +676,25 @@ select<br>
 </li>
 <li>
 <p>not  或！</p>
-<p>– 查询年龄大于 20 岁</p>
+<p>-- 查询年龄大于 20 岁</p>
 <p>SELECT * FROM student WHERE age &gt; 20;</p>
 <p>SELECT * FROM student WHERE age &gt;= 20;</p>
-<p>– 查询年龄等于 20 岁<br>
+<p>-- 查询年龄等于 20 岁<br>
  SELECT * FROM student WHERE age = 20;</p>
-<p>– 查询年龄不等于 20 岁<br>
+<p>-- 查询年龄不等于 20 岁<br>
  SELECT * FROM student WHERE age != 20;<br>
 SELECT * FROM student WHERE age &lt;&gt; 20;</p>
-<p>– 查询年龄大于等于 20 小于等于 30</p>
+<p>-- 查询年龄大于等于 20 小于等于 30</p>
 <p>SELECT * FROM student WHERE age &gt;= 20 &amp;&amp;  age &lt;=30;<br>
 SELECT * FROM student WHERE age &gt;= 20 AND  age &lt;=30;<br>
 SELECT * FROM student WHERE age BETWEEN 20 AND 30;</p>
-<p>– 查询年龄 22 岁，18 岁，25 岁的信息<br>
+<p>-- 查询年龄 22 岁，18 岁，25 岁的信息<br>
  SELECT * FROM student WHERE age = 22 OR age = 18 OR age = 25<br>
 SELECT * FROM student WHERE age IN (22,18,25);</p>
-<p>– 查询英语成绩为 null<br>
-SELECT * FROM student WHERE english = NULL; – 不对的。null 值不能使用 = （!=） 判断</p>
+<p>-- 查询英语成绩为 null<br>
+SELECT * FROM student WHERE english = NULL; -- 不对的。null 值不能使用 = （!=） 判断</p>
 <p>SELECT * FROM student WHERE english IS NULL;</p>
-<p>– 查询英语成绩不为 null<br>
+<p>-- 查询英语成绩不为 null<br>
 SELECT * FROM student WHERE english  IS NOT NULL;</p>
 </li>
 </ul>
@@ -628,17 +702,17 @@ SELECT * FROM student WHERE english  IS NOT NULL;</p>
 </ol>
 </li>
 </ol>
-<p>​			– 查询姓马的有哪些？ like<br>
-​			SELECT * FROM student WHERE NAME LIKE ‘马 %’;<br>
-​			– 查询姓名第二个字是化的人<br>
+<p>​			-- 查询姓马的有哪些？ like<br>
+​			SELECT * FROM student WHERE NAME LIKE ' 马 %';<br>
+​			-- 查询姓名第二个字是化的人<br>
 ​			<br>
 ​			SELECT * FROM student WHERE NAME LIKE "<em>化 %";<br>
 ​			<br>
-​			– 查询姓名是 3 个字的人<br>
-​			SELECT * FROM student WHERE NAME LIKE '</em>__’;</p>
+​			-- 查询姓名是 3 个字的人<br>
+​			SELECT * FROM student WHERE NAME LIKE '</em>__';</p>
 <p>​</p>
-<p>​			– 查询姓名中包含德的人<br>
-​			SELECT * FROM student WHERE NAME LIKE ‘% 德 %’;</p>
+<p>​			-- 查询姓名中包含德的人<br>
+​			SELECT * FROM student WHERE NAME LIKE '% 德 %';</p>
 <p>​</p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -658,4 +732,243 @@ SELECT * FROM student WHERE english  IS NOT NULL;</p>
             });
             document.body.appendChild(img);
           });
-      </script></article><!-- lincense--><div class="license-wrapper"><p> <span>Author:  </span><a href="https://www.baocai-blog.cn">手撕包菜</a></p><p> <span>Link:  </span><a href="https://www.baocai-blog.cn/2020/09/30/MySQL%E5%9F%BA%E7%A1%80/">https://www.baocai-blog.cn/2020/09/30/MySQL%E5%9F%BA%E7%A1%80/</a></p><p> <span>Copyright:  </span><span>All articles in this blog are licensed under <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/3.0">CC BY-NC-SA 3.0</a> unless stating additionally.</span></p></div><div class="post-paginator"><a class="prevSlogan" href="/2020/09/30/MySQL%E7%BA%A6%E6%9D%9F/" title="MySQL约束"><span>< PreviousPost</span><br><span class="prevTitle">MySQL约束</span></a><a class="nextSlogan" href="/2020/09/30/MySQL%E5%A4%9A%E8%A1%A8-%E4%BA%8B%E5%8A%A1/" title="MySQL多表和事务"><span>NextPost ></span><br><span class="nextTitle">MySQL多表和事务</span></a><div class="clear"></div></div><div id="comment"></div></section></article><footer id="cxo-footer-outer"><div id="cxo-footer-inner"><p class="footer-container"><span>Site by </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span> | theme </span><a target="_blank" rel="noopener" href="https://github.com/Longlongyu/hexo-theme-Cxo"><span>Cxo</span></a></p><i class="fa fa-user"> </i><span id="busuanzi_value_site_uv"></span><span> | </span><i class="fa fa-eye"> </i><span id="busuanzi_value_site_pv"></span></div></footer><!-- catelog--><div class="toc-wrapper" style="top: 70vh;"><div class="toc-catalog"><i class="fa fa-list"> </i><span>CATALOG</span></div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text"> 目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text"> 数据库的基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text"> MySQL 数据库软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql"><span class="toc-number">1.3.</span> <span class="toc-text"> SQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ddl%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93-%E8%A1%A8"><span class="toc-number">1.4.</span> <span class="toc-text"> DDL: 操作数据库、表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dml%E5%A2%9E%E5%88%A0%E6%94%B9%E8%A1%A8%E4%B8%AD%E6%95%B0%E6%8D%AE"><span class="toc-number">1.5.</span> <span class="toc-text"> DML：增删改表中数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dql%E6%9F%A5%E8%AF%A2%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%AE%B0%E5%BD%95"><span class="toc-number">1.6.</span> <span class="toc-text"> DQL：查询表中的记录</span></a></li></ol></li></ol></div><!-- top--><i class="fa fa-arrow-up close" id="go-up" aria-hidden="true"></i></body></html>
+      </script>
+      <div class="tags">
+          <a href="/tags/MySQL/" rel="tag"><i class="ic i-tag"></i> MySQL</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2020-10-03 10:57:43" itemprop="dateModified" datetime="2020-10-03T10:57:43+08:00">2020-10-03</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>手撕包菜 <i class="ic i-at"><em>@</em></i>手撕包菜
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://www.baocai-blog.cn/2020/09/30/MySQL%E5%9F%BA%E7%A1%80/" title="MySQL基础">https://www.baocai-blog.cn/2020/09/30/MySQL基础/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="nav">
+    <div class="item left">
+      
+
+  <a href="/2020/09/30/MySQL%E5%A4%9A%E8%A1%A8-%E4%BA%8B%E5%8A%A1/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciuv0socj20zk0m8qes.jpg" title="MySQL多表和事务">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 数据库</span>
+  <h3>MySQL多表和事务</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text"> 目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text"> 数据库的基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text"> MySQL 数据库软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql"><span class="toc-number">1.3.</span> <span class="toc-text"> SQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ddl%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93-%E8%A1%A8"><span class="toc-number">1.4.</span> <span class="toc-text"> DDL: 操作数据库、表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dml%E5%A2%9E%E5%88%A0%E6%94%B9%E8%A1%A8%E4%B8%AD%E6%95%B0%E6%8D%AE"><span class="toc-number">1.5.</span> <span class="toc-text"> DML：增删改表中数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dql%E6%9F%A5%E8%AF%A2%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%AE%B0%E5%BD%95"><span class="toc-number">1.6.</span> <span class="toc-text"> DQL：查询表中的记录</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/2020/09/30/MySQL%E5%9F%BA%E7%A1%80/" rel="bookmark" title="MySQL基础">MySQL基础</a></li><li><a href="/2020/09/30/MySQL%E5%A4%9A%E8%A1%A8-%E4%BA%8B%E5%8A%A1/" rel="bookmark" title="MySQL多表和事务">MySQL多表和事务</a></li><li><a href="/2020/09/30/MySQL%E7%BA%A6%E6%9D%9F/" rel="bookmark" title="MySQL约束">MySQL约束</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="手撕包菜"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">手撕包菜</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">4</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">2</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">2</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3NzYmFvY2Fp" title="https:&#x2F;&#x2F;github.com&#x2F;ssbaocai"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPXlvdXJpZA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;yourid"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2020</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">手撕包菜 @ 手撕包菜</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">25k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">23 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2020/09/30/MySQL基础/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 ${query} ，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2"></script>
+
+
+
+
+</body>
+</html>

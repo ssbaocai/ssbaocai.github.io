@@ -1,105 +1,179 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="author" content="手撕包菜"><meta name="renderer" content="webkit"><meta name="copyright" content="手撕包菜"><meta name="keywords" content="手撕包菜"><meta name="description" content=""><meta name="Cache-Control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>MySQL多表和事务 · Baocai's Blog</title><link rel="stylesheet" href="/css/style.css?v=2018.7.9"><link rel="stylesheet" href="/css/animation.css?v=2018.7.9"><link rel="icon" href="/img/assets/myfavicon.ico"><link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.6"><!-- scripts--><script>(function( w ){
-  "use strict";
-  // rel=preload support test
-  if( !w.loadCSS ){
-    w.loadCSS = function(){};
-  }
-  // define on the loadCSS obj
-  var rp = loadCSS.relpreload = {};
-  // rel=preload feature support test
-  // runs once and returns a function for compat purposes
-  rp.support = (function(){
-    var ret;
-    try {
-      ret = w.document.createElement( "link" ).relList.supports( "preload" );
-    } catch (e) {
-      ret = false;
-    }
-    return function(){
-      return ret;
-    };
-  })();
-
-  // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-  // then change that media back to its intended value on load
-  rp.bindMediaToggle = function( link ){
-    // remember existing media attr for ultimate state, or default to 'all'
-    var finalMedia = link.media || "all";
-
-    function enableStylesheet(){
-      link.media = finalMedia;
-    }
-
-    // bind load handlers to enable media
-    if( link.addEventListener ){
-      link.addEventListener( "load", enableStylesheet );
-    } else if( link.attachEvent ){
-      link.attachEvent( "onload", enableStylesheet );
-    }
-
-    // Set rel and non-applicable media type to start an async request
-    // note: timeout allows this to happen async to let rendering continue in IE
-    setTimeout(function(){
-      link.rel = "stylesheet";
-      link.media = "only x";
-    });
-    // also enable media after 3 seconds,
-    // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-    setTimeout( enableStylesheet, 3000 );
-  };
-
-  // loop through link elements in DOM
-  rp.poly = function(){
-    // double check this to prevent external calls from running
-    if( rp.support() ){
-      return;
-    }
-    var links = w.document.getElementsByTagName( "link" );
-    for( var i = 0; i < links.length; i++ ){
-      var link = links[ i ];
-      // qualify links to those with rel=preload and as=style attrs
-      if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
-        // prevent rerunning on link
-        link.setAttribute( "data-loadcss", true );
-        // bind listeners to toggle media back
-        rp.bindMediaToggle( link );
-      }
-    }
-  };
-
-  // if unsupported, run the polyfill
-  if( !rp.support() ){
-    // run once at least
-    rp.poly();
-
-    // rerun poly on an interval until onload
-    var run = w.setInterval( rp.poly, 500 );
-    if( w.addEventListener ){
-      w.addEventListener( "load", function(){
-        rp.poly();
-        w.clearInterval( run );
-      } );
-    } else if( w.attachEvent ){
-      w.attachEvent( "onload", function(){
-        rp.poly();
-        w.clearInterval( run );
-      } );
-    }
-  }
 
 
-  // commonjs
-  if( typeof exports !== "undefined" ){
-    exports.loadCSS = loadCSS;
-  }
-  else {
-    w.loadCSS = loadCSS;
-  }
-}( typeof global !== "undefined" ? global : this ) );</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script><script src="/js/main.js?v=2018.7.9" defer></script><!-- fancybox--><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script><!-- busuanzi--><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="手撕包菜" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><section class="profile-close" id="cxo-profile"><div class="profile-avatar"><i class="fa fa-caret-left"></i><img src="/img/assets/avatar.jpg"></div><!--.profile-saying
-  i.fa.fa-comment
-  .saying--><div class="cxo-profile-inner"><div class="profile-name">手撕包菜</div><div class="profile-signature">for me</div><div class="friends"><div>FRIENDS</div><span><a href="//github.com/Longlongyu" target="_black">friendA</a></span><span><a href="//github.com/" target="_black">friendB</a></span><span><a href="//github.com/" target="_black">friendC</a></span></div><div class="read-progress"></div></div></section><header id="cxo-intro" style="height: 70vh;background-image: url(/img/intro/index-bg.png);"><nav id="cxo-intro-nav"><section><div class="intro-nav-title"><a href="/">Baocai's Blog</a></div><div class="intro-nav-label-box"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div><i class="fa fa-bars intro-nav-menu"><div class="intro-nav-drop"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div></i><div class="clear"></div></section></nav><h1 class="post-title">MySQL多表和事务</h1><div class="post-intros"><div class="post-intro-meta"><span class="post-intro-time"><i class="post-intro-calendar fa fa-edit"></i><span>2020-10-03 10:57:36</span></span><span class="post-intro-tags"><a class="intro-tag fa fa-tag" href="javascript:void(0)" date-tags="MySQL"> MySQL</a></span></div><div class="post-intro-read"><span> Word count: <span class="post-count">3.2k</span> | Reading time: <span class="post-count">14</span>min</span></div></div></header><article class="cxo-up" id="cxo-content-outer"><section id="cxo-content-inner"><article class="article-entry" id="post"><hr>
-<h1 id="目录"><a class="markdownIt-Anchor" href="#目录">#</a> 目录</h1>
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="手撕包菜" href="https://www.baocai-blog.cn/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="手撕包菜" href="https://www.baocai-blog.cn/atom.xml" />
+<link rel="alternate" type="application/json" title="手撕包菜" href="https://www.baocai-blog.cn/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2">
+
+  
+  <meta name="keywords" content="MySQL" />
+
+
+
+<meta name="description" content="" >
+
+
+<link rel="canonical" href="https://www.baocai-blog.cn/2020/09/30/MySQL%E5%A4%9A%E8%A1%A8-%E4%BA%8B%E5%8A%A1/">
+
+
+
+  <title>
+MySQL多表和事务 - 数据库 |
+手撕包菜 = 手撕包菜 = 手撕包菜</title>
+<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">MySQL多表和事务
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2020-09-30 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2020-09-30T00:00:00+08:00">2020-09-30</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>8.3k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>8 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">手撕包菜</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclxfdlttj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclxp31goj20zk0m8qv5.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicitspjpbj20zk0m81ky.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipetv6p75j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeyonbf9j20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicis3attqj20zk0m8k7l.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main id="main">
+      <div class="inner">
+        <div id="content" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="item" rel="index" title="分类于 数据库"><span itemprop="name">数据库</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://www.baocai-blog.cn/2020/09/30/MySQL%E5%A4%9A%E8%A1%A8-%E4%BA%8B%E5%8A%A1/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="手撕包菜">
+    <meta itemprop="description" content="手撕包菜, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="手撕包菜">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <hr>
+<h1 id="目录"><a class="anchor" href="#目录">#</a> 目录</h1>
 <ol>
 <li>
 <p>多表查询</p>
@@ -111,7 +185,7 @@
 <p>DCL</p>
 </li>
 </ol>
-<h2 id="多表查询"><a class="markdownIt-Anchor" href="#多表查询">#</a> 多表查询：</h2>
+<h2 id="多表查询"><a class="anchor" href="#多表查询">#</a> 多表查询：</h2>
 <ul>
 <li>
 <p>查询语法：<br>
@@ -119,31 +193,31 @@ select<br>
  列名列表<br>
  from<br>
  表名列表<br>
- where…</p>
+ where....</p>
 </li>
 <li>
 <p>准备 sql</p>
-<h3 id="创建部门表"><a class="markdownIt-Anchor" href="#创建部门表">#</a> 创建部门表</h3>
+<h3 id="创建部门表"><a class="anchor" href="#创建部门表">#</a> 创建部门表</h3>
 <p>CREATE TABLE dept(<br>
 id INT PRIMARY KEY AUTO_INCREMENT,<br>
 NAME VARCHAR(20)<br>
 );<br>
-INSERT INTO dept (NAME) VALUES (‘开发部’),(‘市场部’),(‘财务部’);</p>
-<h3 id="创建员工表"><a class="markdownIt-Anchor" href="#创建员工表">#</a> 创建员工表</h3>
+INSERT INTO dept (NAME) VALUES (' 开发部 '),(' 市场部 '),(' 财务部 ');</p>
+<h3 id="创建员工表"><a class="anchor" href="#创建员工表">#</a> 创建员工表</h3>
 <p>CREATE TABLE emp (<br>
 id INT PRIMARY KEY AUTO_INCREMENT,<br>
 NAME VARCHAR(10),<br>
-gender CHAR (1), – 性别<br>
- salary DOUBLE, – 工资<br>
- join_date DATE, – 入职日期<br>
+gender CHAR (1), -- 性别<br>
+ salary DOUBLE, -- 工资<br>
+ join_date DATE, -- 入职日期<br>
  dept_id INT,<br>
-FOREIGN KEY (dept_id) REFERENCES dept (id) – 外键，关联部门表 (部门表的主键)<br>
+FOREIGN KEY (dept_id) REFERENCES dept (id) -- 外键，关联部门表 (部门表的主键)<br>
 );<br>
-INSERT INTO emp (NAME,gender,salary,join_date,dept_id) VALUES (‘孙悟空’,‘男’,7200,‘2013-02-24’,1);<br>
-INSERT INTO emp (NAME,gender,salary,join_date,dept_id) VALUES (‘猪八戒’,‘男’,3600,‘2010-12-02’,2);<br>
-INSERT INTO emp (NAME,gender,salary,join_date,dept_id) VALUES (‘唐僧’,‘男’,9000,‘2008-08-08’,2);<br>
-INSERT INTO emp (NAME,gender,salary,join_date,dept_id) VALUES (‘白骨精’,‘女’,5000,‘2015-10-07’,3);<br>
-INSERT INTO emp (NAME,gender,salary,join_date,dept_id) VALUES (‘蜘蛛精’,‘女’,4500,‘2011-03-14’,1);</p>
+INSERT INTO emp (NAME,gender,salary,join_date,dept_id) VALUES (' 孙悟空 ',' 男 ',7200,'2013-02-24',1);<br>
+INSERT INTO emp (NAME,gender,salary,join_date,dept_id) VALUES (' 猪八戒 ',' 男 ',3600,'2010-12-02',2);<br>
+INSERT INTO emp (NAME,gender,salary,join_date,dept_id) VALUES (' 唐僧 ',' 男 ',9000,'2008-08-08',2);<br>
+INSERT INTO emp (NAME,gender,salary,join_date,dept_id) VALUES (' 白骨精 ',' 女 ',5000,'2015-10-07',3);<br>
+INSERT INTO emp (NAME,gender,salary,join_date,dept_id) VALUES (' 蜘蛛精 ',' 女 ',4500,'2011-03-14',1);</p>
 </li>
 <li>
 <p>笛卡尔积：</p>
@@ -161,15 +235,15 @@ INSERT INTO emp (NAME,gender,salary,join_date,dept_id) VALUES (‘蜘蛛精’,�
 <p>隐式内连接：使用 where 条件消除无用数据</p>
 <ul>
 <li>例子：<br>
-– 查询所有员工信息和对应的部门信息</li>
+-- 查询所有员工信息和对应的部门信息</li>
 </ul>
 <p>SELECT * FROM emp,dept WHERE emp. <code>dept_id</code>  = dept. <code>id</code> ;</p>
-<p>– 查询员工表的名称，性别。部门表的名称<br>
- SELECT <a target="_blank" rel="noopener" href="http://emp.name">emp.name</a>,emp.gender,<a target="_blank" rel="noopener" href="http://dept.name">dept.name</a> FROM emp,dept WHERE emp. <code>dept_id</code>  = dept. <code>id</code> ;</p>
+<p>-- 查询员工表的名称，性别。部门表的名称<br>
+ SELECT <span class="exturl" data-url="aHR0cDovL2VtcC5uYW1l">emp.name</span>,emp.gender,<span class="exturl" data-url="aHR0cDovL2RlcHQubmFtZQ==">dept.name</span> FROM emp,dept WHERE emp. <code>dept_id</code>  = dept. <code>id</code> ;</p>
 <p>SELECT<br>
-<a target="_blank" rel="noopener" href="http://t1.name">t1.name</a>, – 员工表的姓名<br>
+<span class="exturl" data-url="aHR0cDovL3QxLm5hbWU=">t1.name</span>, -- 员工表的姓名<br>
  t1.gender,-- 员工表的性别<br>
-<a target="_blank" rel="noopener" href="http://t2.name"> t2.name</a> – 部门表的名称<br>
+<span class="exturl" data-url="aHR0cDovL3QyLm5hbWU="> t2.name</span> -- 部门表的名称<br>
  FROM<br>
 emp t1,<br>
 dept t2<br>
@@ -200,7 +274,7 @@ t1. <code>dept_id</code>  = t2. <code>id</code> ;</p>
 <li>语法：select 字段列表 from 表 1 left [outer] join 表 2 on 条件；</li>
 <li>查询的是左表所有数据以及其交集部分。</li>
 <li>例子：<br>
-– 查询所有员工信息，如果员工有部门，则查询部门名称，没有部门，则不显示部门名称<br>
+-- 查询所有员工信息，如果员工有部门，则查询部门名称，没有部门，则不显示部门名称<br>
  SELECT 	t1.*,t2. <code>name</code>  FROM emp t1 LEFT JOIN dept t2 ON t1. <code>dept_id</code>  = t2. <code>id</code> ;</li>
 </ul>
 </li>
@@ -218,12 +292,12 @@ SELECT 	* FROM dept t2 RIGHT JOIN emp t1 ON t1. <code>dept_id</code>  = t2. <cod
 <ul>
 <li>
 <p>概念：查询中嵌套查询，称嵌套查询为子查询。<br>
-– 查询工资最高的员工信息<br>
-– 1 查询最高的工资是多少 9000<br>
+-- 查询工资最高的员工信息<br>
+ -- 1 查询最高的工资是多少 9000<br>
 SELECT MAX(salary) FROM emp;</p>
-<p>– 2 查询员工信息，并且工资等于 9000 的<br>
+<p>-- 2 查询员工信息，并且工资等于 9000 的<br>
  SELECT * FROM emp WHERE emp. <code>salary</code>  = 9000;</p>
-<p>– 一条 sql 就完成这个操作。子查询<br>
+<p>-- 一条 sql 就完成这个操作。子查询<br>
  SELECT * FROM emp WHERE emp. <code>salary</code>  = (SELECT MAX(salary) FROM emp);</p>
 </li>
 <li>
@@ -235,31 +309,31 @@ SELECT MAX(salary) FROM emp;</p>
 <li>子查询可以作为条件，使用运算符去判断。 运算符： &gt; &gt;= &lt; &lt;= =</li>
 <li></li>
 </ul>
-<p>– 查询员工工资小于平均工资的人<br>
+<p>-- 查询员工工资小于平均工资的人<br>
  SELECT * FROM emp WHERE emp.salary &lt;(SELECT AVG (salary) FROM emp);</p>
 </li>
 <li>
 <p>子查询的结果是多行单列的：</p>
 <ul>
 <li>子查询可以作为条件，使用运算符 in 来判断<br>
-– 查询’财务部’和’市场部’所有的员工信息<br>
- SELECT id FROM dept WHERE NAME = ‘财务部’ OR NAME = ‘市场部’;<br>
+ -- 查询 ' 财务部 ' 和' 市场部 ' 所有的员工信息<br>
+ SELECT id FROM dept WHERE NAME = ' 财务部 ' OR NAME = ' 市场部 ';<br>
 SELECT * FROM emp WHERE dept_id = 3 OR dept_id = 2;<br>
-– 子查询<br>
- SELECT * FROM emp WHERE dept_id IN (SELECT id FROM dept WHERE NAME = ‘财务部’ OR NAME = ‘市场部’);</li>
+-- 子查询<br>
+ SELECT * FROM emp WHERE dept_id IN (SELECT id FROM dept WHERE NAME = ' 财务部 ' OR NAME = ' 市场部 ');</li>
 </ul>
 </li>
 <li>
 <p>子查询的结果是多行多列的：</p>
 <ul>
 <li>子查询可以作为一张虚拟表参与查询<br>
-– 查询员工入职日期是 2011-11-11 日之后的员工信息和部门信息<br>
-– 子查询<br>
- SELECT * FROM dept t1 ,(SELECT * FROM emp WHERE emp. <code>join_date</code>  &gt; ‘2011-11-11’) t2<br>
-WHERE <a target="_blank" rel="noopener" href="http://t1.id">t1.id</a> = t2.dept_id;</li>
+ -- 查询员工入职日期是 2011-11-11 日之后的员工信息和部门信息<br>
+ -- 子查询<br>
+ SELECT * FROM dept t1 ,(SELECT * FROM emp WHERE emp. <code>join_date</code>  &gt; '2011-11-11') t2<br>
+WHERE <span class="exturl" data-url="aHR0cDovL3QxLmlk">t1.id</span> = t2.dept_id;</li>
 </ul>
-<p>– 普通内连接<br>
- SELECT * FROM emp t1,dept t2 WHERE t1. <code>dept_id</code>  = t2. <code>id</code>  AND t1. <code>join_date</code>  &gt;  ‘2011-11-11’</p>
+<p>-- 普通内连接<br>
+ SELECT * FROM emp t1,dept t2 WHERE t1. <code>dept_id</code>  = t2. <code>id</code>  AND t1. <code>join_date</code>  &gt;  '2011-11-11'</p>
 </li>
 </ol>
 </li>
@@ -287,61 +361,61 @@ WHERE <a target="_blank" rel="noopener" href="http://t1.id">t1.id</a> = t2.dept_
 </ul>
 <p>​				<br>
 ​</p>
-<p>​			– 职务表，职务名称，职务描述<br>
+<p>​			-- 职务表，职务名称，职务描述<br>
 ​			CREATE TABLE job (<br>
 ​			  id INT PRIMARY KEY,<br>
 ​			  jname VARCHAR(20),<br>
 ​			  description VARCHAR(50)<br>
 ​			);<br>
 ​			<br>
-​			– 添加 4 个职务<br>
+​			-- 添加 4 个职务<br>
 ​			INSERT INTO job (id, jname, description) VALUES<br>
-​			(1, ‘董事长’, ‘管理整个公司，接单’),<br>
-​			(2, ‘经理’, ‘管理部门员工’),<br>
-​			(3, ‘销售员’, ‘向客人推销产品’),<br>
-​			(4, ‘文员’, ‘使用办公软件’);</p>
+​			(1, ' 董事长 ', ' 管理整个公司，接单 '),<br>
+​			(2, ' 经理 ', ' 管理部门员工 '),<br>
+​			(3, ' 销售员 ', ' 向客人推销产品 '),<br>
+​			(4, ' 文员 ', ' 使用办公软件 ');</p>
 <p>​				<br>
 ​</p>
-<p>​			– 员工表<br>
+<p>​			-- 员工表<br>
 ​			CREATE TABLE emp (<br>
-​			  id INT PRIMARY KEY, – 员工 id<br>
-​			  ename VARCHAR (50), – 员工姓名<br>
-​			  job_id INT, – 职务 id<br>
-​			  mgr INT , – 上级领导<br>
-​			  joindate DATE, – 入职日期<br>
-​			  salary DECIMAL (7,2), – 工资<br>
-​			  bonus DECIMAL (7,2), – 奖金<br>
-​			  dept_id INT, – 所在部门编号<br>
+​			  id INT PRIMARY KEY, -- 员工 id<br>
+​			  ename VARCHAR (50), -- 员工姓名<br>
+​			  job_id INT, -- 职务 id<br>
+​			  mgr INT , -- 上级领导<br>
+​			  joindate DATE, -- 入职日期<br>
+​			  salary DECIMAL (7,2), -- 工资<br>
+​			  bonus DECIMAL (7,2), -- 奖金<br>
+​			  dept_id INT, -- 所在部门编号<br>
 ​			  CONSTRAINT emp_jobid_ref_job_id_fk FOREIGN KEY (job_id) REFERENCES job (id),<br>
 ​			  CONSTRAINT emp_deptid_ref_dept_id_fk FOREIGN KEY (dept_id) REFERENCES dept (id)<br>
 ​			);<br>
 ​			<br>
-​			– 添加员工<br>
+​			-- 添加员工<br>
 ​			INSERT INTO emp (id,ename,job_id,mgr,joindate,salary,bonus,dept_id) VALUES<br>
-​			(1001,‘孙悟空’,4,1004,‘2000-12-17’,‘8000.00’,NULL,20),<br>
-​			(1002,‘卢俊义’,3,1006,‘2001-02-20’,‘16000.00’,‘3000.00’,30),<br>
-​			(1003,‘林冲’,3,1006,‘2001-02-22’,‘12500.00’,‘5000.00’,30),<br>
-​			(1004,‘唐僧’,2,1009,‘2001-04-02’,‘29750.00’,NULL,20),<br>
-​			(1005,‘李逵’,4,1006,‘2001-09-28’,‘12500.00’,‘14000.00’,30),<br>
-​			(1006,‘宋江’,2,1009,‘2001-05-01’,‘28500.00’,NULL,30),<br>
-​			(1007,‘刘备’,2,1009,‘2001-09-01’,‘24500.00’,NULL,10),<br>
-​			(1008,‘猪八戒’,4,1004,‘2007-04-19’,‘30000.00’,NULL,20),<br>
-​			(1009,‘罗贯中’,1,NULL,‘2001-11-17’,‘50000.00’,NULL,10),<br>
-​			(1010,‘吴用’,3,1006,‘2001-09-08’,‘15000.00’,‘0.00’,30),<br>
-​			(1011,‘沙僧’,4,1004,‘2007-05-23’,‘11000.00’,NULL,20),<br>
-​			(1012,‘李逵’,4,1006,‘2001-12-03’,‘9500.00’,NULL,30),<br>
-​			(1013,‘小白龙’,4,1004,‘2001-12-03’,‘30000.00’,NULL,20),<br>
-​			(1014,‘关羽’,4,1007,‘2002-01-23’,‘13000.00’,NULL,10);</p>
+​			(1001,' 孙悟空 ',4,1004,'2000-12-17','8000.00',NULL,20),<br>
+​			(1002,' 卢俊义 ',3,1006,'2001-02-20','16000.00','3000.00',30),<br>
+​			(1003,' 林冲 ',3,1006,'2001-02-22','12500.00','5000.00',30),<br>
+​			(1004,' 唐僧 ',2,1009,'2001-04-02','29750.00',NULL,20),<br>
+​			(1005,' 李逵 ',4,1006,'2001-09-28','12500.00','14000.00',30),<br>
+​			(1006,' 宋江 ',2,1009,'2001-05-01','28500.00',NULL,30),<br>
+​			(1007,' 刘备 ',2,1009,'2001-09-01','24500.00',NULL,10),<br>
+​			(1008,' 猪八戒 ',4,1004,'2007-04-19','30000.00',NULL,20),<br>
+​			(1009,' 罗贯中 ',1,NULL,'2001-11-17','50000.00',NULL,10),<br>
+​			(1010,' 吴用 ',3,1006,'2001-09-08','15000.00','0.00',30),<br>
+​			(1011,' 沙僧 ',4,1004,'2007-05-23','11000.00',NULL,20),<br>
+​			(1012,' 李逵 ',4,1006,'2001-12-03','9500.00',NULL,30),<br>
+​			(1013,' 小白龙 ',4,1004,'2001-12-03','30000.00',NULL,20),<br>
+​			(1014,' 关羽 ',4,1007,'2002-01-23','13000.00',NULL,10);</p>
 <p>​				<br>
 ​</p>
-<p>​			– 工资等级表<br>
+<p>​			-- 工资等级表<br>
 ​			CREATE TABLE salarygrade (<br>
-​			  grade INT PRIMARY KEY,   – 级别<br>
-​			  losalary INT,  – 最低工资<br>
-​			  hisalary INT – 最高工资<br>
+​			  grade INT PRIMARY KEY,   -- 级别<br>
+​			  losalary INT,  -- 最低工资<br>
+​			  hisalary INT -- 最高工资<br>
 ​			);<br>
 ​			<br>
-​			– 添加 5 个工资等级<br>
+​			-- 添加 5 个工资等级<br>
 ​			INSERT INTO salarygrade (grade,losalary,hisalary) VALUES<br>
 ​			(1,7000,12000),<br>
 ​			(2,12010,14000),<br>
@@ -349,28 +423,28 @@ WHERE <a target="_blank" rel="noopener" href="http://t1.id">t1.id</a> = t2.dept_
 ​			(4,20010,30000),<br>
 ​			(5,30010,99990);<br>
 ​			<br>
-​			– 需求：<br>
+​			-- 需求：<br>
 ​			<br>
-​			– 1. 查询所有员工信息。查询员工编号，员工姓名，工资，职务名称，职务描述<br>
+​			-- 1. 查询所有员工信息。查询员工编号，员工姓名，工资，职务名称，职务描述<br>
 ​			/*<br>
 ​				分析：<br>
 ​					1. 员工编号，员工姓名，工资，需要查询 emp 表  职务名称，职务描述 需要查询 job 表<br>
-​					2. 查询条件 emp.job_id = <a target="_blank" rel="noopener" href="http://job.id">job.id</a><br>
+​					2. 查询条件 emp.job_id = <span class="exturl" data-url="aHR0cDovL2pvYi5pZA==">job.id</span><br>
 ​			<br>
 ​			*/<br>
 ​			SELECT<br>
-​				t1. <code>id</code> , – 员工编号<br>
-​				t1. <code>ename</code> , – 员工姓名<br>
+​				t1. <code>id</code> , -- 员工编号<br>
+​				t1. <code>ename</code> , -- 员工姓名<br>
 ​				t1. <code>salary</code> ,-- 工资<br>
-​				t2. <code>jname</code> , – 职务名称<br>
-​				t2. <code>description</code>  – 职务描述<br>
+​				t2. <code>jname</code> , -- 职务名称<br>
+​				t2. <code>description</code>  -- 职务描述<br>
 ​			FROM<br>
 ​				emp t1, job t2<br>
 ​			WHERE<br>
 ​				t1. <code>job_id</code>  = t2. <code>id</code> ;</p>
 <p>​				<br>
 ​</p>
-<p>​			– 2. 查询员工编号，员工姓名，工资，职务名称，职务描述，部门名称，部门位置<br>
+<p>​			-- 2. 查询员工编号，员工姓名，工资，职务名称，职务描述，部门名称，部门位置<br>
 ​			/*<br>
 ​				分析：</p>
 <pre><code>			1. 员工编号，员工姓名，工资 emp  职务名称，职务描述 job  部门名称，部门位置 dept
@@ -406,7 +480,7 @@ WHERE <a target="_blank" rel="noopener" href="http://t1.id">t1.id</a> = t2.dept_
 </code></pre>
 <p>​				<br>
 ​</p>
-<p>​			– 4. 查询员工姓名，工资，职务名称，职务描述，部门名称，部门位置，工资等级<br>
+<p>​			-- 4. 查询员工姓名，工资，职务名称，职务描述，部门名称，部门位置，工资等级<br>
 ​			/*<br>
 ​				分析：</p>
 <pre><code>			1. 员工姓名，工资 emp ， 职务名称，职务描述 job 部门名称，部门位置，dept  工资等级 salarygrade
@@ -430,7 +504,7 @@ WHERE <a target="_blank" rel="noopener" href="http://t1.id">t1.id</a> = t2.dept_
 </code></pre>
 <p>​				<br>
 ​</p>
-<p>​			– 5. 查询出部门编号、部门名称、部门位置、部门人数<br>
+<p>​			-- 5. 查询出部门编号、部门名称、部门位置、部门人数<br>
 ​			<br>
 ​			/*<br>
 ​				分析：<br>
@@ -450,12 +524,12 @@ WHERE <a target="_blank" rel="noopener" href="http://t1.id">t1.id</a> = t2.dept_
 ​				GROUP BY dept_id) t2<br>
 ​			WHERE t1. <code>id</code>  = t2.dept_id;</p>
 <p>​</p>
-<p>​			– 6. 查询所有员工的姓名及其直接上级的姓名，没有领导的员工也需要查询<br>
+<p>​			-- 6. 查询所有员工的姓名及其直接上级的姓名，没有领导的员工也需要查询<br>
 ​			<br>
 ​			/*<br>
 ​				分析：<br>
 ​					1. 姓名 emp， 直接上级的姓名 emp</p>
-<h2 id="事务"><a class="markdownIt-Anchor" href="#事务">#</a> 事务</h2>
+<h2 id="事务"><a class="anchor" href="#事务">#</a> 事务</h2>
 <ol>
 <li>事务的基本介绍
 <ol>
@@ -480,8 +554,8 @@ id INT PRIMARY KEY AUTO_INCREMENT,<br>
 NAME VARCHAR(10),<br>
 balance DOUBLE<br>
 );<br>
-– 添加数据<br>
- INSERT INTO account (NAME, balance) VALUES (‘zhangsan’, 1000), (‘lisi’, 1000);</p>
+-- 添加数据<br>
+ INSERT INTO account (NAME, balance) VALUES ('zhangsan', 1000), ('lisi', 1000);</p>
 </li>
 </ol>
 </li>
@@ -489,21 +563,21 @@ balance DOUBLE<br>
 <p>​</p>
 <p>​		SELECT * FROM account;<br>
 ​		UPDATE account SET balance = 1000;<br>
-​		– 张三给李四转账 500 元<br>
+​		-- 张三给李四转账 500 元<br>
 ​		<br>
-​		– 0. 开启事务<br>
+​		-- 0. 开启事务<br>
 ​		START TRANSACTION;<br>
-​		– 1. 张三账户 -500<br>
+​		-- 1. 张三账户 -500<br>
 ​		<br>
-​		UPDATE account SET balance = balance - 500 WHERE NAME = ‘zhangsan’;<br>
-​		– 2. 李四账户 +500<br>
-​		– 出错了…<br>
-​		UPDATE account SET balance = balance + 500 WHERE NAME = ‘lisi’;<br>
+​		UPDATE account SET balance = balance - 500 WHERE NAME = 'zhangsan';<br>
+​		-- 2. 李四账户 +500<br>
+​		-- 出错了...<br>
+​		UPDATE account SET balance = balance + 500 WHERE NAME = 'lisi';<br>
 ​		<br>
-​		– 发现执行没有问题，提交事务<br>
+​		-- 发现执行没有问题，提交事务<br>
 ​		COMMIT;<br>
 ​		<br>
-​		– 发现出问题了，回滚事务<br>
+​		-- 发现出问题了，回滚事务<br>
 ​		ROLLBACK;</p>
 <ol start="4">
 <li>
@@ -527,7 +601,7 @@ balance DOUBLE<br>
 </li>
 <li>修改事务的默认提交方式：
 <ul>
-<li>查看事务的默认提交方式：SELECT @@autocommit; – 1 代表自动提交  0 代表手动提交</li>
+<li>查看事务的默认提交方式：SELECT @@autocommit; -- 1 代表自动提交  0 代表手动提交</li>
 <li>修改默认提交方式： set @@autocommit = 0;</li>
 </ul>
 </li>
@@ -598,14 +672,14 @@ balance DOUBLE<br>
 <p>演示：<br>
 set global transaction isolation level read uncommitted;<br>
 start transaction;<br>
-– 转账操作<br>
+-- 转账操作<br>
  update account set balance = balance - 500 where id = 1;<br>
 update account set balance = balance + 500 where id = 2;</p>
 </li>
 </ul>
 </li>
 </ol>
-<h2 id="dcl"><a class="markdownIt-Anchor" href="#dcl">#</a> DCL：</h2>
+<h2 id="dcl"><a class="anchor" href="#dcl">#</a> DCL：</h2>
 <ul>
 <li>
 <p>SQL 分类：</p>
@@ -627,31 +701,31 @@ update account set balance = balance + 500 where id = 2;</p>
 <li>
 <p>添加用户：</p>
 <ul>
-<li>语法：CREATE USER ‘用户名’@‘主机名’ IDENTIFIED BY ‘密码’;</li>
+<li>语法：CREATE USER ' 用户名 '@' 主机名 ' IDENTIFIED BY ' 密码 ';</li>
 </ul>
 </li>
 <li>
 <p>删除用户：</p>
 <ul>
-<li>语法：DROP USER ‘用户名’@‘主机名’;</li>
+<li>语法：DROP USER ' 用户名 '@' 主机名 ';</li>
 </ul>
 </li>
 <li>
 <p>修改用户密码：</p>
-<p>UPDATE USER SET PASSWORD = PASSWORD (‘新密码’) WHERE USER = ‘用户名’;<br>
-UPDATE USER SET PASSWORD = PASSWORD(‘abc’) WHERE USER = ‘lisi’;</p>
+<p>UPDATE USER SET PASSWORD = PASSWORD (' 新密码 ') WHERE USER = ' 用户名 ';<br>
+UPDATE USER SET PASSWORD = PASSWORD('abc') WHERE USER = 'lisi';</p>
 </li>
 </ol>
 </li>
 </ol>
-<p>SET PASSWORD FOR ‘用户名’@‘主机名’ = PASSWORD (‘新密码’);<br>
-SET PASSWORD FOR ‘root’@‘localhost’ = PASSWORD(‘123’);</p>
+<p>SET PASSWORD FOR ' 用户名 '@' 主机名 ' = PASSWORD (' 新密码 ');<br>
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('123');</p>
 <ul>
 <li>mysql 中忘记了 root 用户的密码？</li>
 </ul>
 <ol>
 <li>
-<p>cmd – &gt; net stop mysql 停止 mysql 服务<br>
+<p>cmd -- &gt; net stop mysql 停止 mysql 服务<br>
  * 需要管理员运行该 cmd</p>
 <pre><code> 2. 使用无验证方式启动mysql服务： mysqld --skip-grant-tables
  3. 打开新的cmd窗口,直接输入mysql命令，敲回车。就可以登录成功
@@ -665,9 +739,9 @@ SET PASSWORD FOR ‘root’@‘localhost’ = PASSWORD(‘123’);</p>
 </li>
 <li>
 <p>查询用户：<br>
-– 1. 切换到 mysql 数据库<br>
+-- 1. 切换到 mysql 数据库<br>
  USE myql;<br>
-– 2. 查询 user 表<br>
+-- 2. 查询 user 表<br>
  SELECT * FROM USER;</p>
 <ul>
 <li>通配符： % 表示可以在任意主机使用用户登录数据库</li>
@@ -678,22 +752,22 @@ SET PASSWORD FOR ‘root’@‘localhost’ = PASSWORD(‘123’);</p>
 <ol>
 <li>
 <p>查询权限：<br>
-– 查询权限<br>
- SHOW GRANTS FOR ‘用户名’@‘主机名’;<br>
-SHOW GRANTS FOR ‘lisi’@’%’;</p>
+-- 查询权限<br>
+ SHOW GRANTS FOR ' 用户名 '@' 主机名 ';<br>
+SHOW GRANTS FOR 'lisi'@'%';</p>
 </li>
 <li>
 <p>授予权限：<br>
-– 授予权限<br>
- grant 权限列表 on 数据库名。表名 to ‘用户名’@‘主机名’;<br>
-– 给张三用户授予所有权限，在任意数据库任意表上</p>
-<p>GRANT ALL ON <em>.</em> TO ‘zhangsan’@‘localhost’;</p>
+-- 授予权限<br>
+ grant 权限列表 on 数据库名。表名 to ' 用户名 '@' 主机名 ';<br>
+-- 给张三用户授予所有权限，在任意数据库任意表上</p>
+<p>GRANT ALL ON <em>.</em> TO 'zhangsan'@'localhost';</p>
 </li>
 <li>
 <p>撤销权限：<br>
-– 撤销权限：<br>
-revoke 权限列表 on 数据库名。表名 from ‘用户名’@‘主机名’;<br>
-REVOKE UPDATE ON db3. <code>account</code>  FROM ‘lisi’@’%’;</p>
+-- 撤销权限：<br>
+revoke 权限列表 on 数据库名。表名 from ' 用户名 '@' 主机名 ';<br>
+REVOKE UPDATE ON db3. <code>account</code>  FROM 'lisi'@'%';</p>
 </li>
 </ol>
 </li>
@@ -718,4 +792,253 @@ REVOKE UPDATE ON db3. <code>account</code>  FROM ‘lisi’@’%’;</p>
             });
             document.body.appendChild(img);
           });
-      </script></article><!-- lincense--><div class="license-wrapper"><p> <span>Author:  </span><a href="https://www.baocai-blog.cn">手撕包菜</a></p><p> <span>Link:  </span><a href="https://www.baocai-blog.cn/2020/09/30/MySQL%E5%A4%9A%E8%A1%A8-%E4%BA%8B%E5%8A%A1/">https://www.baocai-blog.cn/2020/09/30/MySQL%E5%A4%9A%E8%A1%A8-%E4%BA%8B%E5%8A%A1/</a></p><p> <span>Copyright:  </span><span>All articles in this blog are licensed under <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/3.0">CC BY-NC-SA 3.0</a> unless stating additionally.</span></p></div><div class="post-paginator"><a class="prevSlogan" href="/2020/09/30/MySQL%E5%9F%BA%E7%A1%80/" title="MySQL基础"><span>< PreviousPost</span><br><span class="prevTitle">MySQL基础</span></a><a class="nextSlogan" href="/2020/09/30/Servlet-HTTP-Request/" title="Servlet-HTTP-Request"><span>NextPost ></span><br><span class="nextTitle">Servlet-HTTP-Request</span></a><div class="clear"></div></div><div id="comment"></div></section></article><footer id="cxo-footer-outer"><div id="cxo-footer-inner"><p class="footer-container"><span>Site by </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span> | theme </span><a target="_blank" rel="noopener" href="https://github.com/Longlongyu/hexo-theme-Cxo"><span>Cxo</span></a></p><i class="fa fa-user"> </i><span id="busuanzi_value_site_uv"></span><span> | </span><i class="fa fa-eye"> </i><span id="busuanzi_value_site_pv"></span></div></footer><!-- catelog--><div class="toc-wrapper" style="top: 70vh;"><div class="toc-catalog"><i class="fa fa-list"> </i><span>CATALOG</span></div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text"> 目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.1.</span> <span class="toc-text"> 多表查询：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%83%A8%E9%97%A8%E8%A1%A8"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 创建部门表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%91%98%E5%B7%A5%E8%A1%A8"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 创建员工表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.2.</span> <span class="toc-text"> 事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dcl"><span class="toc-number">1.3.</span> <span class="toc-text"> DCL：</span></a></li></ol></li></ol></div><!-- top--><i class="fa fa-arrow-up close" id="go-up" aria-hidden="true"></i></body></html>
+      </script>
+      <div class="tags">
+          <a href="/tags/MySQL/" rel="tag"><i class="ic i-tag"></i> MySQL</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2020-10-03 10:57:36" itemprop="dateModified" datetime="2020-10-03T10:57:36+08:00">2020-10-03</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>手撕包菜 <i class="ic i-at"><em>@</em></i>手撕包菜
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://www.baocai-blog.cn/2020/09/30/MySQL%E5%A4%9A%E8%A1%A8-%E4%BA%8B%E5%8A%A1/" title="MySQL多表和事务">https://www.baocai-blog.cn/2020/09/30/MySQL多表-事务/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="nav">
+    <div class="item left">
+      
+
+  <a href="/2020/09/30/MySQL%E7%BA%A6%E6%9D%9F/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciukx8a7j20zk0m8aio.jpg" title="MySQL约束">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 数据库</span>
+  <h3>MySQL约束</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2020/09/30/MySQL%E5%9F%BA%E7%A1%80/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclhfehz7j20zk0m8u0x.jpg" title="MySQL基础">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 数据库</span>
+  <h3>MySQL基础</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text"> 目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.1.</span> <span class="toc-text"> 多表查询：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%83%A8%E9%97%A8%E8%A1%A8"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 创建部门表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%91%98%E5%B7%A5%E8%A1%A8"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 创建员工表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.2.</span> <span class="toc-text"> 事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dcl"><span class="toc-number">1.3.</span> <span class="toc-text"> DCL：</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2020/09/30/MySQL%E5%9F%BA%E7%A1%80/" rel="bookmark" title="MySQL基础">MySQL基础</a></li><li class="active"><a href="/2020/09/30/MySQL%E5%A4%9A%E8%A1%A8-%E4%BA%8B%E5%8A%A1/" rel="bookmark" title="MySQL多表和事务">MySQL多表和事务</a></li><li><a href="/2020/09/30/MySQL%E7%BA%A6%E6%9D%9F/" rel="bookmark" title="MySQL约束">MySQL约束</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="手撕包菜"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">手撕包菜</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">4</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">2</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">2</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3NzYmFvY2Fp" title="https:&#x2F;&#x2F;github.com&#x2F;ssbaocai"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPXlvdXJpZA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;yourid"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2020/09/30/MySQL%E7%BA%A6%E6%9D%9F/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2020/09/30/MySQL%E5%9F%BA%E7%A1%80/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2020</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">手撕包菜 @ 手撕包菜</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">25k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">23 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2020/09/30/MySQL多表-事务/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 ${query} ，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2"></script>
+
+
+
+
+</body>
+</html>
