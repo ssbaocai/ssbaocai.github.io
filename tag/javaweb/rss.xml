@@ -1,0 +1,654 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>手撕包菜 • Posts by &#34;javaweb&#34; tag</title>
+        <link>https://www.baocai-blog.cn</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Wed, 30 Sep 2020 00:00:00 +0800</pubDate>
+        <lastBuildDate>Wed, 30 Sep 2020 00:00:00 +0800</lastBuildDate>
+        <category>MySQL</category>
+        <category>JavaWeb</category>
+        <item>
+            <guid isPermalink="true">https://www.baocai-blog.cn/2020/09/30/Servlet-HTTP-Request/</guid>
+            <title>Servlet-HTTP-Request</title>
+            <link>https://www.baocai-blog.cn/2020/09/30/Servlet-HTTP-Request/</link>
+            <category>JavaWeb</category>
+            <pubDate>Wed, 30 Sep 2020 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;目录&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#目录&#34;&gt;#&lt;/a&gt; 目录：&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Servlet&lt;/li&gt;
+&lt;li&gt;HTTP 协议&lt;/li&gt;
+&lt;li&gt;Request&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;servlet&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#servlet&#34;&gt;#&lt;/a&gt; Servlet：&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;概念&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;步骤&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;执行原理&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;生命周期&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Servlet3.0 注解配置&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Servlet 的体系结构	&lt;br&gt;
+Servlet – 接口&lt;br&gt;
+ |&lt;br&gt;
+GenericServlet – 抽象类&lt;br&gt;
+ |&lt;br&gt;
+HttpServlet  – 抽象类&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;GenericServlet：将 Servlet 接口中其他的方法做了默认空实现，只将 service () 方法作为抽象&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将来定义 Servlet 类时，可以继承 GenericServlet，实现 service () 方法即可&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;HttpServlet：对 http 协议的一种封装，简化操作&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;定义类继承 HttpServlet&lt;/li&gt;
+&lt;li&gt;复写 doGet/doPost 方法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Servlet 相关配置&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;urlpartten:Servlet 访问路径
+&lt;ol&gt;
+&lt;li&gt;一个 Servlet 可以定义多个访问路径 ： @WebServlet ({&#34;/d4&#34;,&#34;/dd4&#34;,&#34;/ddd4&#34;})&lt;/li&gt;
+&lt;li&gt;路径定义规则：
+&lt;ol&gt;
+&lt;li&gt;/xxx：路径匹配&lt;/li&gt;
+&lt;li&gt;/xxx/xxx: 多层路径，目录结构&lt;/li&gt;
+&lt;li&gt;*.do：扩展名匹配&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;http&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#http&#34;&gt;#&lt;/a&gt; HTTP：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;概念：Hyper Text Transfer Protocol 超文本传输协议&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;传输协议：定义了，客户端和服务器端通信时，发送数据的格式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;特点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;基于 TCP/IP 的高级协议&lt;/li&gt;
+&lt;li&gt;默认端口号：80&lt;/li&gt;
+&lt;li&gt;基于请求 / 响应模型的：一次请求对应一次响应&lt;/li&gt;
+&lt;li&gt;无状态的：每次请求之间相互独立，不能交互数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;历史版本：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1.0：每一次请求响应都会建立新的连接&lt;/li&gt;
+&lt;li&gt;1.1：复用连接&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;请求消息数据格式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;请求行&lt;br&gt;
+请求方式 请求 url 请求协议 / 版本&lt;br&gt;
+ GET /login.html	HTTP/1.1&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;请求方式：
+&lt;ul&gt;
+&lt;li&gt;HTTP 协议有 7 中请求方式，常用的有 2 种
+&lt;ul&gt;
+&lt;li&gt;GET：
+&lt;ol&gt;
+&lt;li&gt;请求参数在请求行中，在 url 后。&lt;/li&gt;
+&lt;li&gt;请求的 url 长度有限制的&lt;/li&gt;
+&lt;li&gt;不太安全&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;POST：
+&lt;ol&gt;
+&lt;li&gt;请求参数在请求体中&lt;/li&gt;
+&lt;li&gt;请求的 url 长度没有限制的&lt;/li&gt;
+&lt;li&gt;相对安全&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;请求头：客户端浏览器告诉服务器一些信息&lt;br&gt;
+请求头名称：请求头值&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;常见的请求头：
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;User-Agent：浏览器告诉服务器，我访问你使用的浏览器版本信息&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以在服务器端获取该头的信息，解决浏览器的兼容性问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Referer：&lt;a href=&#34;http://localhost/login.html&#34;&gt;http://localhost/login.html&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;告诉服务器，我 (当前请求) 从哪里来？
+&lt;ul&gt;
+&lt;li&gt;作用：
+&lt;ol&gt;
+&lt;li&gt;防盗链：&lt;/li&gt;
+&lt;li&gt;统计工作：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;请求空行&lt;br&gt;
+空行，就是用于分割 POST 请求的请求头，和请求体的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;请求体 (正文)：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;封装 POST 请求消息的请求参数的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;字符串格式：&lt;br&gt;
+POST /login.html	HTTP/1.1&lt;br&gt;
+Host: localhost&lt;br&gt;
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0&lt;br&gt;
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,&lt;em&gt;/&lt;/em&gt;;q=0.8&lt;br&gt;
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2&lt;br&gt;
+Accept-Encoding: gzip, deflate&lt;br&gt;
+Referer: &lt;a href=&#34;http://localhost/login.html&#34;&gt;http://localhost/login.html&lt;/a&gt;&lt;br&gt;
+Connection: keep-alive&lt;br&gt;
+Upgrade-Insecure-Requests: 1&lt;/p&gt;
+&lt;p&gt;username=zhangsan&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;响应消息数据格式&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;request&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#request&#34;&gt;#&lt;/a&gt; Request：&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;request 对象和 response 对象的原理&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;request 和 response 对象是由服务器创建的。我们来使用它们&lt;/li&gt;
+&lt;li&gt;request 对象是来获取请求消息，response 对象是来设置响应消息&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;request 对象继承体系结构：	&lt;br&gt;
+ServletRequest		–	接口&lt;br&gt;
+ |	继承&lt;br&gt;
+ HttpServletRequest	– 接口&lt;br&gt;
+ |	实现&lt;br&gt;
+ org.apache.catalina.connector.RequestFacade 类 (tomcat)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;request 功能：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;获取请求消息数据
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;获取请求行数据&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GET /day14/demo1?name=zhangsan HTTP/1.1&lt;/li&gt;
+&lt;li&gt;方法：
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;获取请求方式 ：GET&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;String getMethod()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(*) 获取虚拟目录：/day14&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;String getContextPath()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;获取 Servlet 路径: /demo1&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;String getServletPath()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;获取 get 方式请求参数：name=zhangsan&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;String getQueryString()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(*) 获取请求 URI：/day14/demo1&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;String getRequestURI():		/day14/demo1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;StringBuffer getRequestURL()  :&lt;a href=&#34;http://localhost/day14/demo1&#34;&gt;http://localhost/day14/demo1&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;URL: 统一资源定位符 ： &lt;a href=&#34;http://localhost/day14/demo1&#34;&gt;http://localhost/day14/demo1&lt;/a&gt;	中华人民共和国&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;URI：统一资源标识符 : /day14/demo1					共和国&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;获取协议及版本：HTTP/1.1&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;String getProtocol()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;获取客户机的 IP 地址：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;String getRemoteAddr()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;获取请求头数据&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;方法：
+&lt;ul&gt;
+&lt;li&gt;(*) String getHeader (String name): 通过请求头的名称获取请求头的值&lt;/li&gt;
+&lt;li&gt;Enumeration&lt;string&gt; getHeaderNames (): 获取所有的请求头名称&lt;/string&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;获取请求体数据:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;请求体：只有 POST 请求方式，才有请求体，在请求体中封装了 POST 请求的请求参数&lt;/li&gt;
+&lt;li&gt;步骤：
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;获取流对象&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;BufferedReader getReader ()：获取字符输入流，只能操作字符数据&lt;/li&gt;
+&lt;li&gt;ServletInputStream getInputStream ()：获取字节输入流，可以操作所有类型数据
+&lt;ul&gt;
+&lt;li&gt;在文件上传知识点后讲解&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;再从流对象中拿数据&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;​				&lt;br&gt;
+​	2. 其他功能：&lt;br&gt;
+​		1. 获取请求参数通用方式：不论 get 还是 post 请求方式都可以使用下列方法来获取请求参数&lt;br&gt;
+​			1. String getParameter (String name): 根据参数名称获取参数值    username=zs&amp;amp;password=123&lt;br&gt;
+​			2. String [] getParameterValues (String name): 根据参数名称获取参数值的数组  hobby=xx&amp;amp;hobby=game&lt;br&gt;
+​			3. Enumeration&lt;string&gt; getParameterNames (): 获取所有请求的参数名称&lt;br&gt;
+​			4. Map&amp;lt;String,String []&amp;gt; getParameterMap (): 获取所有参数的 map 集合&lt;/string&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;		* 中文乱码问题：
+			* get方式：tomcat 8 已经将get方式乱码问题解决了
+			* post方式：会乱码
+				* 解决：在获取参数前，设置request的编码request.setCharacterEncoding(&#34;utf-8&#34;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;​					&lt;br&gt;
+​		2. 请求转发：一种在服务器内部的资源跳转方式&lt;br&gt;
+​			1. 步骤：&lt;br&gt;
+​				1. 通过 request 对象获取请求转发器对象：RequestDispatcher getRequestDispatcher (String path)&lt;br&gt;
+​				2. 使用 RequestDispatcher 对象来进行转发：forward (ServletRequest request, ServletResponse response)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;		2. 特点：
+			1. 浏览器地址栏路径不发生变化
+			2. 只能转发到当前服务器内部资源中。
+			3. 转发是一次请求
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;案例用户登录&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#案例用户登录&#34;&gt;#&lt;/a&gt; 案例：用户登录&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;用户登录案例需求：&lt;br&gt;
+1. 编写 login.html 登录页面&lt;br&gt;
+ username &amp;amp; password 两个输入框&lt;br&gt;
+ 2. 使用 Druid 数据库连接池技术，操作 mysql，day14 数据库中 user 表&lt;br&gt;
+ 3. 使用 JdbcTemplate 技术封装 JDBC&lt;br&gt;
+4. 登录成功跳转到 SuccessServlet 展示：登录成功！用户名，欢迎您&lt;br&gt;
+ 5. 登录失败跳转到 FailServlet 展示：登录失败，用户名或密码错误&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;分析&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;开发步骤&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;创建项目，导入 html 页面，配置文件，jar 包&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建数据库环境&lt;br&gt;
+ CREATE DATABASE day14;&lt;br&gt;
+USE day14;&lt;br&gt;
+CREATE TABLE USER(&lt;/p&gt;
+&lt;p&gt;​	id INT PRIMARY KEY AUTO_INCREMENT,&lt;br&gt;
+​	username VARCHAR(32) UNIQUE NOT NULL,&lt;br&gt;
+​	PASSWORD VARCHAR(32) NOT NULL&lt;br&gt;
+);&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建包 cn.itcast.domain, 创建类 User&lt;br&gt;
+package cn.itcast.domain;&lt;br&gt;
+/**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;用户的实体类&lt;br&gt;
+ */&lt;br&gt;
+public class User {&lt;/p&gt;
+&lt;p&gt;private int id;&lt;br&gt;
+private String username;&lt;br&gt;
+private String password;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;p&gt;​		    public int getId() {&lt;br&gt;
+​		        return id;&lt;br&gt;
+​		    }&lt;br&gt;
+​		&lt;br&gt;
+​		    public void setId(int id) {&lt;br&gt;
+​		        &lt;a href=&#34;http://this.id&#34;&gt;this.id&lt;/a&gt; = id;&lt;br&gt;
+​		    }&lt;br&gt;
+​		&lt;br&gt;
+​		    public String getUsername() {&lt;br&gt;
+​		        return username;&lt;br&gt;
+​		    }&lt;br&gt;
+​		&lt;br&gt;
+​		    public void setUsername(String username) {&lt;br&gt;
+​		        this.username = username;&lt;br&gt;
+​		    }&lt;br&gt;
+​		&lt;br&gt;
+​		    public String getPassword() {&lt;br&gt;
+​		        return password;&lt;br&gt;
+​		    }&lt;br&gt;
+​		&lt;br&gt;
+​		    public void setPassword(String password) {&lt;br&gt;
+​		        this.password = password;&lt;br&gt;
+​		    }&lt;br&gt;
+​		&lt;br&gt;
+​		    @Override&lt;br&gt;
+​		    public String toString() {&lt;br&gt;
+​		        return “User{” +&lt;br&gt;
+​		                “id=” + id +&lt;br&gt;
+​		                “, username=’” + username + ‘’’ +&lt;br&gt;
+​		                “, password=’” + password + ‘’’ +&lt;br&gt;
+​		                ‘}’;&lt;br&gt;
+​		    }&lt;br&gt;
+​		}&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;4. 创建包cn.itcast.util,编写工具类JDBCUtils
+	package cn.itcast.util;
+
+​	import com.alibaba.druid.pool.DruidDataSourceFactory;
+​	
+​	import javax.sql.DataSource;
+​	import javax.xml.crypto.Data;
+​	import java.io.IOException;
+​	import java.io.InputStream;
+​	import java.sql.Connection;
+​	import java.sql.SQLException;
+​	import java.util.Properties;
+​	
+​	/**
+	 * JDBC工具类 使用Durid连接池
+	 */
+	public class JDBCUtils {
+	
+	​    private static DataSource ds ;
+	
+	​    static {
+	
+	​        try {
+	​            //1.加载配置文件
+	​            Properties pro = new Properties();
+	​            //使用ClassLoader加载配置文件，获取字节输入流
+	​            InputStream is = JDBCUtils.class.getClassLoader().getResourceAsStream(&#34;druid.properties&#34;);
+	​            pro.load(is);
+	
+	​            //2.初始化连接池对象
+	​            ds = DruidDataSourceFactory.createDataSource(pro);
+	
+	​        } catch (IOException e) {
+	​            e.printStackTrace();
+	​        } catch (Exception e) {
+	​            e.printStackTrace();
+	​        }
+	​    }
+	
+	​    /**
+	     * 获取连接池对象
+	          */
+	        public static DataSource getDataSource(){
+	        return ds;
+	        }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;p&gt;​		    /**&lt;br&gt;
+​		     * 获取连接 Connection 对象&lt;br&gt;
+​		     &lt;em&gt;/&lt;br&gt;
+​		    public static Connection getConnection() throws SQLException {&lt;br&gt;
+​		        return  ds.getConnection();&lt;br&gt;
+​		    }&lt;br&gt;
+​		}&lt;br&gt;
+​	5. 创建包 cn.itcast.dao, 创建类 UserDao, 提供 login 方法&lt;br&gt;
+​		&lt;br&gt;
+​		package cn.itcast.dao;&lt;br&gt;
+​	&lt;br&gt;
+​		import cn.itcast.domain.User;&lt;br&gt;
+​		import cn.itcast.util.JDBCUtils;&lt;br&gt;
+​		import org.springframework.dao.DataAccessException;&lt;br&gt;
+​		import org.springframework.jdbc.core.BeanPropertyRowMapper;&lt;br&gt;
+​		import org.springframework.jdbc.core.JdbcTemplate;&lt;br&gt;
+​		&lt;br&gt;
+​		/&lt;/em&gt;*&lt;br&gt;
+​		 * 操作数据库中 User 表的类&lt;br&gt;
+​		 */&lt;br&gt;
+​		public class UserDao {&lt;br&gt;
+​		&lt;br&gt;
+// 声明 JDBCTemplate 对象共用&lt;br&gt;
+ private JdbcTemplate template = new JdbcTemplate (JDBCUtils.getDataSource ());&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;	    /**
+	     * 登录方法
+	     * @param loginUser 只有用户名和密码
+	     * @return user包含用户全部数据,没有查询到，返回null
+	     */
+	    public User login(User loginUser){
+	        try {
+	            //1.编写sql
+	            String sql = &#34;select * from user where username = ? and password = ?&#34;;
+	            //2.调用query方法
+	            User user = template.queryForObject(sql,
+	                    new BeanPropertyRowMapper&amp;lt;User&amp;gt;(User.class),
+	                    loginUser.getUsername(), loginUser.getPassword());
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;p&gt;​		            return user;&lt;br&gt;
+​		        } catch (DataAccessException e) {&lt;br&gt;
+​		            e.printStackTrace ();// 记录日志&lt;br&gt;
+​		            return null;&lt;br&gt;
+​		        }&lt;br&gt;
+​		    }&lt;br&gt;
+​		}&lt;br&gt;
+​&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;6. 编写cn.itcast.web.servlet.LoginServlet类
+	package cn.itcast.web.servlet;
+
+​	import cn.itcast.dao.UserDao;
+​	import cn.itcast.domain.User;
+​	
+​	import javax.servlet.ServletException;
+​	import javax.servlet.annotation.WebServlet;
+​	import javax.servlet.http.HttpServlet;
+​	import javax.servlet.http.HttpServletRequest;
+​	import javax.servlet.http.HttpServletResponse;
+​	import java.io.IOException;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;p&gt;​		@WebServlet(&#34;/loginServlet&#34;)&lt;br&gt;
+​		public class LoginServlet extends HttpServlet {&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;p&gt;​		    @Override&lt;br&gt;
+​		    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {&lt;br&gt;
+​		        &lt;a href=&#34;//1.xn--d8yz4mshv84b&#34;&gt;//1. 设置编码&lt;/a&gt;&lt;br&gt;
+​		        req.setCharacterEncoding (“utf-8”);&lt;br&gt;
+​		        &lt;a href=&#34;//2.xn--8nrrb831grng2u5admk&#34;&gt;//2. 获取请求参数&lt;/a&gt;&lt;br&gt;
+​		        String username = req.getParameter (“username”);&lt;br&gt;
+​		        String password = req.getParameter(“password”);&lt;br&gt;
+​		        &lt;a href=&#34;//3.xn--user-ou9gnbx382dmbg&#34;&gt;//3. 封装 user 对象&lt;/a&gt;&lt;br&gt;
+​		        User loginUser = new User ();&lt;br&gt;
+​		        loginUser.setUsername(username);&lt;br&gt;
+​		        loginUser.setPassword(password);&lt;br&gt;
+​		&lt;br&gt;
+​		        &lt;a href=&#34;//4.xn--UserDaologin-g98y914e5q2aktew64i&#34;&gt;//4. 调用 UserDao 的 login 方法&lt;/a&gt;&lt;br&gt;
+​		        UserDao dao = new UserDao ();&lt;br&gt;
+​		        User user = dao.login(loginUser);&lt;br&gt;
+​		&lt;br&gt;
+​		        &lt;a href=&#34;//5.xn--user-zk9fu84h&#34;&gt;//5. 判断 user&lt;/a&gt;&lt;br&gt;
+​		        if(user == null){&lt;br&gt;
+​		            // 登录失败&lt;br&gt;
+​		            req.getRequestDispatcher (&#34;/failServlet&#34;).forward (req,resp);&lt;br&gt;
+​		        }else{&lt;br&gt;
+​		            // 登录成功&lt;br&gt;
+​		            // 存储数据&lt;br&gt;
+​		            req.setAttribute (“user”,user);&lt;br&gt;
+​		            // 转发&lt;br&gt;
+​		            req.getRequestDispatcher (&#34;/successServlet&#34;).forward (req,resp);&lt;br&gt;
+​		        }&lt;br&gt;
+​		&lt;br&gt;
+​		    }&lt;br&gt;
+​		&lt;br&gt;
+​		    @Override&lt;br&gt;
+​		    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {&lt;br&gt;
+​		        this.doGet(req,resp);&lt;br&gt;
+​		    }&lt;br&gt;
+​		}&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;7. 编写FailServlet和SuccessServlet类
+	@WebServlet(&#34;/successServlet&#34;)
+	public class SuccessServlet extends HttpServlet {
+	    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	        //获取request域中共享的user对象
+	        User user = (User) request.getAttribute(&#34;user&#34;);
+	
+	        if(user != null){
+	            //给页面写一句话
+	
+	            //设置编码
+	            response.setContentType(&#34;text/html;charset=utf-8&#34;);
+	            //输出
+	            response.getWriter().write(&#34;登录成功！&#34;+user.getUsername()+&#34;,欢迎您&#34;);
+	        }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;p&gt;​		    }&lt;/p&gt;
+&lt;p&gt;​		@WebServlet(&#34;/failServlet&#34;)&lt;br&gt;
+​		public class FailServlet extends HttpServlet {&lt;br&gt;
+​		    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {&lt;br&gt;
+​		        // 给页面写一句话&lt;br&gt;
+​		&lt;br&gt;
+​		        // 设置编码&lt;br&gt;
+​		        response.setContentType (“text/html;charset=utf-8”);&lt;br&gt;
+​		        // 输出&lt;br&gt;
+​		        response.getWriter ().write (“登录失败，用户名或密码错误”);&lt;br&gt;
+​		&lt;br&gt;
+​		    }&lt;br&gt;
+​		&lt;br&gt;
+​		    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {&lt;br&gt;
+​		        this.doPost(request,response);&lt;br&gt;
+​		    }&lt;br&gt;
+​		}&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;8. login.html中form表单的action路径的写法
+	* 虚拟目录+Servlet的资源路径
+
+9. BeanUtils工具类，简化数据封装
+	* 用于封装JavaBean的
+	1. JavaBean：标准的Java类
+		1. 要求：
+			1. 类必须被public修饰
+			2. 必须提供空参的构造器
+			3. 成员变量必须使用private修饰
+			4. 提供公共setter和getter方法
+		2. 功能：封装数据
+
+	2. 概念：
+		成员变量：
+		属性：setter和getter方法截取后的产物
+			例如：getUsername() --&amp;gt; Username--&amp;gt; username
+
+	3. 方法：
+		1. setProperty()
+		2. getProperty()
+		3. populate(Object obj , Map map):将map集合的键值对信息，封装到对应的JavaBean对象中&lt;/code&gt;&lt;/pre&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt; ]]></description>
+        </item>
+    </channel>
+</rss>
