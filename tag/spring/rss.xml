@@ -8,12 +8,13 @@
         <pubDate>Sun, 04 Oct 2020 14:58:46 +0800</pubDate>
         <lastBuildDate>Sun, 04 Oct 2020 14:58:46 +0800</lastBuildDate>
         <category>MyBatis</category>
-        <category>MySQL</category>
-        <category>Java</category>
         <category>Spring</category>
-        <category>多线程</category>
+        <category>JavaWeb</category>
+        <category>MySQL</category>
         <category>容器</category>
+        <category>多线程</category>
         <category>设计模式</category>
+        <category>Java</category>
         <item>
             <guid isPermalink="true">https://www.baocai-blog.cn/2020/10/04/Spring/</guid>
             <title>Spring/SpringMVC</title>
