@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "手撕包菜 • All posts by \"多线程\" tag",
+    "description": "",
+    "home_page_url": "https://www.baocai-blog.cn",
+    "items": [
+        {
+            "id": "https://www.baocai-blog.cn/2020/10/04/%E5%A4%9A%E7%BA%BF%E7%A8%8B/",
+            "url": "https://www.baocai-blog.cn/2020/10/04/%E5%A4%9A%E7%BA%BF%E7%A8%8B/",
+            "title": "多线程",
+            "date_published": "2020-10-04T06:58:46.815Z",
+            "content_html": "<link rel=\"stylesheet\" class=\"aplayer-secondary-style-marker\" href=\"\\assets\\css\\APlayer.min.css\"><script src=\"\\assets\\js\\APlayer.min.js\" class=\"aplayer-secondary-script-marker\"></script><h4 id=\"并行和并发有什么区别\"><a class=\"anchor\" href=\"#并行和并发有什么区别\">#</a> 并行和并发有什么区别？</h4>\n<ul>\n<li>并行：多个处理器或多核处理器同时处理多个任务。</li>\n<li>并发：多个任务在同一个 CPU     核上，按细分的时间片轮流 (交替) 执行，从逻辑上来看那些任务是同时执行。</li>\n</ul>\n<p>如下图：<img data-src=\"C:%5CUsers%5CYangMiemie%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201004132903253.png\" alt=\"image-20201004132903253\"></p>\n<p>​\t\t\t\t并发 = 两个队列和一台咖啡机。</p>\n<p>​\t\t\t\t并行 = 两个队列和两台咖啡机。</p>\n<h4 id=\"创建线程有哪几种方式\"><a class=\"anchor\" href=\"#创建线程有哪几种方式\">#</a> 创建线程有哪几种方式？</h4>\n<p>创建线程有三种方式：</p>\n<ul>\n<li>继承 Thread 重写 run 方法；</li>\n<li>实现 Runnable 接口；</li>\n<li>实现 Callable 接口。</li>\n</ul>\n<h4 id=\"说一下-runnable-和-callable-有什么区别\"><a class=\"anchor\" href=\"#说一下-runnable-和-callable-有什么区别\">#</a> 说一下 runnable 和 callable 有什么区别？</h4>\n<ul>\n<li>Runnable 接口 run 方法无返回值；Callable 接口 call 方法有返回值，支持泛型</li>\n<li>Runnable 接口 run 方法只能抛出运行时异常，且无法捕获处理；Callable 接口 call 方法允许抛出异常，可以获取异常信息</li>\n</ul>\n<h4 id=\"java-线程状态有哪些\"><a class=\"anchor\" href=\"#java-线程状态有哪些\">#</a> Java 线程状态有哪些？</h4>\n<p>线程状态有 5 种，新建，就绪，运行，阻塞，死亡。</p>\n<h4 id=\"sleep-和-wait-有什么区别\"><a class=\"anchor\" href=\"#sleep-和-wait-有什么区别\">#</a> sleep () 和 wait () 有什么区别？</h4>\n<ul>\n<li>类的不同：sleep () 来自 Thread，wait () 来自 Object。</li>\n<li>释放锁：sleep () 不释放锁；wait () 释放锁。</li>\n<li>用法不同：sleep () 时间到会自动恢复；wait () 可以使用 notify ()/notifyAll () 直接唤醒。</li>\n</ul>\n<script>\n        document.querySelectorAll('.github-emoji')\n          .forEach(el => {\n            if (!el.dataset.src) { return; }\n            const img = document.createElement('img');\n            img.style = 'display:none !important;';\n            img.src = el.dataset.src;\n            img.addEventListener('error', () => {\n              img.remove();\n              el.style.color = 'inherit';\n              el.style.backgroundImage = 'none';\n              el.style.background = 'none';\n            });\n            img.addEventListener('load', () => {\n              img.remove();\n            });\n            document.body.appendChild(img);\n          });\n      </script>",
+            "tags": [
+                "多线程"
+            ]
+        }
+    ]
+}

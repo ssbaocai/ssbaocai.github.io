@@ -1,0 +1,28 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "手撕包菜 • All posts by \"框架\" category",
+    "description": "",
+    "home_page_url": "https://www.baocai-blog.cn",
+    "items": [
+        {
+            "id": "https://www.baocai-blog.cn/2020/10/04/Spring/",
+            "url": "https://www.baocai-blog.cn/2020/10/04/Spring/",
+            "title": "Spring/SpringMVC",
+            "date_published": "2020-10-04T06:58:46.815Z",
+            "content_html": "<link rel=\"stylesheet\" class=\"aplayer-secondary-style-marker\" href=\"\\assets\\css\\APlayer.min.css\"><script src=\"\\assets\\js\\APlayer.min.js\" class=\"aplayer-secondary-script-marker\"></script><h4 id=\"spring是一个ioc和aop容器框架\"><a class=\"anchor\" href=\"#spring是一个ioc和aop容器框架\">#</a> Spring 是一个 IOC 和 AOP 容器框架。</h4>\n<ul>\n<li>\n<p><strong>控制反转（IOC</strong>）在 spring 开发模式中，<strong>spring 容器</strong>使用了工厂模式为我们<strong>创建</strong>所需要的对象，我们自己直接调用 spring 提供的对象就可以了，这是控制反转的思想。</p>\n</li>\n<li>\n<p><strong>依赖注入</strong>（<strong>DI</strong>），spring 使用 javaBean 对象的 <strong>set 方法</strong>或者<strong>带参数的构造方法</strong>为我们在创建所需对象时将其<strong>属性</strong>自动设置所需要的值 ** 的过程，就是依赖注入的思想。</p>\n</li>\n<li>\n<p><strong>面向切面编程</strong>（<strong>AOP</strong>），在面向对象编程（oop）思想中，我们将事物纵向抽成一个个的对象。而在面向切面编程中，我们将一个个的对象某些类似的方面横向抽成一个切面，对这个切面进行一些如权限控制、事物管理，记录日志等公用操作处理的过程就是面向切面编程的思想。AOP 底层是动态代理，如果是接口  采用 JDK 动态代理，如果是类  采用 CGLIB 方式实现动态代理。</p>\n<p>通过预编译方式和运行期动态代理<strong>实现程序功能的统一维护</strong>的一种技术。就是统一处理某一 “切面”（类）的问题，比如统一处理日志、异常等。</p>\n</li>\n</ul>\n<h4 id=\"spring-常用的注入方式有哪些\"><a class=\"anchor\" href=\"#spring-常用的注入方式有哪些\">#</a> spring 常用的注入方式有哪些？</h4>\n<ul>\n<li>setter 属性注入</li>\n<li>构造方法注入</li>\n<li>注解方式注入</li>\n</ul>\n<h4 id=\"说一下-spring-mvc-运行流程\"><a class=\"anchor\" href=\"#说一下-spring-mvc-运行流程\">#</a> 说一下 spring mvc 运行流程？</h4>\n<ul>\n<li>spring     mvc 先将<strong>请求发送</strong>给 DispatcherServlet（前置控制器）。</li>\n<li>DispatcherServlet     查询一个或多个 HandlerMapping（映射控制器），<strong>找到</strong>处理请求的 Controller（处理器）。</li>\n<li>DispatcherServlet     再把请求<strong>提交到</strong>对应的 Controller。</li>\n<li>Controller     进行业务逻辑<strong>处理后，会返回</strong>一个 ModelAndView。</li>\n<li>Dispathcher     查询一个或多个 ViewResolver 视图解析器，找到 ModelAndView 对象指定的视图对象。</li>\n<li>视图对象负责渲染返回给客户端。</li>\n</ul>\n<h4 id=\"springbootspringmvc区别\"><a class=\"anchor\" href=\"#springbootspringmvc区别\">#</a> SpringBoot/SpringMVC 区别</h4>\n<p>Spring MVC 基于 Spring 的 web 框架，主要解决 WEB 开发的问题</p>\n<p>SpringBoot 实现自动配置，降低项目搭建的复杂度</p>\n<script>\n        document.querySelectorAll('.github-emoji')\n          .forEach(el => {\n            if (!el.dataset.src) { return; }\n            const img = document.createElement('img');\n            img.style = 'display:none !important;';\n            img.src = el.dataset.src;\n            img.addEventListener('error', () => {\n              img.remove();\n              el.style.color = 'inherit';\n              el.style.backgroundImage = 'none';\n              el.style.background = 'none';\n            });\n            img.addEventListener('load', () => {\n              img.remove();\n            });\n            document.body.appendChild(img);\n          });\n      </script>",
+            "tags": [
+                "Spring"
+            ]
+        },
+        {
+            "id": "https://www.baocai-blog.cn/2020/10/04/MyBatis/",
+            "url": "https://www.baocai-blog.cn/2020/10/04/MyBatis/",
+            "title": "MyBatis",
+            "date_published": "2020-10-04T06:58:46.799Z",
+            "content_html": "<link rel=\"stylesheet\" class=\"aplayer-secondary-style-marker\" href=\"\\assets\\css\\APlayer.min.css\"><script src=\"\\assets\\js\\APlayer.min.js\" class=\"aplayer-secondary-script-marker\"></script><h4 id=\"缓存\"><a class=\"anchor\" href=\"#缓存\">#</a> 缓存</h4>\n<ul>\n<li>一级缓存：基于 PerpetualCache 的 HashMap 本地缓存，<strong>声明周期</strong>是和 SQLSession 一致的，作用域 session。<strong>当 Session flush 或 close 之后， Cache 就将清空，一级缓存开启</strong>。</li>\n<li>二级缓存：也是基于 PerpetualCache 的 HashMap 本地缓存，作用域为 Mapper 级别的，如果多个 SQLSession 之间需要<strong>共享缓存</strong>，则需要使用到二级缓存，并且二级缓存可自定义存储源。</li>\n</ul>\n<h4 id=\"mybatis的编程步骤\"><a class=\"anchor\" href=\"#mybatis的编程步骤\">#</a> Mybatis 的编程步骤</h4>\n<p>1、创建 SqlSessionFactory<br>\n2、通过 SqlSessionFactory 创建 SqlSession<br>\n3、通过 sqlsession 执行数据库操作<br>\n 4、调用 session.commit () 提交事务<br>\n 5、调用 session.close () 关闭会话</p>\n<p>MyBatis 是一个可以自定义 SQL、存储过程和高级映射的<strong>持久层框架</strong></p>\n<p>MyBatis 只使用<strong>简单的 XML 和注解</strong>来<strong>配置和映射</strong>基本数据类型、Map 接口和 POJO 到数据库记录。</p>\n<script>\n        document.querySelectorAll('.github-emoji')\n          .forEach(el => {\n            if (!el.dataset.src) { return; }\n            const img = document.createElement('img');\n            img.style = 'display:none !important;';\n            img.src = el.dataset.src;\n            img.addEventListener('error', () => {\n              img.remove();\n              el.style.color = 'inherit';\n              el.style.backgroundImage = 'none';\n              el.style.background = 'none';\n            });\n            img.addEventListener('load', () => {\n              img.remove();\n            });\n            document.body.appendChild(img);\n          });\n      </script>",
+            "tags": [
+                "MyBatis"
+            ]
+        }
+    ]
+}

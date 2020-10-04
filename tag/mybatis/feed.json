@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "手撕包菜 • All posts by \"mybatis\" tag",
+    "description": "",
+    "home_page_url": "https://www.baocai-blog.cn",
+    "items": [
+        {
+            "id": "https://www.baocai-blog.cn/2020/10/04/MyBatis/",
+            "url": "https://www.baocai-blog.cn/2020/10/04/MyBatis/",
+            "title": "MyBatis",
+            "date_published": "2020-10-04T06:58:46.799Z",
+            "content_html": "<link rel=\"stylesheet\" class=\"aplayer-secondary-style-marker\" href=\"\\assets\\css\\APlayer.min.css\"><script src=\"\\assets\\js\\APlayer.min.js\" class=\"aplayer-secondary-script-marker\"></script><h4 id=\"缓存\"><a class=\"anchor\" href=\"#缓存\">#</a> 缓存</h4>\n<ul>\n<li>一级缓存：基于 PerpetualCache 的 HashMap 本地缓存，<strong>声明周期</strong>是和 SQLSession 一致的，作用域 session。<strong>当 Session flush 或 close 之后， Cache 就将清空，一级缓存开启</strong>。</li>\n<li>二级缓存：也是基于 PerpetualCache 的 HashMap 本地缓存，作用域为 Mapper 级别的，如果多个 SQLSession 之间需要<strong>共享缓存</strong>，则需要使用到二级缓存，并且二级缓存可自定义存储源。</li>\n</ul>\n<h4 id=\"mybatis的编程步骤\"><a class=\"anchor\" href=\"#mybatis的编程步骤\">#</a> Mybatis 的编程步骤</h4>\n<p>1、创建 SqlSessionFactory<br>\n2、通过 SqlSessionFactory 创建 SqlSession<br>\n3、通过 sqlsession 执行数据库操作<br>\n 4、调用 session.commit () 提交事务<br>\n 5、调用 session.close () 关闭会话</p>\n<p>MyBatis 是一个可以自定义 SQL、存储过程和高级映射的<strong>持久层框架</strong></p>\n<p>MyBatis 只使用<strong>简单的 XML 和注解</strong>来<strong>配置和映射</strong>基本数据类型、Map 接口和 POJO 到数据库记录。</p>\n<script>\n        document.querySelectorAll('.github-emoji')\n          .forEach(el => {\n            if (!el.dataset.src) { return; }\n            const img = document.createElement('img');\n            img.style = 'display:none !important;';\n            img.src = el.dataset.src;\n            img.addEventListener('error', () => {\n              img.remove();\n              el.style.color = 'inherit';\n              el.style.backgroundImage = 'none';\n              el.style.background = 'none';\n            });\n            img.addEventListener('load', () => {\n              img.remove();\n            });\n            document.body.appendChild(img);\n          });\n      </script>",
+            "tags": [
+                "MyBatis"
+            ]
+        }
+    ]
+}
