@@ -4,61 +4,11 @@
   
     
     <entry>
-      <title>设计模式</title>
-      <link href="2020/10/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-      <url>2020/10/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
+      <title>面向对象</title>
+      <link href="2020/10/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+      <url>2020/10/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="熟悉的设计模式"><a class="anchor" href="#熟悉的设计模式">#</a> 熟悉的设计模式？</h4><ul><li>单例模式：保证被创建一次，节省系统开销。</li><li>工厂模式（简单工厂、抽象工厂）：解耦代码。</li><li>观察者模式：定义了对象之间的一对多的依赖，这样一来，当一个对象改变时，它的所有的依赖者都会收到通知并自动更新。</li><li>外观模式：提供一个统一的接口，用来访问子系统中的一群接口，外观定义了一个高层的接口，让子系统更容易使用。</li><li>模版方法模式：定义了一个算法的骨架，而将一些步骤延迟到子类中，模版方法使得子类可以在不改变算法结构的情况下，重新定义算法的步骤。</li><li>状态模式：允许对象在内部状态改变时改变它的行为，对象看起来好像修改了它的类。</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> 设计模式 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 设计模式 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Spring/SpringMVC</title>
-      <link href="2020/10/04/Spring/"/>
-      <url>2020/10/04/Spring/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="spring是一个ioc和aop容器框架"><a class="anchor" href="#spring是一个ioc和aop容器框架">#</a> Spring 是一个 IOC 和 AOP 容器框架。</h4><ul><li><p><strong>控制反转（IOC</strong>）在 spring 开发模式中，<strong>spring 容器</strong>使用了工厂模式为我们<strong>创建</strong>所需要的对象，我们自己直接调用 spring 提供的对象就可以了，这是控制反转的思想。</p></li><li><p><strong>依赖注入</strong>（<strong>DI</strong>），spring 使用 javaBean 对象的 <strong>set 方法</strong>或者<strong>带参数的构造方法</strong>为我们在创建所需对象时将其<strong>属性</strong>自动设置所需要的值 ** 的过程，就是依赖注入的思想。</p></li><li><p><strong>面向切面编程</strong>（<strong>AOP</strong>），在面向对象编程（oop）思想中，我们将事物纵向抽成一个个的对象。而在面向切面编程中，我们将一个个的对象某些类似的方面横向抽成一个切面，对这个切面进行一些如权限控制、事物管理，记录日志等公用操作处理的过程就是面向切面编程的思想。AOP 底层是动态代理，如果是接口  采用 JDK 动态代理，如果是类  采用 CGLIB 方式实现动态代理。</p><p>通过预编译方式和运行期动态代理<strong>实现程序功能的统一维护</strong>的一种技术。就是统一处理某一 “切面”（类）的问题，比如统一处理日志、异常等。</p></li></ul><h4 id="spring-常用的注入方式有哪些"><a class="anchor" href="#spring-常用的注入方式有哪些">#</a> spring 常用的注入方式有哪些？</h4><ul><li>setter 属性注入</li><li>构造方法注入</li><li>注解方式注入</li></ul><h4 id="说一下-spring-mvc-运行流程"><a class="anchor" href="#说一下-spring-mvc-运行流程">#</a> 说一下 spring mvc 运行流程？</h4><ul><li>spring     mvc 先将<strong>请求发送</strong>给 DispatcherServlet（前置控制器）。</li><li>DispatcherServlet     查询一个或多个 HandlerMapping（映射控制器），<strong>找到</strong>处理请求的 Controller（处理器）。</li><li>DispatcherServlet     再把请求<strong>提交到</strong>对应的 Controller。</li><li>Controller     进行业务逻辑<strong>处理后，会返回</strong>一个 ModelAndView。</li><li>Dispathcher     查询一个或多个 ViewResolver 视图解析器，找到 ModelAndView 对象指定的视图对象。</li><li>视图对象负责渲染返回给客户端。</li></ul><h4 id="springbootspringmvc区别"><a class="anchor" href="#springbootspringmvc区别">#</a> SpringBoot/SpringMVC 区别</h4><p>Spring MVC 基于 Spring 的 web 框架，主要解决 WEB 开发的问题</p><p>SpringBoot 实现自动配置，降低项目搭建的复杂度</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> 框架 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Spring </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Java容器（Cellection/Map）</title>
-      <link href="2020/10/04/%E5%AE%B9%E5%99%A8%EF%BC%88%E9%9B%86%E5%90%88%EF%BC%89/"/>
-      <url>2020/10/04/%E5%AE%B9%E5%99%A8%EF%BC%88%E9%9B%86%E5%90%88%EF%BC%89/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="java-容器分为-collection-和-map-两大类"><a class="anchor" href="#java-容器分为-collection-和-map-两大类">#</a> Java 容器分为 Collection 和 Map 两大类</h4><ul><li><p>Collection</p><p>List</p></li><li><ul><li>ArrayList</li><li>LinkedList</li><li>Vector</li><li>Stack</li></ul></li></ul><p>​       Set</p><ul><li><ul><li>HashSet</li><li>LinkedHashSet</li><li>TreeSet</li></ul></li><li><p>Map</p><p>HashMap</p></li><li><ul><li>LinkedHashMap</li></ul></li></ul><p>​       TreeMap、ConcurrentHashMap、Hashtable</p><h4 id="list-set-map-之间的区别是什么"><a class="anchor" href="#list-set-map-之间的区别是什么">#</a> List、Set、Map 之间的区别是什么？</h4><p>List、Set、Map 的区别主要体现在两个方面：元素是否有序、是否允许元素重复。</p><p><img data-src="C:%5CUsers%5CYangMiemie%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200925103453410.png" alt="image-20200925103453410"></p><p><strong>List 和 Set</strong> 是存储 <strong>单列数据</strong> 的集合，<strong>Map</strong> 是存储<strong>键和值</strong>这样的双列数据的集合；</p><p><strong>List</strong> 中存储的数据是<strong>有顺序</strong>，并且允许<strong>重复</strong>；</p><p><strong>Map</strong> 中存储的数据是<strong>无序</strong>的，其<strong>键</strong>是不能重复的，它的<strong>值</strong>是可以有重复的。</p><p><strong>Set</strong> 中存储的数据是<strong>无序</strong>的，且不允许有重复。</p><h4 id="hashmap-和-hashtable-有什么区别"><a class="anchor" href="#hashmap-和-hashtable-有什么区别">#</a> HashMap 和 Hashtable 有什么区别？</h4><ul><li>存储：HashMap 允许 key 和 value 为  null，而 Hashtable 不允许。</li><li>线程安全：Hashtable 是线程安全的，而 HashMap 是非线程安全的。</li><li>推荐使用：在  Hashtable 的类注释可以看到，Hashtable 是保留类不建议使用，推荐在单线程环境下使用 HashMap 替代，如果需要多线程使用则用     ConcurrentHashMap 替代。</li></ul><h4 id="如何决定使用-hashmap-还是-treemap"><a class="anchor" href="#如何决定使用-hashmap-还是-treemap">#</a> 如何决定使用 HashMap 还是 TreeMap？</h4><p>对在 Map 中插入、删除、定位一个元素这类操作，HashMap 最好，因为相对而言 HashMap 的插入会更快</p><p>对一个 key 集合进行有序的遍历，那 TreeMap 是更好的选择。</p><h4 id="说一下-hashmap-的实现原理"><a class="anchor" href="#说一下-hashmap-的实现原理">#</a> 说一下 HashMap 的实现原理？</h4><p>HashMap 基于 Hash 算法实现的，我们通过 **put (key,value)** 存储，**get (key)** 来获取。</p><p>当传入 key 时，HashMap 会根据 key. hashCode () 计算出 hash 值，根据 hash 值将 value 保存在 bucket 里。当计算出的 hash 值相同时，我们称之为 hash 冲突，HashMap 的做法是用链表和红黑树存储相同 hash 值的 value。当 hash 冲突的个数比较少时，使用链表否则使用红黑树。</p><h4 id="说一下-hashset-的实现原理"><a class="anchor" href="#说一下-hashset-的实现原理">#</a> 说一下 HashSet 的实现原理？</h4><p>HashSet 是基于 HashMap 实现的，底层使用 HashMap 来保存所有元素，HashSet 的实现比较简单，</p><p>相关 HashSet 的操作，基本上都是直接调用底层 HashMap 的相关方法来完成，HashSet 不允许重复的值。</p><h4 id="arraylist-和-linkedlist-的区别是什么"><a class="anchor" href="#arraylist-和-linkedlist-的区别是什么">#</a> ArrayList 和 LinkedList 的区别是什么？</h4><ul><li>数据结构实现：ArrayList  是<strong>动态数组</strong>的数据结构实现，而 LinkedList 是<strong>双向链表</strong>的数据结构实现。</li><li>随机访问效率：ArrayList  比 LinkedList 在随机访问的时候效率要高，因为 LinkedList 是线性的数据存储方式，所以需要移动指针从前往后依次查找。</li><li>增加和删除效率：在非首尾的增加和删除操作，LinkedList 要比 ArrayList 效率要高，因为 ArrayList 增删操作要影响数组内的其他数据的下标。</li></ul><p>综合来说，在需要频繁读取集合中的元素时，更推荐使用 ArrayList.</p><p>在插入和删除操作较多时，更推荐使用 LinkedList。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="面向对象"><a class="anchor" href="#面向对象">#</a> 面向对象</h1><h2 id="基础"><a class="anchor" href="#基础">#</a> 基础</h2><h3 id="类与对象"><a class="anchor" href="#类与对象">#</a> 类与对象</h3><ul><li>对象：对象是类的实例</li><li>类：类是一个模板，描述一类对象的行为和状态</li></ul><h3 id="构造方法"><a class="anchor" href="#构造方法">#</a> 构造方法</h3><ul><li>用于对象初始化。</li><li>构造方法的名称必须与类同名，一个类可以有多个构造方法。</li></ul><h3 id="方法重载方法重写"><a class="anchor" href="#方法重载方法重写">#</a> 方法重载 / 方法重写</h3><ul><li>重写：重写是子类对父类的允许访问的方法的实现过程进行重新编写，返回值和形参都不能改变。子类可以根据需要，定义特定于自己的行为。</li><li>重载：重载是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。</li></ul><h2 id="高级"><a class="anchor" href="#高级">#</a> 高级</h2><h3 id="final关键字"><a class="anchor" href="#final关键字">#</a> final 关键字</h3><p>1.final 修饰的类叫最终类，该类不能被继承。<br>2.final 修饰的方法不能被重写。<br>3.final 修饰的变量叫常量，常量必须初始化，初始化之后值就不能被修改</p><h3 id="抽象类"><a class="anchor" href="#抽象类">#</a> 抽象类</h3><ol><li><p>抽象类不能被实例化</p></li><li><p>抽象类中不一定包含抽象方法，但是有抽象方法的类必定是抽象类。</p></li><li><p>抽象类中的抽象方法只是声明，不包含方法体，就是不给出方法的具体实现也就是方法的具体功能。</p></li><li><p>构造方法，类方法（用 static 修饰的方法）不能声明为抽象方法。</p></li><li><p>抽象类的子类必须给出抽象类中的抽象方法的具体实现，除非该子类也是抽象类。</p></li></ol><h3 id="接口"><a class="anchor" href="#接口">#</a> 接口</h3><p>接口是抽象方法的集合</p><ul><li>定义格式：<br>interface 接口名称 { &nbsp; &nbsp; &nbsp;<br>全局常量；&nbsp; &nbsp; &nbsp;<br>抽象方法；&nbsp;<br>}</li><li>接口和抽象类的区别：<br>1、抽象类要被子类继承，接口要被类实现。<br>2、接口只能声明抽象方法，抽象类中可以声明抽象方法，也可以写非抽象方法。<br>3、接口里定义的变量只能是公共的静态的常量，抽象类中的变量是普通变量。<br>4、抽象类使用继承来使用，无法多继承。接口使用实现来使用，可以多实现<br> 5、抽象类中可以包含 static 方法 ，但是接口中不允许（静态方法不能被子类重写，因此接口中不能声明 静态方法）     6、接口不能有构造方法，但是抽象类可以有</li></ul><h3 id="equals"><a class="anchor" href="#equals">#</a> equals</h3><h3 id="内部类"><a class="anchor" href="#内部类">#</a> 内部类</h3><h4 id="成员内部类"><a class="anchor" href="#成员内部类">#</a> 成员内部类</h4><p>成员内部类是最普通的内部类，它的定义为位于另一个类的内部，形如下面的形式：</p><pre><code>class Outer { &nbsp; &nbsp;private double x = 0; &nbsp; &nbsp;public Outer(double x) { this.x = x;     } &nbsp; &nbsp;  &nbsp; &nbsp;class Inner { &nbsp; //内部类 &nbsp; &nbsp; &nbsp;public void say() {    System.out.println("x="+x);&nbsp;      } &nbsp;} }</code></pre><p>特点： 成员内部类可以无条件访问外部类的所有成员属性和成员方法（包括 private 成员和静态成员）。</p><h4 id="局部内部类"><a class="anchor" href="#局部内部类">#</a> 局部内部类</h4><p>局部内部类是定义在一个方法或者一个作用域里面的类，它和成员内部类的区别在于局部内部类的访问仅限 于方法内或者该作用域内。<br>例如：</p><pre><code>class Person{ &nbsp;  public Person() { &nbsp; &nbsp;}      }        class Man{ &nbsp; &nbsp; &nbsp;      public Man(){ &nbsp; &nbsp; &nbsp;  } &nbsp; &nbsp; &nbsp; &nbsp;public People getPerson(){ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;          class Student extends People{                //局部内部类         int age =0; &nbsp;          } &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;          return new Student(); &nbsp;           }       }</code></pre><h4 id="匿名内部类"><a class="anchor" href="#匿名内部类">#</a> 匿名内部类</h4><p>new 父类构造器（参数列表）| 实现接口（） { &nbsp; &nbsp; &nbsp;<br>// 匿名内部类的类体部分<br>}</p><h4 id="静态内部类"><a class="anchor" href="#静态内部类">#</a> 静态内部类</h4><p>静态内部类是不需要依赖于外部类对象的，并且它不能使用外部类的非 static 成员变量或者方法.<br> 格式：</p><pre><code>public class Test { &nbsp; public static void main(String[] args)  { &nbsp; &nbsp; &nbsp; Outter.Inner inner = new Outter.Inner(); &nbsp; } } class Outter { &nbsp; &nbsp;public Outter() { &nbsp;  } &nbsp; &nbsp;  &nbsp; &nbsp;static class Inner { &nbsp; &nbsp; &nbsp; &nbsp;public Inner() { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;     } &nbsp; } }</code></pre><h2 id="进阶"><a class="anchor" href="#进阶">#</a> 进阶</h2><h3 id="封装"><a class="anchor" href="#封装">#</a> 封装</h3><p>private 修饰变量<br> Getter/Setter</p><h3 id="this"><a class="anchor" href="#this">#</a> this</h3><p>使用 this 关键字可以完成以下的操作：</p><ul><li>调用类中的属性</li><li>调用类中的方法或构造方法</li><li>表示当前对象</li></ul><h3 id="static"><a class="anchor" href="#static">#</a> static</h3><p>static 表示 “静态” 的意思，可以用来修饰成员变量和成员方法<br>重点：<br>1. 静态成员 在类加载时加载并初始化。<br>2. 无论一个类存在多少个对象，静态的属性，永远在内存中只有一份<br> 3. 在访问时： 静态不能访问非静态，非静态可以访问静态！</p><h2 id="异常处理"><a class="anchor" href="#异常处理">#</a> 异常处理</h2><h3 id="try-catch"><a class="anchor" href="#try-catch">#</a> try&nbsp; catch</h3><ul><li>异常指的是 Exception，Exception 类，在 Java 中存在一个父 Throwable（可能的抛出）</li><li>Throwable 存在两个子类：<br>1.Error：表示的是错误，是 JVM 发出的错误操作，只能尽量避免，无法用代码处理。<br>2.Exception：一般表示所有程序中的错误，所以一般在程序中将进行 try…catch 的处理。</li></ul><h3 id="throwthrows"><a class="anchor" href="#throwthrows">#</a> throw/throws</h3><ul><li>throws 关键字：<br>此关键字主要在方法的声明上使 用，表示方法中不处理异常，而交给调用处处理。<br>格式：<br>返回值 方法名称 () throws Exception {<br>}</li><li>throw 关键字<br> throw 关键字表示在程序中人为的抛出一个异常，因为从异常处理机制来看，所有的异常一旦产生之后，实际上抛出 的就是一个异常类的实例化对象，那么此对象也可以由 throw 直接抛出。<br>代码： throw new Exception ("抛着玩的。") ;</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
@@ -70,7 +20,7 @@
       
         <tags>
             
-            <tag> 容器 </tag>
+            <tag> 面向对象 </tag>
             
         </tags>
       
@@ -79,123 +29,23 @@
     
     
     <entry>
-      <title>多线程</title>
-      <link href="2020/10/04/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-      <url>2020/10/04/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+      <title>Java基础语法</title>
+      <link href="2020/10/10/JAVA%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+      <url>2020/10/10/JAVA%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="并行和并发有什么区别"><a class="anchor" href="#并行和并发有什么区别">#</a> 并行和并发有什么区别？</h4><ul><li>并行：多个处理器或多核处理器同时处理多个任务。</li><li>并发：多个任务在同一个 CPU     核上，按细分的时间片轮流 (交替) 执行，从逻辑上来看那些任务是同时执行。</li></ul><p>如下图：<img data-src="C:%5CUsers%5CYangMiemie%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201004132903253.png" alt="image-20201004132903253"></p><p>​并发 = 两个队列和一台咖啡机。</p><p>​并行 = 两个队列和两台咖啡机。</p><h4 id="创建线程有哪几种方式"><a class="anchor" href="#创建线程有哪几种方式">#</a> 创建线程有哪几种方式？</h4><p>创建线程有三种方式：</p><ul><li>继承 Thread 重写 run 方法；</li><li>实现 Runnable 接口；</li><li>实现 Callable 接口。</li></ul><h4 id="说一下-runnable-和-callable-有什么区别"><a class="anchor" href="#说一下-runnable-和-callable-有什么区别">#</a> 说一下 runnable 和 callable 有什么区别？</h4><ul><li>Runnable 接口 run 方法无返回值；Callable 接口 call 方法有返回值，支持泛型</li><li>Runnable 接口 run 方法只能抛出运行时异常，且无法捕获处理；Callable 接口 call 方法允许抛出异常，可以获取异常信息</li></ul><h4 id="java-线程状态有哪些"><a class="anchor" href="#java-线程状态有哪些">#</a> Java 线程状态有哪些？</h4><p>线程状态有 5 种，新建，就绪，运行，阻塞，死亡。</p><h4 id="sleep-和-wait-有什么区别"><a class="anchor" href="#sleep-和-wait-有什么区别">#</a> sleep () 和 wait () 有什么区别？</h4><ul><li>类的不同：sleep () 来自 Thread，wait () 来自 Object。</li><li>释放锁：sleep () 不释放锁；wait () 释放锁。</li><li>用法不同：sleep () 时间到会自动恢复；wait () 可以使用 notify ()/notifyAll () 直接唤醒。</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="java基础语法"><a class="anchor" href="#java基础语法">#</a> JAVA 基础语法</h1><h2 id="基础语法"><a class="anchor" href="#基础语法">#</a> 基础语法</h2><h3 id="运算符"><a class="anchor" href="#运算符">#</a> 运算符</h3><p>算数运算符</p><p>关系运算符</p><p>赋值运算符</p><p>逻辑运算符</p><p>三目运算符</p><h3 id="数据类型"><a class="anchor" href="#数据类型">#</a> 数据类型</h3><h4 id="基本数据类型"><a class="anchor" href="#基本数据类型">#</a> 基本数据类型</h4><ul><li>byte、short、int、long</li><li>float、double、char</li><li>boolean</li></ul><h4 id="引用数据类型"><a class="anchor" href="#引用数据类型">#</a> 引用数据类型</h4><ul><li>class</li><li>interface</li><li>数组</li></ul><h2 id="流程控制"><a class="anchor" href="#流程控制">#</a> 流程控制</h2><h3 id="if"><a class="anchor" href="#if">#</a> if</h3><p>if 条件结构是根据条件判断之后再做处理</p><h3 id="switch"><a class="anchor" href="#switch">#</a> switch</h3><ul><li>switch (表达式){<br>case 取值 1: 语句块 1;break;<br>case 取值 n: 语句块 n;break; default: 语句块 n+1;break;<br>}</li><li>switch 语句有关规则 表达式的返回值必须是下述几种类型之一：int,byte,char,short,String；</li><li>case 子句中的取值必须是常量，且所有 case 子句中的取值应是不同的；</li></ul><h3 id="while"><a class="anchor" href="#while">#</a> while</h3><ul><li>while 循环<br>符合条件，循环继续执行；否则，循环退出<br>特点：先判断，再执行</li><li>do-while 循环<br>先执行一遍循环操作，符合条件，循环继续执行；否则，循环退出<br>特点：先执行，再判断</li></ul><h3 id="for"><a class="anchor" href="#for">#</a> for</h3><p>语法：<br>for (初始化参数；判断条件；更新循环变量){<br>循环体；<br>}</p><h2 id="数组"><a class="anchor" href="#数组">#</a> 数组</h2><h3 id="冒泡排序"><a class="anchor" href="#冒泡排序">#</a> 冒泡排序</h3><p>原理：</p><ul><li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li><li>对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的</li></ul><h3 id="二分查找"><a class="anchor" href="#二分查找">#</a> 二分查找</h3><p>二分查找也叫折半查找，是一种基本的查找算法，需要待查的表满足两个条件：</p><ul><li>1. 查找表必须使用顺序的存储结构</li><li>2. 查找表必须按关键字大小有序排列</li></ul><p>算法的基本思想是：</p><ul><li><p>将查找表中间位置数据元素的关键字与给定关键字比较，如果相等则查找成功；</p></li><li><p>否则利用中间元素将表一分为二，如果中间关键字大于给定关键字，则在前一子表中进行折半查找，否则在后一子表中进行折半查找。</p></li><li><p>重复以上过程直到找到满足条件的元素，则查找成功；或直到子表为空为止，此时查找不成功。</p></li></ul><p>二分查找递归写法：</p><pre><code>public int firstOccurrence (int [] nums,int target){    int low = 0,high = nums.length - 1;    while(low &lt;=  high){           int mid = low + (high-low)/2;        if(nums[mid] == target){            return mid;        }        if(nums[mid] &lt; target){            low = mid+1;        }else {            high = mid-1;        }    }    return -1;}</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
           
-          <category> 线程 </category>
+          <category> Java </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 多线程 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Java基础</title>
-      <link href="2020/10/04/%E5%9F%BA%E7%A1%80/"/>
-      <url>2020/10/04/%E5%9F%BA%E7%A1%80/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="string-和-stringbuffer-stringbuilder-的区别"><a class="anchor" href="#string-和-stringbuffer-stringbuilder-的区别">#</a> <strong>String 和 StringBuffer、StringBuilder</strong> 的区别：</h4><p>String 声明的是<strong>不可变</strong>的对象，StringBuffer、StringBuilder 可以在原有对象的基础上进行操作。</p><p>StringBuffer 和 StringBuilder 最大的区别在于，StringBuffer 是<strong>线程安全的</strong>，但 StringBuilder 的性能却高于 StringBuffer，所以在<strong>单线程</strong>环境下推荐使用 StringBuilder，<strong>多线程</strong>环境下推荐使用 StringBuffer。</p><h4 id="方法重载与方法重写"><a class="anchor" href="#方法重载与方法重写">#</a> 方法重载与方法重写</h4><ul><li><p><strong>方法重写：</strong></p><p>重写是子类对父类的允许访问的方法的<strong>实现过程</strong>进行重新编写，<strong>返回值</strong>和<strong>形参</strong>都不能改变。</p></li><li><p><strong>方法重载：</strong></p><p>在一个类中，方法名相同，参数不同。返回类型可以相同也可以不同。</p></li><li><p><strong>区别：</strong></p><p><strong>方法重载</strong>是一个类中定义了多个方法名相同，而他们的<strong>参数</strong>的数量不同或数量相同而<strong>类型</strong>和<strong>顺序</strong>不同，则称为方法的重载。</p><p><strong>方法重写</strong>是在子类存在方法与父类的<strong>方法名</strong>相同，而且<strong>参数</strong>的个数与类型一样，<strong> 返回值</strong>也一样的方法，就称为重写。</p></li></ul><h4 id="接口和抽象类有什么区别"><a class="anchor" href="#接口和抽象类有什么区别">#</a> 接口和抽象类有什么区别？</h4><ul><li>实现：抽象类的子类使用  extends 来继承；接口必须使用 implements 来实现接口。</li><li>构造函数：抽象类可以有构造函数；接口不能有。</li><li>实现数量：类可以实现很多个接口；但是只能继承一个抽象类。</li><li>访问修饰符：接口中的方法默认使用 public 修饰；抽象类中的方法可以是任意访问修饰符。</li></ul><h4 id="静态变量和实例变量"><a class="anchor" href="#静态变量和实例变量">#</a> 静态变量和实例变量</h4><p>** 静态变量：** 独立存在，属于类所有，可以直接类名加点调用静态变量名使用。</p><p><strong>实例变量</strong>：需要先初始化该类，就是 new 该类后，才可以调用。但是该类被垃圾回收器回收后，该实例也将不存在。</p><p><strong>区别：</strong></p><ul><li><p>1. 存储区域不同：静态变量存储在<strong>方法区</strong>，普通变量存储在<strong>堆</strong>中；</p></li><li><p>2. 静态变量与类相关，普通变量则与实例相关</p></li><li><p>3. 内存分配方式不同。</p></li><li><p>4. 生命周期不同。</p></li></ul><h4 id="和的区别"><a class="anchor" href="#和的区别">#</a> &amp; 和 &amp;&amp; 的区别</h4><p>&amp; 运算符有两种用法：(1) 按位与；(2) 逻辑与。</p><p>&amp;&amp; 运算符是短路与运算。逻辑与跟短路与的差别是非常巨大的，虽然二者都要求运算符左右两端的布尔值都是 true 整个表达式的值才是 true。&amp;&amp; 之所以称为短路运算，是因为如果 &amp;&amp; 左边的表达式的值是 false，右边的表达式会被直接短路掉，不会进行运算。</p><h4 id="final-有什么用"><a class="anchor" href="#final-有什么用">#</a> final 有什么用？</h4><p>用于修饰类、属性和方法；</p><ul><li>被 final 修饰的类不可以被继承</li><li>被 final 修饰的方法不可以被重写</li><li>被 final 修饰的变量不可以被改变，被 final 修饰不可变的是变量的引用，而不是引用指向的内容，引用指向的内容是可以改变的</li></ul><h4 id="final-finally-finalize区别"><a class="anchor" href="#final-finally-finalize区别">#</a> final finally finalize 区别</h4><ul><li>final 可以修饰类、变量、方法，修饰类表示该类不能被继承、修饰方法表示该方法不能被重写、修饰变量表<br>示该变量是一个常量不能被重新赋值。</li><li>finally 一般作用在 try-catch 代码块中，在处理异常的时候，通常我们将一定要执行的代码方法 finally 代码块<br>中，表示不管是否出现异常，该代码块都会执行，一般用来存放一些关闭资源的代码。</li><li>finalize 是一个方法，属于 Object 类的一个方法，而 Object 类是所有类的父类，该方法一般由垃圾回收器来调<br>用，当我们调用 System.gc () 方法的时候，由垃圾回收器调用 finalize ()，回收垃圾，一个对象是否可回收的<br>最后判断。</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>MyBatis</title>
-      <link href="2020/10/04/MyBatis/"/>
-      <url>2020/10/04/MyBatis/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="缓存"><a class="anchor" href="#缓存">#</a> 缓存</h4><ul><li>一级缓存：基于 PerpetualCache 的 HashMap 本地缓存，<strong>声明周期</strong>是和 SQLSession 一致的，作用域 session。<strong>当 Session flush 或 close 之后， Cache 就将清空，一级缓存开启</strong>。</li><li>二级缓存：也是基于 PerpetualCache 的 HashMap 本地缓存，作用域为 Mapper 级别的，如果多个 SQLSession 之间需要<strong>共享缓存</strong>，则需要使用到二级缓存，并且二级缓存可自定义存储源。</li></ul><h4 id="mybatis的编程步骤"><a class="anchor" href="#mybatis的编程步骤">#</a> Mybatis 的编程步骤</h4><p>1、创建 SqlSessionFactory<br>2、通过 SqlSessionFactory 创建 SqlSession<br>3、通过 sqlsession 执行数据库操作<br> 4、调用 session.commit () 提交事务<br> 5、调用 session.close () 关闭会话</p><p>MyBatis 是一个可以自定义 SQL、存储过程和高级映射的<strong>持久层框架</strong></p><p>MyBatis 只使用<strong>简单的 XML 和注解</strong>来<strong>配置和映射</strong>基本数据类型、Map 接口和 POJO 到数据库记录。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> 框架 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> MyBatis </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>JavaWeb</title>
-      <link href="2020/10/04/JavaWeb/"/>
-      <url>2020/10/04/JavaWeb/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="说下原生jdbc操作数据库流程"><a class="anchor" href="#说下原生jdbc操作数据库流程">#</a> 说下原生 jdbc 操作数据库流程？</h3><ul><li>第一步：Class.forName () 加载数据库连接驱动；</li><li>第二步：DriverManager.getConnection () 获取数据连接对象；</li><li>第三步：根据 SQL 获取 sql 会话对象，有 2 种方式 Statement、PreparedStatement ;</li><li>第四步：执行 SQL 处理结果集，执行 SQL 前如果有参数值就设置参数值 setXXX ();</li><li>第五步：关闭结果集、关闭会话、关闭连接。<br>详细代码请看（封装）：<span class="exturl" data-url="aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjk1NDI2MTEvYXJ0aWNsZS9kZXRhaWxzLzUyNDI2MDA2">http://blog.csdn.net/qq_29542611/article/details/52426006</span></li></ul><h3 id="session-和-cookie-有什么区别"><a class="anchor" href="#session-和-cookie-有什么区别">#</a> session 和 cookie 有什么区别？</h3><ul><li>存储位置不同：session 存储在服务器端；cookie 存储在浏览器端。</li><li>安全性不同：cookie 安全性一般，在浏览器存储，可以被伪造和修改。</li><li>容量和个数限制：cookie 有容量限制，每个站点下的 cookie 也有个数限制。</li><li>存储的多样性：session 可以存储在 Redis 中、数据库中、应用程序中；而 cookie 只能存储在浏览器中。</li></ul><h3 id="简述-tcp-和-udp的区别"><a class="anchor" href="#简述-tcp-和-udp的区别">#</a> 简述 tcp 和 udp 的区别？</h3><p><strong>tcp</strong> 和 <strong>udp</strong> 是 OSI 模型中的运输层中的协议。</p><p><strong>tcp</strong> 提供可靠的通信传输    <strong>udp</strong> 则常被用于让广播和细节控制交给应用的通信传输。</p><p>两者的区别大致如下：</p><ul><li>tcp <strong>面向连接</strong>，udp <strong>面向非连接</strong>即发送数据前不需要建立链接；</li><li>tcp 提供可靠的服务（数据传输），udp 无法保证；</li><li>tcp 面向字节流，udp 面向报文；</li><li>tcp 数据传输慢，udp 数据传输快；</li></ul><h3 id="tcp三次握手"><a class="anchor" href="#tcp三次握手">#</a> tcp 三次握手</h3><p>第一次</p><p>第一次握手：建立连接时，客户端  发送<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9zeW4="> syn</span> 包（seq=j）到  服务器，并进入 SYN_SENT 状态，等待  服务器确认；SYN：同步序列编号（Synchronize Sequence Numbers）。 [3]</p><p>第二次</p><p>第二次握手：服务器  收到<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9zeW4="> syn</span> 包，必须确认  客户端  的 SYN（<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9hY2s=">ack</span>=j+1），同时自己也发送一个 SYN 包（seq=k），即 SYN+ACK 包，此时服务器进入 SYN_RECV 状态。 [3]</p><p>第三次</p><p>第三次握手：客户端  收到  服务器  的 SYN+ACK 包，向  服务器  发送确认包 ACK (<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9hY2s=">ack</span>=k+1），此包发送完毕，客户端和服务器进入<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9FU1RBQkxJU0hFRA=="> ESTABLISHED</span>（TCP 连接成功）状态，完成三次握手。</p><h3 id="为什么要三次握手两次不行吗为什么"><a class="anchor" href="#为什么要三次握手两次不行吗为什么">#</a> 为什么要三次握手，两次不行吗？为什么？</h3><p>如果采用两次握手，那么只要<strong>服务器</strong>发出确认数据包就会建立连接，但由于<strong>客户端</strong>此时并未响应服务器端的请求，那此时<strong>服务器端</strong>就会一直在等待客户端，这样服务器端就白白浪费了一定的资源。</p><p>若采用三次握手，服务器端没有收到来自客户端的再此确认，则就会知道客户端并没有要求建立请求，就不会浪费服务器的资源。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> JavaWeb </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> JavaWeb </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>MySQL</title>
-      <link href="2020/10/04/MySQL/"/>
-      <url>2020/10/04/MySQL/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="数据库的三范式是什么"><a class="anchor" href="#数据库的三范式是什么">#</a> 数据库的三范式是什么？</h4><ul><li>第一范式：强调的是原子性，即数据库表的每一列都是不可分割的原子数据项。</li><li>第二范式：要求实体的属性完全依赖于主关键字。所谓完全依赖是指不能存在仅依赖主关键字一部分的属性。</li><li>第三范式：任何非主属性不依赖于其它非主属性。</li></ul><h4 id="mysql-的内连接-左连接-右连接有什么区别"><a class="anchor" href="#mysql-的内连接-左连接-右连接有什么区别">#</a> MySQL 的内连接、左连接、右连接有什么区别？</h4><p>内连接关键字：inner join；左连接：left join；右连接：right join。</p><p>内连接是把匹配的关联数 据显示出来；左连接是左边的表全部显示出来，右边的表显示出符合条件的数据；右连接正好相反。</p><h4 id="数据库基本操作语句"><a class="anchor" href="#数据库基本操作语句">#</a> 数据库基本操作语句</h4><p>主键约束 (primary key)  唯一约束 (unique) 非空约束 (not null) 外键约束 (foreign key)</p><p><strong>select</strong> ... from 表名  where 条件  group by  分组字段  having 条件  order by  排序字段 ase|desc</p><p>去重操作<strong> distinct</strong>             select distinct 字段名，字段名 2 from 表名</p><p><strong>insert  into  &lt;表名&gt;  [列名]  values  &lt; 列值 &gt;                delete  from  &lt; 表名 &gt;  where  &lt; 删除条件 &gt;</strong>**</p><p><strong>update 表名 set  字段名 = 字段值，字段名 = 字段值   [where 修改条件];</strong></p><h4 id="数据库特性"><a class="anchor" href="#数据库特性">#</a> 数据库特性</h4><ul><li>Atomicity（<strong>原子性</strong>）：事务不可分割、不可约简。</li><li>Consistency（<strong>一致性</strong>）：在事务开始前和事务结束后，<strong>数据库的完整性</strong>没有被破坏。</li><li>Isolation（<strong>隔离性</strong>）：数据库允许多个事务同时对数据处理，隔离性可以<strong>防止</strong>多个事务并发执行时由于交叉执行而<strong>导致数据的不一致</strong>。事务隔离分为不同级别，包括读未提交（Read uncommitted）、读提交（read committed）、可重复读（repeatable read）和串行化（Serializable）。</li><li>Durability（<strong>持久性</strong>）：事务处理结束后，对数据的修改就是永久，不会丢失。</li></ul><h4 id="事务隔离"><a class="anchor" href="#事务隔离">#</a> 事务隔离</h4><ul><li>READ-UNCOMMITTED：<strong>未提交读</strong>，最低隔离级别、事务未提交前，就可被其他事务读取（会出现幻读、脏读、不可重复读）。</li><li>READ-COMMITTED：<strong>提交读</strong>，一个事务提交后才能被其他事务读取到（会造成幻读、不可重复读）。</li><li>REPEATABLE-READ：<strong>可重复读</strong>，<strong>默认</strong>级别，保证多次读取同一个数据，值和内容一致。禁止读取到别的事务未提交的数据（会造成幻读）。</li><li>SERIALIZABLE：<strong>序列化</strong>，代价最高最可靠的隔离级别，该隔离级别能防止脏读、不可重复读、幻读。</li></ul><p><strong>脏读</strong> ：表示一个事务能够读取另一个事务中还未提交的数据。<strong>不可重复读</strong> ：是指在一个事务内，多次读同一数据。</p><h4 id="oracle页查询"><a class="anchor" href="#oracle页查询">#</a> <strong>Oracle 页查询</strong></h4><p>Oracle 中使用 rownum 来进行分页，</p><p>select * from    ( select rownum r,a from tabName where rownum &lt;= 20 )  where r &gt; 10</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> MySQL </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> MySQL </tag>
+            <tag> Java基础 </tag>
             
         </tags>
       

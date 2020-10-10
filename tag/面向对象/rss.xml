@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <rss version="2.0">
     <channel>
-        <title>手撕包菜 • Posts by &#34;java&#34; category</title>
+        <title>手撕包菜 • Posts by &#34;面向对象&#34; tag</title>
         <link>https://www.baocai-blog.cn</link>
         <description></description>
         <language>zh-CN</language>
@@ -165,122 +165,6 @@ static class Inner { &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;
  throw 关键字表示在程序中人为的抛出一个异常，因为从异常处理机制来看，所有的异常一旦产生之后，实际上抛出 的就是一个异常类的实例化对象，那么此对象也可以由 throw 直接抛出。&lt;br&gt;
 代码： throw new Exception (&#34;抛着玩的。&#34;) ;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement(&#39;img&#39;);
-            img.style = &#39;display:none !important;&#39;;
-            img.src = el.dataset.src;
-            img.addEventListener(&#39;error&#39;, () =&gt; {
-              img.remove();
-              el.style.color = &#39;inherit&#39;;
-              el.style.backgroundImage = &#39;none&#39;;
-              el.style.background = &#39;none&#39;;
-            });
-            img.addEventListener(&#39;load&#39;, () =&gt; {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      &lt;/script&gt; ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://www.baocai-blog.cn/2020/10/10/JAVA%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
-            <title>Java基础语法</title>
-            <link>https://www.baocai-blog.cn/2020/10/10/JAVA%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
-            <category>Java基础</category>
-            <pubDate>Sat, 10 Oct 2020 10:41:02 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;java基础语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#java基础语法&#34;&gt;#&lt;/a&gt; JAVA 基础语法&lt;/h1&gt;
-&lt;h2 id=&#34;基础语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基础语法&#34;&gt;#&lt;/a&gt; 基础语法&lt;/h2&gt;
-&lt;h3 id=&#34;运算符&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#运算符&#34;&gt;#&lt;/a&gt; 运算符&lt;/h3&gt;
-&lt;p&gt;算数运算符&lt;/p&gt;
-&lt;p&gt;关系运算符&lt;/p&gt;
-&lt;p&gt;赋值运算符&lt;/p&gt;
-&lt;p&gt;逻辑运算符&lt;/p&gt;
-&lt;p&gt;三目运算符&lt;/p&gt;
-&lt;h3 id=&#34;数据类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据类型&#34;&gt;#&lt;/a&gt; 数据类型&lt;/h3&gt;
-&lt;h4 id=&#34;基本数据类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基本数据类型&#34;&gt;#&lt;/a&gt; 基本数据类型&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;byte、short、int、long&lt;/li&gt;
-&lt;li&gt;float、double、char&lt;/li&gt;
-&lt;li&gt;boolean&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;引用数据类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#引用数据类型&#34;&gt;#&lt;/a&gt; 引用数据类型&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;class&lt;/li&gt;
-&lt;li&gt;interface&lt;/li&gt;
-&lt;li&gt;数组&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;流程控制&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#流程控制&#34;&gt;#&lt;/a&gt; 流程控制&lt;/h2&gt;
-&lt;h3 id=&#34;if&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#if&#34;&gt;#&lt;/a&gt; if&lt;/h3&gt;
-&lt;p&gt;if 条件结构是根据条件判断之后再做处理&lt;/p&gt;
-&lt;h3 id=&#34;switch&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#switch&#34;&gt;#&lt;/a&gt; switch&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;switch (表达式){&lt;br&gt;
-case 取值 1: 语句块 1;break;&lt;br&gt;
-case 取值 n: 语句块 n;break; 		default: 语句块 n+1;break;&lt;br&gt;
-}&lt;/li&gt;
-&lt;li&gt;switch 语句有关规则 表达式的返回值必须是下述几种类型之一：int,byte,char,short,String；&lt;/li&gt;
-&lt;li&gt;case 子句中的取值必须是常量，且所有 case 子句中的取值应是不同的；&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;while&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#while&#34;&gt;#&lt;/a&gt; while&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;while 循环&lt;br&gt;
-符合条件，循环继续执行；否则，循环退出&lt;br&gt;
-特点：先判断，再执行&lt;/li&gt;
-&lt;li&gt;do-while 循环&lt;br&gt;
-先执行一遍循环操作，符合条件，循环继续执行；否则，循环退出&lt;br&gt;
-特点：先执行，再判断&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;for&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#for&#34;&gt;#&lt;/a&gt; for&lt;/h3&gt;
-&lt;p&gt;语法：&lt;br&gt;
-for (初始化参数；判断条件；更新循环变量){&lt;br&gt;
-循环体；&lt;br&gt;
-}&lt;/p&gt;
-&lt;h2 id=&#34;数组&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数组&#34;&gt;#&lt;/a&gt; 数组&lt;/h2&gt;
-&lt;h3 id=&#34;冒泡排序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#冒泡排序&#34;&gt;#&lt;/a&gt; 冒泡排序&lt;/h3&gt;
-&lt;p&gt;原理：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;比较相邻的元素。如果第一个比第二个大，就交换他们两个。&lt;/li&gt;
-&lt;li&gt;对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;二分查找&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#二分查找&#34;&gt;#&lt;/a&gt; 二分查找&lt;/h3&gt;
-&lt;p&gt;二分查找也叫折半查找，是一种基本的查找算法，需要待查的表满足两个条件：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;1. 查找表必须使用顺序的存储结构&lt;/li&gt;
-&lt;li&gt;2. 查找表必须按关键字大小有序排列&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;算法的基本思想是：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;将查找表中间位置数据元素的关键字与给定关键字比较，如果相等则查找成功；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;否则利用中间元素将表一分为二，如果中间关键字大于给定关键字，则在前一子表中进行折半查找，否则在后一子表中进行折半查找。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;重复以上过程直到找到满足条件的元素，则查找成功；或直到子表为空为止，此时查找不成功。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;二分查找递归写法：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;public int firstOccurrence (int [] nums,int target){
-	
-    int low = 0,high = nums.length - 1;
-    while(low &amp;lt;=  high){   
-        int mid = low + (high-low)/2;
-        if(nums[mid] == target){
-            return mid;
-        }
-        if(nums[mid] &amp;lt; target){
-            low = mid+1;
-        }else {
-            high = mid-1;
-        }
-    }
-    return -1;
-}
-&lt;/code&gt;&lt;/pre&gt;
 &lt;script&gt;
         document.querySelectorAll(&#39;.github-emoji&#39;)
           .forEach(el =&gt; {

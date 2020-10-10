@@ -3,84 +3,163 @@
     <id>https://www.baocai-blog.cn</id>
     <title>手撕包菜 • Posts by &#34;java&#34; category</title>
     <link href="https://www.baocai-blog.cn" />
-    <updated>2020-10-04T06:58:46.815Z</updated>
-    <category term="MyBatis" />
-    <category term="Spring" />
-    <category term="JavaWeb" />
-    <category term="MySQL" />
-    <category term="容器" />
-    <category term="多线程" />
-    <category term="设计模式" />
-    <category term="Java" />
+    <updated>2020-10-10T04:07:06.642Z</updated>
+    <category term="面向对象" />
+    <category term="Java基础" />
     <entry>
-        <id>https://www.baocai-blog.cn/2020/10/04/%E5%AE%B9%E5%99%A8%EF%BC%88%E9%9B%86%E5%90%88%EF%BC%89/</id>
-        <title>Java容器（Cellection/Map）</title>
-        <link rel="alternate" href="https://www.baocai-blog.cn/2020/10/04/%E5%AE%B9%E5%99%A8%EF%BC%88%E9%9B%86%E5%90%88%EF%BC%89/"/>
-        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h4 id=&#34;java-容器分为-collection-和-map-两大类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#java-容器分为-collection-和-map-两大类&#34;&gt;#&lt;/a&gt; Java 容器分为 Collection 和 Map 两大类&lt;/h4&gt;
+        <id>https://www.baocai-blog.cn/2020/10/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</id>
+        <title>面向对象</title>
+        <link rel="alternate" href="https://www.baocai-blog.cn/2020/10/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;面向对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#面向对象&#34;&gt;#&lt;/a&gt; 面向对象&lt;/h1&gt;
+&lt;h2 id=&#34;基础&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基础&#34;&gt;#&lt;/a&gt; 基础&lt;/h2&gt;
+&lt;h3 id=&#34;类与对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#类与对象&#34;&gt;#&lt;/a&gt; 类与对象&lt;/h3&gt;
 &lt;ul&gt;
+&lt;li&gt;对象：对象是类的实例&lt;/li&gt;
+&lt;li&gt;类：类是一个模板，描述一类对象的行为和状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;构造方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#构造方法&#34;&gt;#&lt;/a&gt; 构造方法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;用于对象初始化。&lt;/li&gt;
+&lt;li&gt;构造方法的名称必须与类同名，一个类可以有多个构造方法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;方法重载方法重写&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法重载方法重写&#34;&gt;#&lt;/a&gt; 方法重载 / 方法重写&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;重写：重写是子类对父类的允许访问的方法的实现过程进行重新编写，返回值和形参都不能改变。子类可以根据需要，定义特定于自己的行为。&lt;/li&gt;
+&lt;li&gt;重载：重载是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;高级&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#高级&#34;&gt;#&lt;/a&gt; 高级&lt;/h2&gt;
+&lt;h3 id=&#34;final关键字&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#final关键字&#34;&gt;#&lt;/a&gt; final 关键字&lt;/h3&gt;
+&lt;p&gt;1.final 修饰的类叫最终类，该类不能被继承。&lt;br&gt;
+2.final 修饰的方法不能被重写。&lt;br&gt;
+3.final 修饰的变量叫常量，常量必须初始化，初始化之后值就不能被修改&lt;/p&gt;
+&lt;h3 id=&#34;抽象类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#抽象类&#34;&gt;#&lt;/a&gt; 抽象类&lt;/h3&gt;
+&lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Collection&lt;/p&gt;
-&lt;p&gt;List&lt;/p&gt;
+&lt;p&gt;抽象类不能被实例化&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;ArrayList&lt;/li&gt;
-&lt;li&gt;LinkedList&lt;/li&gt;
-&lt;li&gt;Vector&lt;/li&gt;
-&lt;li&gt;Stack&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;​       Set&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;HashSet&lt;/li&gt;
-&lt;li&gt;LinkedHashSet&lt;/li&gt;
-&lt;li&gt;TreeSet&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;抽象类中不一定包含抽象方法，但是有抽象方法的类必定是抽象类。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Map&lt;/p&gt;
-&lt;p&gt;HashMap&lt;/p&gt;
+&lt;p&gt;抽象类中的抽象方法只是声明，不包含方法体，就是不给出方法的具体实现也就是方法的具体功能。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;LinkedHashMap&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;构造方法，类方法（用 static 修饰的方法）不能声明为抽象方法。&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;​       TreeMap、ConcurrentHashMap、Hashtable&lt;/p&gt;
-&lt;h4 id=&#34;list-set-map-之间的区别是什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#list-set-map-之间的区别是什么&#34;&gt;#&lt;/a&gt; List、Set、Map 之间的区别是什么？&lt;/h4&gt;
-&lt;p&gt;List、Set、Map 的区别主要体现在两个方面：元素是否有序、是否允许元素重复。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;C:%5CUsers%5CYangMiemie%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200925103453410.png&#34; alt=&#34;image-20200925103453410&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;List 和 Set&lt;/strong&gt; 是存储 &lt;strong&gt;单列数据&lt;/strong&gt; 的集合，&lt;strong&gt;Map&lt;/strong&gt; 是存储&lt;strong&gt;键和值&lt;/strong&gt;这样的双列数据的集合；&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;List&lt;/strong&gt; 中存储的数据是&lt;strong&gt;有顺序&lt;/strong&gt;，并且允许&lt;strong&gt;重复&lt;/strong&gt;；&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Map&lt;/strong&gt; 中存储的数据是&lt;strong&gt;无序&lt;/strong&gt;的，其&lt;strong&gt;键&lt;/strong&gt;是不能重复的，它的&lt;strong&gt;值&lt;/strong&gt;是可以有重复的。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Set&lt;/strong&gt; 中存储的数据是&lt;strong&gt;无序&lt;/strong&gt;的，且不允许有重复。&lt;/p&gt;
-&lt;h4 id=&#34;hashmap-和-hashtable-有什么区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#hashmap-和-hashtable-有什么区别&#34;&gt;#&lt;/a&gt; HashMap 和 Hashtable 有什么区别？&lt;/h4&gt;
+&lt;li&gt;
+&lt;p&gt;抽象类的子类必须给出抽象类中的抽象方法的具体实现，除非该子类也是抽象类。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;接口&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#接口&#34;&gt;#&lt;/a&gt; 接口&lt;/h3&gt;
+&lt;p&gt;接口是抽象方法的集合&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;存储：HashMap 允许 key 和 value 为  null，而 Hashtable 不允许。&lt;/li&gt;
-&lt;li&gt;线程安全：Hashtable 是线程安全的，而 HashMap 是非线程安全的。&lt;/li&gt;
-&lt;li&gt;推荐使用：在  Hashtable 的类注释可以看到，Hashtable 是保留类不建议使用，推荐在单线程环境下使用 HashMap 替代，如果需要多线程使用则用     ConcurrentHashMap 替代。&lt;/li&gt;
+&lt;li&gt;定义格式：&lt;br&gt;
+interface 接口名称 { &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;
+全局常量；&amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;
+抽象方法；&amp;nbsp;&lt;br&gt;
+}&lt;/li&gt;
+&lt;li&gt;接口和抽象类的区别：&lt;br&gt;
+1、抽象类要被子类继承，接口要被类实现。&lt;br&gt;
+2、接口只能声明抽象方法，抽象类中可以声明抽象方法，也可以写非抽象方法。&lt;br&gt;
+3、接口里定义的变量只能是公共的静态的常量，抽象类中的变量是普通变量。&lt;br&gt;
+4、抽象类使用继承来使用，无法多继承。接口使用实现来使用，可以多实现&lt;br&gt;
+ 5、抽象类中可以包含 static 方法 ，但是接口中不允许（静态方法不能被子类重写，因此接口中不能声明 静态方法）     6、接口不能有构造方法，但是抽象类可以有&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;如何决定使用-hashmap-还是-treemap&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#如何决定使用-hashmap-还是-treemap&#34;&gt;#&lt;/a&gt; 如何决定使用 HashMap 还是 TreeMap？&lt;/h4&gt;
-&lt;p&gt;对在 Map 中插入、删除、定位一个元素这类操作，HashMap 最好，因为相对而言 HashMap 的插入会更快&lt;/p&gt;
-&lt;p&gt;对一个 key 集合进行有序的遍历，那 TreeMap 是更好的选择。&lt;/p&gt;
-&lt;h4 id=&#34;说一下-hashmap-的实现原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#说一下-hashmap-的实现原理&#34;&gt;#&lt;/a&gt; 说一下 HashMap 的实现原理？&lt;/h4&gt;
-&lt;p&gt;HashMap 基于 Hash 算法实现的，我们通过 **put (key,value)** 存储，**get (key)** 来获取。&lt;/p&gt;
-&lt;p&gt;当传入 key 时，HashMap 会根据 key. hashCode () 计算出 hash 值，根据 hash 值将 value 保存在 bucket 里。当计算出的 hash 值相同时，我们称之为 hash 冲突，HashMap 的做法是用链表和红黑树存储相同 hash 值的 value。当 hash 冲突的个数比较少时，使用链表否则使用红黑树。&lt;/p&gt;
-&lt;h4 id=&#34;说一下-hashset-的实现原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#说一下-hashset-的实现原理&#34;&gt;#&lt;/a&gt; 说一下 HashSet 的实现原理？&lt;/h4&gt;
-&lt;p&gt;HashSet 是基于 HashMap 实现的，底层使用 HashMap 来保存所有元素，HashSet 的实现比较简单，&lt;/p&gt;
-&lt;p&gt;相关 HashSet 的操作，基本上都是直接调用底层 HashMap 的相关方法来完成，HashSet 不允许重复的值。&lt;/p&gt;
-&lt;h4 id=&#34;arraylist-和-linkedlist-的区别是什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#arraylist-和-linkedlist-的区别是什么&#34;&gt;#&lt;/a&gt; ArrayList 和 LinkedList 的区别是什么？&lt;/h4&gt;
+&lt;h3 id=&#34;equals&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#equals&#34;&gt;#&lt;/a&gt; equals&lt;/h3&gt;
+&lt;h3 id=&#34;内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#内部类&#34;&gt;#&lt;/a&gt; 内部类&lt;/h3&gt;
+&lt;h4 id=&#34;成员内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#成员内部类&#34;&gt;#&lt;/a&gt; 成员内部类&lt;/h4&gt;
+&lt;p&gt;成员内部类是最普通的内部类，它的定义为位于另一个类的内部，形如下面的形式：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class Outer { &amp;nbsp; &amp;nbsp;
+	private double x = 0; &amp;nbsp; &amp;nbsp;
+	public Outer(double x) { 
+	this.x = x; 
+    } &amp;nbsp; &amp;nbsp;  &amp;nbsp; &amp;nbsp;
+class Inner { &amp;nbsp; //内部类 &amp;nbsp; &amp;nbsp; &amp;nbsp;
+	public void say() {
+    	System.out.println(&#34;x=&#34;+x);&amp;nbsp;  
+    } &amp;nbsp;
+} 
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;特点： 成员内部类可以无条件访问外部类的所有成员属性和成员方法（包括 private 成员和静态成员）。&lt;/p&gt;
+&lt;h4 id=&#34;局部内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#局部内部类&#34;&gt;#&lt;/a&gt; 局部内部类&lt;/h4&gt;
+&lt;p&gt;局部内部类是定义在一个方法或者一个作用域里面的类，它和成员内部类的区别在于局部内部类的访问仅限 于方法内或者该作用域内。&lt;br&gt;
+例如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;	class Person{ &amp;nbsp;  
+		public Person() {
+ &amp;nbsp; &amp;nbsp;	}  
+    }
+    
+    class Man{ &amp;nbsp; &amp;nbsp; &amp;nbsp;  
+    	public Man(){
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;  }
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;public People getPerson(){ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  
+        class Student extends People{        
+        //局部内部类 
+        int age =0; &amp;nbsp;  
+        } &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  
+        return new Student(); &amp;nbsp;   
+        }   
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;匿名内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#匿名内部类&#34;&gt;#&lt;/a&gt; 匿名内部类&lt;/h4&gt;
+&lt;p&gt;new 父类构造器（参数列表）| 实现接口（） { &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;
+// 匿名内部类的类体部分&lt;br&gt;
+}&lt;/p&gt;
+&lt;h4 id=&#34;静态内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#静态内部类&#34;&gt;#&lt;/a&gt; 静态内部类&lt;/h4&gt;
+&lt;p&gt;静态内部类是不需要依赖于外部类对象的，并且它不能使用外部类的非 static 成员变量或者方法.&lt;br&gt;
+ 格式：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public class Test { &amp;nbsp; 
+	public static void main(String[] args)  { &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+	Outter.Inner inner = new Outter.Inner(); &amp;nbsp; 
+	} 
+}
+ 
+class Outter { &amp;nbsp; &amp;nbsp;
+	public Outter() { &amp;nbsp;
+  	} &amp;nbsp; &amp;nbsp;  &amp;nbsp; &amp;nbsp;
+static class Inner { &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;
+	public Inner() { &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  &amp;nbsp; 
+    } &amp;nbsp; 
+} 
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;进阶&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#进阶&#34;&gt;#&lt;/a&gt; 进阶&lt;/h2&gt;
+&lt;h3 id=&#34;封装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#封装&#34;&gt;#&lt;/a&gt; 封装&lt;/h3&gt;
+&lt;p&gt;private 修饰变量&lt;br&gt;
+ Getter/Setter&lt;/p&gt;
+&lt;h3 id=&#34;this&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#this&#34;&gt;#&lt;/a&gt; this&lt;/h3&gt;
+&lt;p&gt;使用 this 关键字可以完成以下的操作：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;数据结构实现：ArrayList  是&lt;strong&gt;动态数组&lt;/strong&gt;的数据结构实现，而 LinkedList 是&lt;strong&gt;双向链表&lt;/strong&gt;的数据结构实现。&lt;/li&gt;
-&lt;li&gt;随机访问效率：ArrayList  比 LinkedList 在随机访问的时候效率要高，因为 LinkedList 是线性的数据存储方式，所以需要移动指针从前往后依次查找。&lt;/li&gt;
-&lt;li&gt;增加和删除效率：在非首尾的增加和删除操作，LinkedList 要比 ArrayList 效率要高，因为 ArrayList 增删操作要影响数组内的其他数据的下标。&lt;/li&gt;
+&lt;li&gt;调用类中的属性&lt;/li&gt;
+&lt;li&gt;调用类中的方法或构造方法&lt;/li&gt;
+&lt;li&gt;表示当前对象&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;综合来说，在需要频繁读取集合中的元素时，更推荐使用 ArrayList.&lt;/p&gt;
-&lt;p&gt;在插入和删除操作较多时，更推荐使用 LinkedList。&lt;/p&gt;
+&lt;h3 id=&#34;static&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#static&#34;&gt;#&lt;/a&gt; static&lt;/h3&gt;
+&lt;p&gt;static 表示 “静态” 的意思，可以用来修饰成员变量和成员方法&lt;br&gt;
+重点：&lt;br&gt;
+1. 静态成员 在类加载时加载并初始化。&lt;br&gt;
+2. 无论一个类存在多少个对象，静态的属性，永远在内存中只有一份&lt;br&gt;
+ 3. 在访问时： 静态不能访问非静态，非静态可以访问静态！&lt;/p&gt;
+&lt;h2 id=&#34;异常处理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#异常处理&#34;&gt;#&lt;/a&gt; 异常处理&lt;/h2&gt;
+&lt;h3 id=&#34;try-catch&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#try-catch&#34;&gt;#&lt;/a&gt; try&amp;nbsp; catch&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;异常指的是 Exception，Exception 类，在 Java 中存在一个父 Throwable（可能的抛出）&lt;/li&gt;
+&lt;li&gt;Throwable 存在两个子类：&lt;br&gt;
+1.Error：表示的是错误，是 JVM 发出的错误操作，只能尽量避免，无法用代码处理。&lt;br&gt;
+2.Exception：一般表示所有程序中的错误，所以一般在程序中将进行 try…catch 的处理。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;throwthrows&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#throwthrows&#34;&gt;#&lt;/a&gt; throw/throws&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;throws 关键字：&lt;br&gt;
+此关键字主要在方法的声明上使 用，表示方法中不处理异常，而交给调用处处理。&lt;br&gt;
+格式：&lt;br&gt;
+返回值 方法名称 () throws Exception {&lt;br&gt;
+}&lt;/li&gt;
+&lt;li&gt;throw 关键字&lt;br&gt;
+ throw 关键字表示在程序中人为的抛出一个异常，因为从异常处理机制来看，所有的异常一旦产生之后，实际上抛出 的就是一个异常类的实例化对象，那么此对象也可以由 throw 直接抛出。&lt;br&gt;
+代码： throw new Exception (&#34;抛着玩的。&#34;) ;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;script&gt;
         document.querySelectorAll(&#39;.github-emoji&#39;)
           .forEach(el =&gt; {
@@ -100,77 +179,103 @@
             document.body.appendChild(img);
           });
       &lt;/script&gt;</content>
-        <category term="容器" />
-        <updated>2020-10-04T06:58:46.815Z</updated>
+        <category term="面向对象" />
+        <updated>2020-10-10T04:07:06.642Z</updated>
     </entry>
     <entry>
-        <id>https://www.baocai-blog.cn/2020/10/04/%E5%9F%BA%E7%A1%80/</id>
-        <title>Java基础</title>
-        <link rel="alternate" href="https://www.baocai-blog.cn/2020/10/04/%E5%9F%BA%E7%A1%80/"/>
-        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h4 id=&#34;string-和-stringbuffer-stringbuilder-的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#string-和-stringbuffer-stringbuilder-的区别&#34;&gt;#&lt;/a&gt; &lt;strong&gt;String 和 StringBuffer、StringBuilder&lt;/strong&gt; 的区别：&lt;/h4&gt;
-&lt;p&gt;String 声明的是&lt;strong&gt;不可变&lt;/strong&gt;的对象，StringBuffer、StringBuilder 可以在原有对象的基础上进行操作。&lt;/p&gt;
-&lt;p&gt;StringBuffer 和 StringBuilder 最大的区别在于，StringBuffer 是&lt;strong&gt;线程安全的&lt;/strong&gt;，但 StringBuilder 的性能却高于 StringBuffer，所以在&lt;strong&gt;单线程&lt;/strong&gt;环境下推荐使用 StringBuilder，&lt;strong&gt;多线程&lt;/strong&gt;环境下推荐使用 StringBuffer。&lt;/p&gt;
-&lt;h4 id=&#34;方法重载与方法重写&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法重载与方法重写&#34;&gt;#&lt;/a&gt; 方法重载与方法重写&lt;/h4&gt;
+        <id>https://www.baocai-blog.cn/2020/10/10/JAVA%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</id>
+        <title>Java基础语法</title>
+        <link rel="alternate" href="https://www.baocai-blog.cn/2020/10/10/JAVA%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;java基础语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#java基础语法&#34;&gt;#&lt;/a&gt; JAVA 基础语法&lt;/h1&gt;
+&lt;h2 id=&#34;基础语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基础语法&#34;&gt;#&lt;/a&gt; 基础语法&lt;/h2&gt;
+&lt;h3 id=&#34;运算符&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#运算符&#34;&gt;#&lt;/a&gt; 运算符&lt;/h3&gt;
+&lt;p&gt;算数运算符&lt;/p&gt;
+&lt;p&gt;关系运算符&lt;/p&gt;
+&lt;p&gt;赋值运算符&lt;/p&gt;
+&lt;p&gt;逻辑运算符&lt;/p&gt;
+&lt;p&gt;三目运算符&lt;/p&gt;
+&lt;h3 id=&#34;数据类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据类型&#34;&gt;#&lt;/a&gt; 数据类型&lt;/h3&gt;
+&lt;h4 id=&#34;基本数据类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基本数据类型&#34;&gt;#&lt;/a&gt; 基本数据类型&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;byte、short、int、long&lt;/li&gt;
+&lt;li&gt;float、double、char&lt;/li&gt;
+&lt;li&gt;boolean&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;引用数据类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#引用数据类型&#34;&gt;#&lt;/a&gt; 引用数据类型&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;class&lt;/li&gt;
+&lt;li&gt;interface&lt;/li&gt;
+&lt;li&gt;数组&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;流程控制&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#流程控制&#34;&gt;#&lt;/a&gt; 流程控制&lt;/h2&gt;
+&lt;h3 id=&#34;if&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#if&#34;&gt;#&lt;/a&gt; if&lt;/h3&gt;
+&lt;p&gt;if 条件结构是根据条件判断之后再做处理&lt;/p&gt;
+&lt;h3 id=&#34;switch&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#switch&#34;&gt;#&lt;/a&gt; switch&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;switch (表达式){&lt;br&gt;
+case 取值 1: 语句块 1;break;&lt;br&gt;
+case 取值 n: 语句块 n;break; 		default: 语句块 n+1;break;&lt;br&gt;
+}&lt;/li&gt;
+&lt;li&gt;switch 语句有关规则 表达式的返回值必须是下述几种类型之一：int,byte,char,short,String；&lt;/li&gt;
+&lt;li&gt;case 子句中的取值必须是常量，且所有 case 子句中的取值应是不同的；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;while&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#while&#34;&gt;#&lt;/a&gt; while&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;while 循环&lt;br&gt;
+符合条件，循环继续执行；否则，循环退出&lt;br&gt;
+特点：先判断，再执行&lt;/li&gt;
+&lt;li&gt;do-while 循环&lt;br&gt;
+先执行一遍循环操作，符合条件，循环继续执行；否则，循环退出&lt;br&gt;
+特点：先执行，再判断&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;for&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#for&#34;&gt;#&lt;/a&gt; for&lt;/h3&gt;
+&lt;p&gt;语法：&lt;br&gt;
+for (初始化参数；判断条件；更新循环变量){&lt;br&gt;
+循环体；&lt;br&gt;
+}&lt;/p&gt;
+&lt;h2 id=&#34;数组&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数组&#34;&gt;#&lt;/a&gt; 数组&lt;/h2&gt;
+&lt;h3 id=&#34;冒泡排序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#冒泡排序&#34;&gt;#&lt;/a&gt; 冒泡排序&lt;/h3&gt;
+&lt;p&gt;原理：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;比较相邻的元素。如果第一个比第二个大，就交换他们两个。&lt;/li&gt;
+&lt;li&gt;对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;二分查找&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#二分查找&#34;&gt;#&lt;/a&gt; 二分查找&lt;/h3&gt;
+&lt;p&gt;二分查找也叫折半查找，是一种基本的查找算法，需要待查的表满足两个条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1. 查找表必须使用顺序的存储结构&lt;/li&gt;
+&lt;li&gt;2. 查找表必须按关键字大小有序排列&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;算法的基本思想是：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;方法重写：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;重写是子类对父类的允许访问的方法的&lt;strong&gt;实现过程&lt;/strong&gt;进行重新编写，&lt;strong&gt;返回值&lt;/strong&gt;和&lt;strong&gt;形参&lt;/strong&gt;都不能改变。&lt;/p&gt;
+&lt;p&gt;将查找表中间位置数据元素的关键字与给定关键字比较，如果相等则查找成功；&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;方法重载：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;在一个类中，方法名相同，参数不同。返回类型可以相同也可以不同。&lt;/p&gt;
+&lt;p&gt;否则利用中间元素将表一分为二，如果中间关键字大于给定关键字，则在前一子表中进行折半查找，否则在后一子表中进行折半查找。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;区别：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;方法重载&lt;/strong&gt;是一个类中定义了多个方法名相同，而他们的&lt;strong&gt;参数&lt;/strong&gt;的数量不同或数量相同而&lt;strong&gt;类型&lt;/strong&gt;和&lt;strong&gt;顺序&lt;/strong&gt;不同，则称为方法的重载。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;方法重写&lt;/strong&gt;是在子类存在方法与父类的&lt;strong&gt;方法名&lt;/strong&gt;相同，而且&lt;strong&gt;参数&lt;/strong&gt;的个数与类型一样，&lt;strong&gt; 返回值&lt;/strong&gt;也一样的方法，就称为重写。&lt;/p&gt;
+&lt;p&gt;重复以上过程直到找到满足条件的元素，则查找成功；或直到子表为空为止，此时查找不成功。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;接口和抽象类有什么区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#接口和抽象类有什么区别&#34;&gt;#&lt;/a&gt; 接口和抽象类有什么区别？&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;实现：抽象类的子类使用  extends 来继承；接口必须使用 implements 来实现接口。&lt;/li&gt;
-&lt;li&gt;构造函数：抽象类可以有构造函数；接口不能有。&lt;/li&gt;
-&lt;li&gt;实现数量：类可以实现很多个接口；但是只能继承一个抽象类。&lt;/li&gt;
-&lt;li&gt;访问修饰符：接口中的方法默认使用 public 修饰；抽象类中的方法可以是任意访问修饰符。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;静态变量和实例变量&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#静态变量和实例变量&#34;&gt;#&lt;/a&gt; 静态变量和实例变量&lt;/h4&gt;
-&lt;p&gt;** 静态变量：** 独立存在，属于类所有，可以直接类名加点调用静态变量名使用。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;实例变量&lt;/strong&gt;：需要先初始化该类，就是 new 该类后，才可以调用。但是该类被垃圾回收器回收后，该实例也将不存在。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;区别：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;1. 存储区域不同：静态变量存储在&lt;strong&gt;方法区&lt;/strong&gt;，普通变量存储在&lt;strong&gt;堆&lt;/strong&gt;中；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;2. 静态变量与类相关，普通变量则与实例相关&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;3. 内存分配方式不同。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;4. 生命周期不同。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;和的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#和的区别&#34;&gt;#&lt;/a&gt; &amp;amp; 和 &amp;amp;&amp;amp; 的区别&lt;/h4&gt;
-&lt;p&gt;&amp;amp; 运算符有两种用法：(1) 按位与；(2) 逻辑与。&lt;/p&gt;
-&lt;p&gt;&amp;amp;&amp;amp; 运算符是短路与运算。逻辑与跟短路与的差别是非常巨大的，虽然二者都要求运算符左右两端的布尔值都是 true 整个表达式的值才是 true。&amp;amp;&amp;amp; 之所以称为短路运算，是因为如果 &amp;amp;&amp;amp; 左边的表达式的值是 false，右边的表达式会被直接短路掉，不会进行运算。&lt;/p&gt;
-&lt;h4 id=&#34;final-有什么用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#final-有什么用&#34;&gt;#&lt;/a&gt; final 有什么用？&lt;/h4&gt;
-&lt;p&gt;用于修饰类、属性和方法；&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;被 final 修饰的类不可以被继承&lt;/li&gt;
-&lt;li&gt;被 final 修饰的方法不可以被重写&lt;/li&gt;
-&lt;li&gt;被 final 修饰的变量不可以被改变，被 final 修饰不可变的是变量的引用，而不是引用指向的内容，引用指向的内容是可以改变的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;final-finally-finalize区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#final-finally-finalize区别&#34;&gt;#&lt;/a&gt; final finally finalize 区别&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;final 可以修饰类、变量、方法，修饰类表示该类不能被继承、修饰方法表示该方法不能被重写、修饰变量表&lt;br&gt;
-示该变量是一个常量不能被重新赋值。&lt;/li&gt;
-&lt;li&gt;finally 一般作用在 try-catch 代码块中，在处理异常的时候，通常我们将一定要执行的代码方法 finally 代码块&lt;br&gt;
-中，表示不管是否出现异常，该代码块都会执行，一般用来存放一些关闭资源的代码。&lt;/li&gt;
-&lt;li&gt;finalize 是一个方法，属于 Object 类的一个方法，而 Object 类是所有类的父类，该方法一般由垃圾回收器来调&lt;br&gt;
-用，当我们调用 System.gc () 方法的时候，由垃圾回收器调用 finalize ()，回收垃圾，一个对象是否可回收的&lt;br&gt;
-最后判断。&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;二分查找递归写法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public int firstOccurrence (int [] nums,int target){
+	
+    int low = 0,high = nums.length - 1;
+    while(low &amp;lt;=  high){   
+        int mid = low + (high-low)/2;
+        if(nums[mid] == target){
+            return mid;
+        }
+        if(nums[mid] &amp;lt; target){
+            low = mid+1;
+        }else {
+            high = mid-1;
+        }
+    }
+    return -1;
+}
+&lt;/code&gt;&lt;/pre&gt;
 &lt;script&gt;
         document.querySelectorAll(&#39;.github-emoji&#39;)
           .forEach(el =&gt; {
@@ -190,7 +295,7 @@
             document.body.appendChild(img);
           });
       &lt;/script&gt;</content>
-        <category term="Java" />
-        <updated>2020-10-04T06:58:46.815Z</updated>
+        <category term="Java基础" />
+        <updated>2020-10-10T02:41:02.214Z</updated>
     </entry>
 </feed>
