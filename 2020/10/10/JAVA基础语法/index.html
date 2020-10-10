@@ -68,12 +68,12 @@ baocai's blog = 手撕包菜 = 学习笔记</title>
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2020-10-10 10:41:02">
+  <span class="item" title="创建时间：2020-10-10 12:45:31">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2020-10-10T10:41:02+08:00">2020-10-10</time>
+    <time itemprop="dateCreated datePublished" datetime="2020-10-10T12:45:31+08:00">2020-10-10</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
@@ -121,12 +121,12 @@ baocai's blog = 手撕包菜 = 学习笔记</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipey84bjtj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipexbei4hj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicliwyw55j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclga70tsj20zk0m84mr.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclgi503lj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclhpw3lwj20zk0m8gvw.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipewkhf1zj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciub8ja1j20zk0m81ky.jpg"></li>
         </ul>
       </div>
     </header>
@@ -175,11 +175,7 @@ baocai's blog = 手撕包菜 = 学习笔记</title>
     <h1 id="java基础语法"><a class="anchor" href="#java基础语法">#</a> JAVA 基础语法</h1>
 <h2 id="基础语法"><a class="anchor" href="#基础语法">#</a> 基础语法</h2>
 <h3 id="运算符"><a class="anchor" href="#运算符">#</a> 运算符</h3>
-<p>算数运算符</p>
-<p>关系运算符</p>
-<p>赋值运算符</p>
-<p>逻辑运算符</p>
-<p>三目运算符</p>
+<p>算数运算符、关系运算符、赋值运算符、逻辑运算符、三目运算符</p>
 <h3 id="数据类型"><a class="anchor" href="#数据类型">#</a> 数据类型</h3>
 <h4 id="基本数据类型"><a class="anchor" href="#基本数据类型">#</a> 基本数据类型</h4>
 <ul>
@@ -198,12 +194,19 @@ baocai's blog = 手撕包菜 = 学习笔记</title>
 <p>if 条件结构是根据条件判断之后再做处理</p>
 <h3 id="switch"><a class="anchor" href="#switch">#</a> switch</h3>
 <ul>
-<li>switch (表达式){<br>
-case 取值 1: 语句块 1;break;<br>
-case 取值 n: 语句块 n;break; 		default: 语句块 n+1;break;<br>
-}</li>
-<li>switch 语句有关规则 表达式的返回值必须是下述几种类型之一：int,byte,char,short,String；</li>
-<li>case 子句中的取值必须是常量，且所有 case 子句中的取值应是不同的；</li>
+<li>
+<p>switch (表达式){</p>
+<p>case 取值 1: 语句块 1;break;<br>
+case 取值 n: 语句块 n;break; 		<br>
+default: 语句块 n+1;break;<br>
+}</p>
+</li>
+<li>
+<p>switch 语句有关规则 表达式的返回值必须是下述几种类型之一：int,byte,char,short,String；</p>
+</li>
+<li>
+<p>case 子句中的取值必须是常量，且所有 case 子句中的取值应是不同的；</p>
+</li>
 </ul>
 <h3 id="while"><a class="anchor" href="#while">#</a> while</h3>
 <ul>
@@ -228,10 +231,14 @@ for (初始化参数；判断条件；更新循环变量){<br>
 </ul>
 <h3 id="二分查找"><a class="anchor" href="#二分查找">#</a> 二分查找</h3>
 <p>二分查找也叫折半查找，是一种基本的查找算法，需要待查的表满足两个条件：</p>
-<ul>
-<li>1. 查找表必须使用顺序的存储结构</li>
-<li>2. 查找表必须按关键字大小有序排列</li>
-</ul>
+<ol>
+<li>
+<p>查找表必须使用顺序的存储结构</p>
+</li>
+<li>
+<p>查找表必须按关键字大小有序排列</p>
+</li>
+</ol>
 <p>算法的基本思想是：</p>
 <ul>
 <li>
@@ -246,7 +253,6 @@ for (初始化参数；判断条件；更新循环变量){<br>
 </ul>
 <p>二分查找递归写法：</p>
 <pre><code>public int firstOccurrence (int [] nums,int target){
-	
     int low = 0,high = nums.length - 1;
     while(low &lt;=  high){   
         int mid = low + (high-low)/2;
@@ -294,7 +300,7 @@ for (初始化参数；判断条件；更新循环变量){<br>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2020-10-10 12:13:47" itemprop="dateModified" datetime="2020-10-10T12:13:47+08:00">2020-10-10</time>
+    <time title="修改时间：2020-10-10 12:52:53" itemprop="dateModified" datetime="2020-10-10T12:52:53+08:00">2020-10-10</time>
   </span>
 </div>
 
@@ -324,16 +330,16 @@ for (初始化参数；判断条件；更新循环变量){<br>
 
 <div class="nav">
     <div class="item left">
-    </div>
-    <div class="item right">
       
 
-  <a href="/2020/10/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicitf0kl1j20zk0m87fe.jpg" title="面向对象">
-  <span class="type">下一篇</span>
+  <a href="/2020/10/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclhtuo6nj20zk0m8ttm.jpg" title="面向对象">
+  <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> Java</span>
   <h3>面向对象</h3>
   </a>
 
+    </div>
+    <div class="item right">
     </div>
 </div>
 

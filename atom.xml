@@ -3,185 +3,9 @@
     <id>https://www.baocai-blog.cn</id>
     <title>手撕包菜</title>
     <link href="https://www.baocai-blog.cn" />
-    <updated>2020-10-10T04:07:06.642Z</updated>
+    <updated>2020-10-10T04:45:31.957Z</updated>
     <category term="面向对象" />
     <category term="Java基础" />
-    <entry>
-        <id>https://www.baocai-blog.cn/2020/10/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</id>
-        <title>面向对象</title>
-        <link rel="alternate" href="https://www.baocai-blog.cn/2020/10/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;面向对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#面向对象&#34;&gt;#&lt;/a&gt; 面向对象&lt;/h1&gt;
-&lt;h2 id=&#34;基础&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基础&#34;&gt;#&lt;/a&gt; 基础&lt;/h2&gt;
-&lt;h3 id=&#34;类与对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#类与对象&#34;&gt;#&lt;/a&gt; 类与对象&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;对象：对象是类的实例&lt;/li&gt;
-&lt;li&gt;类：类是一个模板，描述一类对象的行为和状态&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;构造方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#构造方法&#34;&gt;#&lt;/a&gt; 构造方法&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;用于对象初始化。&lt;/li&gt;
-&lt;li&gt;构造方法的名称必须与类同名，一个类可以有多个构造方法。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;方法重载方法重写&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法重载方法重写&#34;&gt;#&lt;/a&gt; 方法重载 / 方法重写&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;重写：重写是子类对父类的允许访问的方法的实现过程进行重新编写，返回值和形参都不能改变。子类可以根据需要，定义特定于自己的行为。&lt;/li&gt;
-&lt;li&gt;重载：重载是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;高级&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#高级&#34;&gt;#&lt;/a&gt; 高级&lt;/h2&gt;
-&lt;h3 id=&#34;final关键字&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#final关键字&#34;&gt;#&lt;/a&gt; final 关键字&lt;/h3&gt;
-&lt;p&gt;1.final 修饰的类叫最终类，该类不能被继承。&lt;br&gt;
-2.final 修饰的方法不能被重写。&lt;br&gt;
-3.final 修饰的变量叫常量，常量必须初始化，初始化之后值就不能被修改&lt;/p&gt;
-&lt;h3 id=&#34;抽象类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#抽象类&#34;&gt;#&lt;/a&gt; 抽象类&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;抽象类不能被实例化&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;抽象类中不一定包含抽象方法，但是有抽象方法的类必定是抽象类。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;抽象类中的抽象方法只是声明，不包含方法体，就是不给出方法的具体实现也就是方法的具体功能。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;构造方法，类方法（用 static 修饰的方法）不能声明为抽象方法。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;抽象类的子类必须给出抽象类中的抽象方法的具体实现，除非该子类也是抽象类。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;接口&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#接口&#34;&gt;#&lt;/a&gt; 接口&lt;/h3&gt;
-&lt;p&gt;接口是抽象方法的集合&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;定义格式：&lt;br&gt;
-interface 接口名称 { &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;
-全局常量；&amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;
-抽象方法；&amp;nbsp;&lt;br&gt;
-}&lt;/li&gt;
-&lt;li&gt;接口和抽象类的区别：&lt;br&gt;
-1、抽象类要被子类继承，接口要被类实现。&lt;br&gt;
-2、接口只能声明抽象方法，抽象类中可以声明抽象方法，也可以写非抽象方法。&lt;br&gt;
-3、接口里定义的变量只能是公共的静态的常量，抽象类中的变量是普通变量。&lt;br&gt;
-4、抽象类使用继承来使用，无法多继承。接口使用实现来使用，可以多实现&lt;br&gt;
- 5、抽象类中可以包含 static 方法 ，但是接口中不允许（静态方法不能被子类重写，因此接口中不能声明 静态方法）     6、接口不能有构造方法，但是抽象类可以有&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;equals&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#equals&#34;&gt;#&lt;/a&gt; equals&lt;/h3&gt;
-&lt;h3 id=&#34;内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#内部类&#34;&gt;#&lt;/a&gt; 内部类&lt;/h3&gt;
-&lt;h4 id=&#34;成员内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#成员内部类&#34;&gt;#&lt;/a&gt; 成员内部类&lt;/h4&gt;
-&lt;p&gt;成员内部类是最普通的内部类，它的定义为位于另一个类的内部，形如下面的形式：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;class Outer { &amp;nbsp; &amp;nbsp;
-	private double x = 0; &amp;nbsp; &amp;nbsp;
-	public Outer(double x) { 
-	this.x = x; 
-    } &amp;nbsp; &amp;nbsp;  &amp;nbsp; &amp;nbsp;
-class Inner { &amp;nbsp; //内部类 &amp;nbsp; &amp;nbsp; &amp;nbsp;
-	public void say() {
-    	System.out.println(&#34;x=&#34;+x);&amp;nbsp;  
-    } &amp;nbsp;
-} 
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;特点： 成员内部类可以无条件访问外部类的所有成员属性和成员方法（包括 private 成员和静态成员）。&lt;/p&gt;
-&lt;h4 id=&#34;局部内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#局部内部类&#34;&gt;#&lt;/a&gt; 局部内部类&lt;/h4&gt;
-&lt;p&gt;局部内部类是定义在一个方法或者一个作用域里面的类，它和成员内部类的区别在于局部内部类的访问仅限 于方法内或者该作用域内。&lt;br&gt;
-例如：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;	class Person{ &amp;nbsp;  
-		public Person() {
- &amp;nbsp; &amp;nbsp;	}  
-    }
-    
-    class Man{ &amp;nbsp; &amp;nbsp; &amp;nbsp;  
-    	public Man(){
- &amp;nbsp; &amp;nbsp; &amp;nbsp;  }
- &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;public People getPerson(){ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  
-        class Student extends People{        
-        //局部内部类 
-        int age =0; &amp;nbsp;  
-        } &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  
-        return new Student(); &amp;nbsp;   
-        }   
-    }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;匿名内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#匿名内部类&#34;&gt;#&lt;/a&gt; 匿名内部类&lt;/h4&gt;
-&lt;p&gt;new 父类构造器（参数列表）| 实现接口（） { &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;
-// 匿名内部类的类体部分&lt;br&gt;
-}&lt;/p&gt;
-&lt;h4 id=&#34;静态内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#静态内部类&#34;&gt;#&lt;/a&gt; 静态内部类&lt;/h4&gt;
-&lt;p&gt;静态内部类是不需要依赖于外部类对象的，并且它不能使用外部类的非 static 成员变量或者方法.&lt;br&gt;
- 格式：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;public class Test { &amp;nbsp; 
-	public static void main(String[] args)  { &amp;nbsp; &amp;nbsp; &amp;nbsp; 
-	Outter.Inner inner = new Outter.Inner(); &amp;nbsp; 
-	} 
-}
- 
-class Outter { &amp;nbsp; &amp;nbsp;
-	public Outter() { &amp;nbsp;
-  	} &amp;nbsp; &amp;nbsp;  &amp;nbsp; &amp;nbsp;
-static class Inner { &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;
-	public Inner() { &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  &amp;nbsp; 
-    } &amp;nbsp; 
-} 
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;进阶&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#进阶&#34;&gt;#&lt;/a&gt; 进阶&lt;/h2&gt;
-&lt;h3 id=&#34;封装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#封装&#34;&gt;#&lt;/a&gt; 封装&lt;/h3&gt;
-&lt;p&gt;private 修饰变量&lt;br&gt;
- Getter/Setter&lt;/p&gt;
-&lt;h3 id=&#34;this&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#this&#34;&gt;#&lt;/a&gt; this&lt;/h3&gt;
-&lt;p&gt;使用 this 关键字可以完成以下的操作：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;调用类中的属性&lt;/li&gt;
-&lt;li&gt;调用类中的方法或构造方法&lt;/li&gt;
-&lt;li&gt;表示当前对象&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;static&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#static&#34;&gt;#&lt;/a&gt; static&lt;/h3&gt;
-&lt;p&gt;static 表示 “静态” 的意思，可以用来修饰成员变量和成员方法&lt;br&gt;
-重点：&lt;br&gt;
-1. 静态成员 在类加载时加载并初始化。&lt;br&gt;
-2. 无论一个类存在多少个对象，静态的属性，永远在内存中只有一份&lt;br&gt;
- 3. 在访问时： 静态不能访问非静态，非静态可以访问静态！&lt;/p&gt;
-&lt;h2 id=&#34;异常处理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#异常处理&#34;&gt;#&lt;/a&gt; 异常处理&lt;/h2&gt;
-&lt;h3 id=&#34;try-catch&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#try-catch&#34;&gt;#&lt;/a&gt; try&amp;nbsp; catch&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;异常指的是 Exception，Exception 类，在 Java 中存在一个父 Throwable（可能的抛出）&lt;/li&gt;
-&lt;li&gt;Throwable 存在两个子类：&lt;br&gt;
-1.Error：表示的是错误，是 JVM 发出的错误操作，只能尽量避免，无法用代码处理。&lt;br&gt;
-2.Exception：一般表示所有程序中的错误，所以一般在程序中将进行 try…catch 的处理。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;throwthrows&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#throwthrows&#34;&gt;#&lt;/a&gt; throw/throws&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;throws 关键字：&lt;br&gt;
-此关键字主要在方法的声明上使 用，表示方法中不处理异常，而交给调用处处理。&lt;br&gt;
-格式：&lt;br&gt;
-返回值 方法名称 () throws Exception {&lt;br&gt;
-}&lt;/li&gt;
-&lt;li&gt;throw 关键字&lt;br&gt;
- throw 关键字表示在程序中人为的抛出一个异常，因为从异常处理机制来看，所有的异常一旦产生之后，实际上抛出 的就是一个异常类的实例化对象，那么此对象也可以由 throw 直接抛出。&lt;br&gt;
-代码： throw new Exception (&#34;抛着玩的。&#34;) ;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement(&#39;img&#39;);
-            img.style = &#39;display:none !important;&#39;;
-            img.src = el.dataset.src;
-            img.addEventListener(&#39;error&#39;, () =&gt; {
-              img.remove();
-              el.style.color = &#39;inherit&#39;;
-              el.style.backgroundImage = &#39;none&#39;;
-              el.style.background = &#39;none&#39;;
-            });
-            img.addEventListener(&#39;load&#39;, () =&gt; {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      &lt;/script&gt;</content>
-        <category term="面向对象" />
-        <updated>2020-10-10T04:07:06.642Z</updated>
-    </entry>
     <entry>
         <id>https://www.baocai-blog.cn/2020/10/10/JAVA%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</id>
         <title>Java基础语法</title>
@@ -189,11 +13,7 @@ static class Inner { &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;java基础语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#java基础语法&#34;&gt;#&lt;/a&gt; JAVA 基础语法&lt;/h1&gt;
 &lt;h2 id=&#34;基础语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基础语法&#34;&gt;#&lt;/a&gt; 基础语法&lt;/h2&gt;
 &lt;h3 id=&#34;运算符&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#运算符&#34;&gt;#&lt;/a&gt; 运算符&lt;/h3&gt;
-&lt;p&gt;算数运算符&lt;/p&gt;
-&lt;p&gt;关系运算符&lt;/p&gt;
-&lt;p&gt;赋值运算符&lt;/p&gt;
-&lt;p&gt;逻辑运算符&lt;/p&gt;
-&lt;p&gt;三目运算符&lt;/p&gt;
+&lt;p&gt;算数运算符、关系运算符、赋值运算符、逻辑运算符、三目运算符&lt;/p&gt;
 &lt;h3 id=&#34;数据类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据类型&#34;&gt;#&lt;/a&gt; 数据类型&lt;/h3&gt;
 &lt;h4 id=&#34;基本数据类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基本数据类型&#34;&gt;#&lt;/a&gt; 基本数据类型&lt;/h4&gt;
 &lt;ul&gt;
@@ -212,12 +32,19 @@ static class Inner { &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;
 &lt;p&gt;if 条件结构是根据条件判断之后再做处理&lt;/p&gt;
 &lt;h3 id=&#34;switch&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#switch&#34;&gt;#&lt;/a&gt; switch&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;switch (表达式){&lt;br&gt;
-case 取值 1: 语句块 1;break;&lt;br&gt;
-case 取值 n: 语句块 n;break; 		default: 语句块 n+1;break;&lt;br&gt;
-}&lt;/li&gt;
-&lt;li&gt;switch 语句有关规则 表达式的返回值必须是下述几种类型之一：int,byte,char,short,String；&lt;/li&gt;
-&lt;li&gt;case 子句中的取值必须是常量，且所有 case 子句中的取值应是不同的；&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;switch (表达式){&lt;/p&gt;
+&lt;p&gt;case 取值 1: 语句块 1;break;&lt;br&gt;
+case 取值 n: 语句块 n;break; 		&lt;br&gt;
+default: 语句块 n+1;break;&lt;br&gt;
+}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;switch 语句有关规则 表达式的返回值必须是下述几种类型之一：int,byte,char,short,String；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;case 子句中的取值必须是常量，且所有 case 子句中的取值应是不同的；&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;while&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#while&#34;&gt;#&lt;/a&gt; while&lt;/h3&gt;
 &lt;ul&gt;
@@ -242,10 +69,14 @@ for (初始化参数；判断条件；更新循环变量){&lt;br&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;二分查找&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#二分查找&#34;&gt;#&lt;/a&gt; 二分查找&lt;/h3&gt;
 &lt;p&gt;二分查找也叫折半查找，是一种基本的查找算法，需要待查的表满足两个条件：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;1. 查找表必须使用顺序的存储结构&lt;/li&gt;
-&lt;li&gt;2. 查找表必须按关键字大小有序排列&lt;/li&gt;
-&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;查找表必须使用顺序的存储结构&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查找表必须按关键字大小有序排列&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;算法的基本思想是：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -260,7 +91,6 @@ for (初始化参数；判断条件；更新循环变量){&lt;br&gt;
 &lt;/ul&gt;
 &lt;p&gt;二分查找递归写法：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;public int firstOccurrence (int [] nums,int target){
-	
     int low = 0,high = nums.length - 1;
     while(low &amp;lt;=  high){   
         int mid = low + (high-low)/2;
@@ -296,6 +126,213 @@ for (初始化参数；判断条件；更新循环变量){&lt;br&gt;
           });
       &lt;/script&gt;</content>
         <category term="Java基础" />
-        <updated>2020-10-10T02:41:02.214Z</updated>
+        <updated>2020-10-10T04:45:31.957Z</updated>
+    </entry>
+    <entry>
+        <id>https://www.baocai-blog.cn/2020/10/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</id>
+        <title>面向对象</title>
+        <link rel="alternate" href="https://www.baocai-blog.cn/2020/10/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;面向对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#面向对象&#34;&gt;#&lt;/a&gt; 面向对象&lt;/h1&gt;
+&lt;h2 id=&#34;基础&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基础&#34;&gt;#&lt;/a&gt; 基础&lt;/h2&gt;
+&lt;h3 id=&#34;类与对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#类与对象&#34;&gt;#&lt;/a&gt; 类与对象&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;对象：对象是类的实例&lt;/li&gt;
+&lt;li&gt;类：类是一个模板，描述一类对象的行为和状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;构造方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#构造方法&#34;&gt;#&lt;/a&gt; 构造方法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;用于对象初始化。&lt;/li&gt;
+&lt;li&gt;构造方法的名称必须与类同名，一个类可以有多个构造方法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;方法重载方法重写&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法重载方法重写&#34;&gt;#&lt;/a&gt; 方法重载 / 方法重写&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;重写：重写是子类对父类的允许访问的方法的实现过程进行重新编写，返回值和形参都不能改变。子类可以根据需要，定义特定于自己的行为。&lt;/li&gt;
+&lt;li&gt;重载：重载是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;高级&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#高级&#34;&gt;#&lt;/a&gt; 高级&lt;/h2&gt;
+&lt;h3 id=&#34;final关键字&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#final关键字&#34;&gt;#&lt;/a&gt; final 关键字&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;final 修饰的类叫最终类，该类不能被继承。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;final 修饰的方法不能被重写。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;final 修饰的变量叫常量，常量必须初始化，初始化之后值就不能被修改&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;抽象类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#抽象类&#34;&gt;#&lt;/a&gt; 抽象类&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;抽象类不能被实例化&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;抽象类中不一定包含抽象方法，但是有抽象方法的类必定是抽象类。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;抽象类中的抽象方法只是声明，不包含方法体，就是不给出方法的具体实现也就是方法的具体功能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;构造方法，类方法（用 static 修饰的方法）不能声明为抽象方法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;抽象类的子类必须给出抽象类中的抽象方法的具体实现，除非该子类也是抽象类。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;接口&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#接口&#34;&gt;#&lt;/a&gt; 接口&lt;/h3&gt;
+&lt;p&gt;接口是抽象方法的集合&lt;br&gt;
+定义格式：&lt;br&gt;
+interface 接口名称 { &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;
+全局常量；&amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;
+抽象方法；&amp;nbsp;&lt;br&gt;
+}&lt;br&gt;
+ 接口和抽象类的区别：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;抽象类要被子类继承，接口要被类实现。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;接口只能声明抽象方法，抽象类中可以声明抽象方法，也可以写非抽象方法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;接口里定义的变量只能是公共的静态的常量，抽象类中的变量是普通变量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;抽象类使用继承来使用，无法多继承。接口使用实现来使用，可以多实现&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;抽象类中可以包含 static 方法 ，但是接口中不允许（静态方法不能被子类重写，因此接口中不能声明 静态方法）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;接口不能有构造方法，但是抽象类可以有&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;equals&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#equals&#34;&gt;#&lt;/a&gt; equals&lt;/h3&gt;
+&lt;h3 id=&#34;内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#内部类&#34;&gt;#&lt;/a&gt; 内部类&lt;/h3&gt;
+&lt;h4 id=&#34;成员内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#成员内部类&#34;&gt;#&lt;/a&gt; 成员内部类&lt;/h4&gt;
+&lt;p&gt;成员内部类是最普通的内部类，它的定义为位于另一个类的内部，形如下面的形式：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class Outer { &amp;nbsp; &amp;nbsp;
+	private double x = 0; &amp;nbsp; &amp;nbsp;
+	public Outer(double x) { 
+	this.x = x; 
+    } &amp;nbsp; &amp;nbsp;  &amp;nbsp; &amp;nbsp;
+class Inner { &amp;nbsp; //内部类 &amp;nbsp; &amp;nbsp; &amp;nbsp;
+	public void say() {
+    	System.out.println(&#34;x=&#34;+x);&amp;nbsp;  
+    } &amp;nbsp;
+} 
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;特点： 成员内部类可以无条件访问外部类的所有成员属性和成员方法（包括 private 成员和静态成员）。&lt;/p&gt;
+&lt;h4 id=&#34;局部内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#局部内部类&#34;&gt;#&lt;/a&gt; 局部内部类&lt;/h4&gt;
+&lt;p&gt;局部内部类是定义在一个方法或者一个作用域里面的类，它和成员内部类的区别在于局部内部类的访问仅限 于方法内或者该作用域内。&lt;br&gt;
+例如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;	class Person{ &amp;nbsp;  
+		public Person() {
+		}  
+    }&amp;nbsp;  
+    class Man{ &amp;nbsp; &amp;nbsp; &amp;nbsp;  
+    	public Man(){
+ &amp;nbsp; &amp;nbsp; &amp;nbsp;  }
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;public People getPerson(){         
+        	class Student extends People{        
+        	  //局部内部类 
+       		  int age =0; &amp;nbsp;  
+       		} &amp;nbsp;      
+        return new Student(); &amp;nbsp;   
+        }   
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;匿名内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#匿名内部类&#34;&gt;#&lt;/a&gt; 匿名内部类&lt;/h4&gt;
+&lt;p&gt;new 父类构造器（参数列表）| 实现接口（） { &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;
+// 匿名内部类的类体部分&lt;br&gt;
+}&lt;/p&gt;
+&lt;h4 id=&#34;静态内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#静态内部类&#34;&gt;#&lt;/a&gt; 静态内部类&lt;/h4&gt;
+&lt;p&gt;静态内部类是不需要依赖于外部类对象的，并且它不能使用外部类的非 static 成员变量或者方法.&lt;br&gt;
+ 格式：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public class Test { &amp;nbsp; 
+	public static void main(String[] args)  { &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+		Outter.Inner inner = new Outter.Inner(); &amp;nbsp; 
+	} 
+}
+ 
+class Outter { &amp;nbsp; &amp;nbsp;
+	public Outter() { &amp;nbsp;
+  	} &amp;nbsp; &amp;nbsp;  &amp;nbsp; &amp;nbsp;
+static class Inner { &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;
+	public Inner() { &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+    } &amp;nbsp; 
+} 
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;进阶&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#进阶&#34;&gt;#&lt;/a&gt; 进阶&lt;/h2&gt;
+&lt;h3 id=&#34;封装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#封装&#34;&gt;#&lt;/a&gt; 封装&lt;/h3&gt;
+&lt;p&gt;private 修饰变量&lt;br&gt;
+ Getter/Setter&lt;/p&gt;
+&lt;h3 id=&#34;this&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#this&#34;&gt;#&lt;/a&gt; this&lt;/h3&gt;
+&lt;p&gt;使用 this 关键字可以完成以下的操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;调用类中的属性&lt;/li&gt;
+&lt;li&gt;调用类中的方法或构造方法&lt;/li&gt;
+&lt;li&gt;表示当前对象&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;static&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#static&#34;&gt;#&lt;/a&gt; static&lt;/h3&gt;
+&lt;p&gt;static 表示 “静态” 的意思，可以用来修饰成员变量和成员方法&lt;br&gt;
+重点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;静态成员 在类加载时加载并初始化。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;无论一个类存在多少个对象，静态的属性，永远在内存中只有一份&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在访问时： 静态不能访问非静态，非静态可以访问静态！&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;异常处理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#异常处理&#34;&gt;#&lt;/a&gt; 异常处理&lt;/h2&gt;
+&lt;h3 id=&#34;try-catch&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#try-catch&#34;&gt;#&lt;/a&gt; try&amp;nbsp; catch&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;异常指的是 Exception，Exception 类，在 Java 中存在一个父 Throwable（可能的抛出）&lt;/li&gt;
+&lt;li&gt;Throwable 存在两个子类：
+&lt;ol&gt;
+&lt;li&gt;Error：表示的是错误，是 JVM 发出的错误操作，只能尽量避免，无法用代码处理。&lt;/li&gt;
+&lt;li&gt;Exception：一般表示所有程序中的错误，所以一般在程序中将进行 try…catch 的处理。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;throwthrows&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#throwthrows&#34;&gt;#&lt;/a&gt; throw/throws&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;throws 关键字：&lt;br&gt;
+此关键字主要在方法的声明上使 用，表示方法中不处理异常，而交给调用处处理。&lt;br&gt;
+格式：&lt;br&gt;
+返回值 方法名称 () throws Exception {&lt;br&gt;
+}&lt;/li&gt;
+&lt;li&gt;throw 关键字&lt;br&gt;
+ throw 关键字表示在程序中人为的抛出一个异常，因为从异常处理机制来看，所有的异常一旦产生之后，实际上抛出 的就是一个异常类的实例化对象，那么此对象也可以由 throw 直接抛出。&lt;br&gt;
+代码： throw new Exception (&#34;抛着玩的。&#34;) ;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt;</content>
+        <category term="面向对象" />
+        <updated>2020-10-10T04:42:25.431Z</updated>
     </entry>
 </feed>

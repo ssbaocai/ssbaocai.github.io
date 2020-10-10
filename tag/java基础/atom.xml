@@ -3,7 +3,7 @@
     <id>https://www.baocai-blog.cn</id>
     <title>手撕包菜 • Posts by &#34;java基础&#34; tag</title>
     <link href="https://www.baocai-blog.cn" />
-    <updated>2020-10-10T02:41:02.214Z</updated>
+    <updated>2020-10-10T04:45:31.957Z</updated>
     <category term="面向对象" />
     <category term="Java基础" />
     <entry>
@@ -13,11 +13,7 @@
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;java基础语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#java基础语法&#34;&gt;#&lt;/a&gt; JAVA 基础语法&lt;/h1&gt;
 &lt;h2 id=&#34;基础语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基础语法&#34;&gt;#&lt;/a&gt; 基础语法&lt;/h2&gt;
 &lt;h3 id=&#34;运算符&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#运算符&#34;&gt;#&lt;/a&gt; 运算符&lt;/h3&gt;
-&lt;p&gt;算数运算符&lt;/p&gt;
-&lt;p&gt;关系运算符&lt;/p&gt;
-&lt;p&gt;赋值运算符&lt;/p&gt;
-&lt;p&gt;逻辑运算符&lt;/p&gt;
-&lt;p&gt;三目运算符&lt;/p&gt;
+&lt;p&gt;算数运算符、关系运算符、赋值运算符、逻辑运算符、三目运算符&lt;/p&gt;
 &lt;h3 id=&#34;数据类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据类型&#34;&gt;#&lt;/a&gt; 数据类型&lt;/h3&gt;
 &lt;h4 id=&#34;基本数据类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基本数据类型&#34;&gt;#&lt;/a&gt; 基本数据类型&lt;/h4&gt;
 &lt;ul&gt;
@@ -36,12 +32,19 @@
 &lt;p&gt;if 条件结构是根据条件判断之后再做处理&lt;/p&gt;
 &lt;h3 id=&#34;switch&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#switch&#34;&gt;#&lt;/a&gt; switch&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;switch (表达式){&lt;br&gt;
-case 取值 1: 语句块 1;break;&lt;br&gt;
-case 取值 n: 语句块 n;break; 		default: 语句块 n+1;break;&lt;br&gt;
-}&lt;/li&gt;
-&lt;li&gt;switch 语句有关规则 表达式的返回值必须是下述几种类型之一：int,byte,char,short,String；&lt;/li&gt;
-&lt;li&gt;case 子句中的取值必须是常量，且所有 case 子句中的取值应是不同的；&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;switch (表达式){&lt;/p&gt;
+&lt;p&gt;case 取值 1: 语句块 1;break;&lt;br&gt;
+case 取值 n: 语句块 n;break; 		&lt;br&gt;
+default: 语句块 n+1;break;&lt;br&gt;
+}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;switch 语句有关规则 表达式的返回值必须是下述几种类型之一：int,byte,char,short,String；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;case 子句中的取值必须是常量，且所有 case 子句中的取值应是不同的；&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;while&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#while&#34;&gt;#&lt;/a&gt; while&lt;/h3&gt;
 &lt;ul&gt;
@@ -66,10 +69,14 @@ for (初始化参数；判断条件；更新循环变量){&lt;br&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;二分查找&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#二分查找&#34;&gt;#&lt;/a&gt; 二分查找&lt;/h3&gt;
 &lt;p&gt;二分查找也叫折半查找，是一种基本的查找算法，需要待查的表满足两个条件：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;1. 查找表必须使用顺序的存储结构&lt;/li&gt;
-&lt;li&gt;2. 查找表必须按关键字大小有序排列&lt;/li&gt;
-&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;查找表必须使用顺序的存储结构&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查找表必须按关键字大小有序排列&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;算法的基本思想是：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -84,7 +91,6 @@ for (初始化参数；判断条件；更新循环变量){&lt;br&gt;
 &lt;/ul&gt;
 &lt;p&gt;二分查找递归写法：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;public int firstOccurrence (int [] nums,int target){
-	
     int low = 0,high = nums.length - 1;
     while(low &amp;lt;=  high){   
         int mid = low + (high-low)/2;
@@ -120,6 +126,6 @@ for (初始化参数；判断条件；更新循环变量){&lt;br&gt;
           });
       &lt;/script&gt;</content>
         <category term="Java基础" />
-        <updated>2020-10-10T02:41:02.214Z</updated>
+        <updated>2020-10-10T04:45:31.957Z</updated>
     </entry>
 </feed>

@@ -3,7 +3,7 @@
     <id>https://www.baocai-blog.cn</id>
     <title>手撕包菜 • Posts by &#34;面向对象&#34; tag</title>
     <link href="https://www.baocai-blog.cn" />
-    <updated>2020-10-10T04:07:06.642Z</updated>
+    <updated>2020-10-10T04:42:25.431Z</updated>
     <category term="面向对象" />
     <category term="Java基础" />
     <entry>
@@ -29,9 +29,17 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;高级&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#高级&#34;&gt;#&lt;/a&gt; 高级&lt;/h2&gt;
 &lt;h3 id=&#34;final关键字&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#final关键字&#34;&gt;#&lt;/a&gt; final 关键字&lt;/h3&gt;
-&lt;p&gt;1.final 修饰的类叫最终类，该类不能被继承。&lt;br&gt;
-2.final 修饰的方法不能被重写。&lt;br&gt;
-3.final 修饰的变量叫常量，常量必须初始化，初始化之后值就不能被修改&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;final 修饰的类叫最终类，该类不能被继承。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;final 修饰的方法不能被重写。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;final 修饰的变量叫常量，常量必须初始化，初始化之后值就不能被修改&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;抽象类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#抽象类&#34;&gt;#&lt;/a&gt; 抽象类&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -51,20 +59,33 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;接口&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#接口&#34;&gt;#&lt;/a&gt; 接口&lt;/h3&gt;
-&lt;p&gt;接口是抽象方法的集合&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;定义格式：&lt;br&gt;
+&lt;p&gt;接口是抽象方法的集合&lt;br&gt;
+定义格式：&lt;br&gt;
 interface 接口名称 { &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;
 全局常量；&amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;br&gt;
 抽象方法；&amp;nbsp;&lt;br&gt;
-}&lt;/li&gt;
-&lt;li&gt;接口和抽象类的区别：&lt;br&gt;
-1、抽象类要被子类继承，接口要被类实现。&lt;br&gt;
-2、接口只能声明抽象方法，抽象类中可以声明抽象方法，也可以写非抽象方法。&lt;br&gt;
-3、接口里定义的变量只能是公共的静态的常量，抽象类中的变量是普通变量。&lt;br&gt;
-4、抽象类使用继承来使用，无法多继承。接口使用实现来使用，可以多实现&lt;br&gt;
- 5、抽象类中可以包含 static 方法 ，但是接口中不允许（静态方法不能被子类重写，因此接口中不能声明 静态方法）     6、接口不能有构造方法，但是抽象类可以有&lt;/li&gt;
-&lt;/ul&gt;
+}&lt;br&gt;
+ 接口和抽象类的区别：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;抽象类要被子类继承，接口要被类实现。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;接口只能声明抽象方法，抽象类中可以声明抽象方法，也可以写非抽象方法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;接口里定义的变量只能是公共的静态的常量，抽象类中的变量是普通变量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;抽象类使用继承来使用，无法多继承。接口使用实现来使用，可以多实现&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;抽象类中可以包含 static 方法 ，但是接口中不允许（静态方法不能被子类重写，因此接口中不能声明 静态方法）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;接口不能有构造方法，但是抽象类可以有&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;equals&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#equals&#34;&gt;#&lt;/a&gt; equals&lt;/h3&gt;
 &lt;h3 id=&#34;内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#内部类&#34;&gt;#&lt;/a&gt; 内部类&lt;/h3&gt;
 &lt;h4 id=&#34;成员内部类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#成员内部类&#34;&gt;#&lt;/a&gt; 成员内部类&lt;/h4&gt;
@@ -87,17 +108,16 @@ class Inner { &amp;nbsp; //内部类 &amp;nbsp; &amp;nbsp; &amp;nbsp;
 例如：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;	class Person{ &amp;nbsp;  
 		public Person() {
- &amp;nbsp; &amp;nbsp;	}  
-    }
-    
+		}  
+    }&amp;nbsp;  
     class Man{ &amp;nbsp; &amp;nbsp; &amp;nbsp;  
     	public Man(){
  &amp;nbsp; &amp;nbsp; &amp;nbsp;  }
- &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;public People getPerson(){ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  
-        class Student extends People{        
-        //局部内部类 
-        int age =0; &amp;nbsp;  
-        } &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  
+ &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;public People getPerson(){         
+        	class Student extends People{        
+        	  //局部内部类 
+       		  int age =0; &amp;nbsp;  
+       		} &amp;nbsp;      
         return new Student(); &amp;nbsp;   
         }   
     }
@@ -111,7 +131,7 @@ class Inner { &amp;nbsp; //内部类 &amp;nbsp; &amp;nbsp; &amp;nbsp;
  格式：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;public class Test { &amp;nbsp; 
 	public static void main(String[] args)  { &amp;nbsp; &amp;nbsp; &amp;nbsp; 
-	Outter.Inner inner = new Outter.Inner(); &amp;nbsp; 
+		Outter.Inner inner = new Outter.Inner(); &amp;nbsp; 
 	} 
 }
  
@@ -119,7 +139,7 @@ class Outter { &amp;nbsp; &amp;nbsp;
 	public Outter() { &amp;nbsp;
   	} &amp;nbsp; &amp;nbsp;  &amp;nbsp; &amp;nbsp;
 static class Inner { &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;
-	public Inner() { &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  &amp;nbsp; 
+	public Inner() { &amp;nbsp; &amp;nbsp; &amp;nbsp; 
     } &amp;nbsp; 
 } 
 }
@@ -137,17 +157,28 @@ static class Inner { &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;
 &lt;/ul&gt;
 &lt;h3 id=&#34;static&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#static&#34;&gt;#&lt;/a&gt; static&lt;/h3&gt;
 &lt;p&gt;static 表示 “静态” 的意思，可以用来修饰成员变量和成员方法&lt;br&gt;
-重点：&lt;br&gt;
-1. 静态成员 在类加载时加载并初始化。&lt;br&gt;
-2. 无论一个类存在多少个对象，静态的属性，永远在内存中只有一份&lt;br&gt;
- 3. 在访问时： 静态不能访问非静态，非静态可以访问静态！&lt;/p&gt;
+重点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;静态成员 在类加载时加载并初始化。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;无论一个类存在多少个对象，静态的属性，永远在内存中只有一份&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在访问时： 静态不能访问非静态，非静态可以访问静态！&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&#34;异常处理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#异常处理&#34;&gt;#&lt;/a&gt; 异常处理&lt;/h2&gt;
 &lt;h3 id=&#34;try-catch&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#try-catch&#34;&gt;#&lt;/a&gt; try&amp;nbsp; catch&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;异常指的是 Exception，Exception 类，在 Java 中存在一个父 Throwable（可能的抛出）&lt;/li&gt;
-&lt;li&gt;Throwable 存在两个子类：&lt;br&gt;
-1.Error：表示的是错误，是 JVM 发出的错误操作，只能尽量避免，无法用代码处理。&lt;br&gt;
-2.Exception：一般表示所有程序中的错误，所以一般在程序中将进行 try…catch 的处理。&lt;/li&gt;
+&lt;li&gt;Throwable 存在两个子类：
+&lt;ol&gt;
+&lt;li&gt;Error：表示的是错误，是 JVM 发出的错误操作，只能尽量避免，无法用代码处理。&lt;/li&gt;
+&lt;li&gt;Exception：一般表示所有程序中的错误，所以一般在程序中将进行 try…catch 的处理。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;throwthrows&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#throwthrows&#34;&gt;#&lt;/a&gt; throw/throws&lt;/h3&gt;
 &lt;ul&gt;
@@ -180,6 +211,6 @@ static class Inner { &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;
           });
       &lt;/script&gt;</content>
         <category term="面向对象" />
-        <updated>2020-10-10T04:07:06.642Z</updated>
+        <updated>2020-10-10T04:42:25.431Z</updated>
     </entry>
 </feed>
