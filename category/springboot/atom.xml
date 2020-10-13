@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://www.baocai-blog.cn</id>
+    <title>手撕包菜 • Posts by &#34;springboot&#34; category</title>
+    <link href="https://www.baocai-blog.cn" />
+    <updated>2020-10-13T13:46:19.631Z</updated>
+    <category term="Java基础" />
+    <category term="框架" />
+    <category term="数据库" />
+    <category term="面向对象" />
+    <entry>
+        <id>https://www.baocai-blog.cn/2020/10/13/SpringBoot/</id>
+        <title>SpringBoot</title>
+        <link rel="alternate" href="https://www.baocai-blog.cn/2020/10/13/SpringBoot/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;springboot&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springboot&#34;&gt;#&lt;/a&gt; SpringBoot&lt;/h1&gt;
+&lt;h2 id=&#34;概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h2&gt;
+&lt;h3 id=&#34;什么是springboot&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是springboot&#34;&gt;#&lt;/a&gt; 什么是 SpringBoot&lt;/h3&gt;
+&lt;p&gt;spring boot 为 spring 服务，用来简化新 spring 应用的初始搭建以及开发过程&lt;/p&gt;
+&lt;h3 id=&#34;优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#优点&#34;&gt;#&lt;/a&gt; 优点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;减少开发，测试时间和努力。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 JavaConfig 有助于避免使用 XML。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;避免大量的 Maven 导入和各种版本冲突。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;提供意见发展方法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过提供默认值快速开始开发。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;没有单独的 Web 服务器需要。这意味着你不再需要启动 Tomcat，Glassfish 或其他任何东西。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;需要更少的配置 因为没有 web.xml 文件。只需添加用 @ Configuration 注释的类，然后添加用 @Bean 注释的方法，Spring 将自动加载对象并像以前一样对其进行管理。您甚至可以将 @Autowired 添加到 bean 方法中，以使 Spring 自动装入需要的依赖关系中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;基于环境的配置 使用这些属性，您可以将您正在使用的环境传递到应用程序：-Dspring.profiles.active = {enviornment}。在加载主应用程序属性文件后，Spring 将在（application {environment} .properties）中加载后续的应用程序属性文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常见问题&#34;&gt;#&lt;/a&gt; 常见问题&lt;/h2&gt;
+&lt;h3 id=&#34;springboot核心配置文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springboot核心配置文件&#34;&gt;#&lt;/a&gt; SpringBoot 核心配置文件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;bootstrap (. yml 或者 . properties)：boostrap 由父 ApplicationContext 加载的，比 applicaton 优先加载，且 boostrap 里面的属性不能被覆盖；&lt;/li&gt;
+&lt;li&gt;application (. yml 或者 . properties)：用于 spring boot 项目的自动化配置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt;</content>
+        <category term="框架" />
+        <updated>2020-10-13T13:46:19.631Z</updated>
+    </entry>
+</feed>

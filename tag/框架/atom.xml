@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://www.baocai-blog.cn</id>
+    <title>手撕包菜 • Posts by &#34;框架&#34; tag</title>
+    <link href="https://www.baocai-blog.cn" />
+    <updated>2020-10-13T13:46:19.631Z</updated>
+    <category term="Java基础" />
+    <category term="框架" />
+    <category term="数据库" />
+    <category term="面向对象" />
+    <entry>
+        <id>https://www.baocai-blog.cn/2020/10/13/SpringBoot/</id>
+        <title>SpringBoot</title>
+        <link rel="alternate" href="https://www.baocai-blog.cn/2020/10/13/SpringBoot/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;springboot&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springboot&#34;&gt;#&lt;/a&gt; SpringBoot&lt;/h1&gt;
+&lt;h2 id=&#34;概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h2&gt;
+&lt;h3 id=&#34;什么是springboot&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是springboot&#34;&gt;#&lt;/a&gt; 什么是 SpringBoot&lt;/h3&gt;
+&lt;p&gt;spring boot 为 spring 服务，用来简化新 spring 应用的初始搭建以及开发过程&lt;/p&gt;
+&lt;h3 id=&#34;优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#优点&#34;&gt;#&lt;/a&gt; 优点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;减少开发，测试时间和努力。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 JavaConfig 有助于避免使用 XML。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;避免大量的 Maven 导入和各种版本冲突。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;提供意见发展方法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过提供默认值快速开始开发。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;没有单独的 Web 服务器需要。这意味着你不再需要启动 Tomcat，Glassfish 或其他任何东西。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;需要更少的配置 因为没有 web.xml 文件。只需添加用 @ Configuration 注释的类，然后添加用 @Bean 注释的方法，Spring 将自动加载对象并像以前一样对其进行管理。您甚至可以将 @Autowired 添加到 bean 方法中，以使 Spring 自动装入需要的依赖关系中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;基于环境的配置 使用这些属性，您可以将您正在使用的环境传递到应用程序：-Dspring.profiles.active = {enviornment}。在加载主应用程序属性文件后，Spring 将在（application {environment} .properties）中加载后续的应用程序属性文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常见问题&#34;&gt;#&lt;/a&gt; 常见问题&lt;/h2&gt;
+&lt;h3 id=&#34;springboot核心配置文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springboot核心配置文件&#34;&gt;#&lt;/a&gt; SpringBoot 核心配置文件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;bootstrap (. yml 或者 . properties)：boostrap 由父 ApplicationContext 加载的，比 applicaton 优先加载，且 boostrap 里面的属性不能被覆盖；&lt;/li&gt;
+&lt;li&gt;application (. yml 或者 . properties)：用于 spring boot 项目的自动化配置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt;</content>
+        <category term="框架" />
+        <updated>2020-10-13T13:46:19.631Z</updated>
+    </entry>
+    <entry>
+        <id>https://www.baocai-blog.cn/2020/10/13/MyBatis/</id>
+        <title>MyBatis</title>
+        <link rel="alternate" href="https://www.baocai-blog.cn/2020/10/13/MyBatis/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;mybatis&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mybatis&#34;&gt;#&lt;/a&gt; MyBatis&lt;/h1&gt;
+&lt;h2 id=&#34;概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h2&gt;
+&lt;h3 id=&#34;什么是mybatis&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是mybatis&#34;&gt;#&lt;/a&gt; 什么是 MyBatis&lt;/h3&gt;
+&lt;p&gt;MyBatis 是一个可以自定义 SQL、存储过程和高级映射的持久层框架。&lt;/p&gt;
+&lt;h3 id=&#34;mybatis优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mybatis优点&#34;&gt;#&lt;/a&gt; MyBatis 优点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;基于 SQL 语句，灵活&lt;/li&gt;
+&lt;li&gt;降低代码量&lt;/li&gt;
+&lt;li&gt;与数据库兼容&lt;/li&gt;
+&lt;li&gt;与 Spring 集成&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;基础&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基础&#34;&gt;#&lt;/a&gt; 基础&lt;/h2&gt;
+&lt;h3 id=&#34;mybatis缓存&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mybatis缓存&#34;&gt;#&lt;/a&gt; MyBatis 缓存&lt;/h3&gt;
+&lt;p&gt;MyBatis 的缓存分为一级缓存和二级存，一级缓存放在 session 里面，默认就有，二级缓 存放在它的命名空间里，默认是不打开的，使用二级缓存属性类需要实现 Serializable 序列化 接口 (可用来保存对象的状态), 可在它的映射文件中配置 &amp;lt; cache/&amp;gt;&lt;/p&gt;
+&lt;h3 id=&#34;mybatis分页&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mybatis分页&#34;&gt;#&lt;/a&gt; MyBatis 分页&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;分页方式：Mybatis 使用 RowBounds 对象进行分页，也可以直接编写 sql 实现分页，也可以使用 Mybatis 的分页插件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;分页插件的原理：实现 Mybatis 提供的接口，实现自定义插件，在插件的拦截方法内拦 截待执行的 sql，然后重写 sql&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;和的区别是什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#和的区别是什么&#34;&gt;#&lt;/a&gt; #{} 和 ${} 的区别是什么？&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;#{} 是预编译处理，${} 是字符串替换。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mybatis 在处理 #{} 时，会将 sql 中的 #{} 替换为？号，调用 PreparedStatement 的 set 方法 来赋值；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mybatis 在处理&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mtext&gt;时，就是把&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;{}时，就是把&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;时&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;就&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;是&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;把&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; {} 替换成变量的值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 #{} 可以有效的防止 SQL 注入，提高系统安全性&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;mybatis编程步骤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mybatis编程步骤&#34;&gt;#&lt;/a&gt; Mybatis 编程步骤&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;创建 SqlSessionFactory&lt;/li&gt;
+&lt;li&gt;通过 SqlSessionFactory 创建 SqlSession&lt;/li&gt;
+&lt;li&gt;通过 sqlsession 执行数据库操作&lt;/li&gt;
+&lt;li&gt;调用 session.commit () 提交事务&lt;/li&gt;
+&lt;li&gt;调用 session.close () 关闭会话&lt;/li&gt;
+&lt;/ol&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt;</content>
+        <category term="框架" />
+        <updated>2020-10-13T13:17:48.784Z</updated>
+    </entry>
+    <entry>
+        <id>https://www.baocai-blog.cn/2020/10/13/Spring/</id>
+        <title>Spring</title>
+        <link rel="alternate" href="https://www.baocai-blog.cn/2020/10/13/Spring/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;spring&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#spring&#34;&gt;#&lt;/a&gt; Spring&lt;/h1&gt;
+&lt;h2 id=&#34;概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h2&gt;
+&lt;h3 id=&#34;什么是spring&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是spring&#34;&gt;#&lt;/a&gt; 什么是 Spring&lt;/h3&gt;
+&lt;p&gt;Spring 是个 java 企业级应用的开源开发框架。Spring 框架目标是简化 Java 企业级应用开发，并通过 POJO 为基础的编程模型促进良好的编程习惯。&lt;/p&gt;
+&lt;h2 id=&#34;aop&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#aop&#34;&gt;#&lt;/a&gt; AOP&lt;/h2&gt;
+&lt;h3 id=&#34;什么是aop&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是aop&#34;&gt;#&lt;/a&gt; 什么是 AOP&lt;/h3&gt;
+&lt;p&gt;aop 是面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。&lt;/p&gt;
+&lt;h2 id=&#34;ioc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ioc&#34;&gt;#&lt;/a&gt; IOC&lt;/h2&gt;
+&lt;h3 id=&#34;什么是ioc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是ioc&#34;&gt;#&lt;/a&gt; 什么是 IOC&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;IOC 容器负责实例化、配置程序中的对象及建立对象间的依赖。&#34;控制反转&#34; 是指 new 实例工作交给 Spring 容器来做。&lt;/li&gt;
+&lt;li&gt;所谓 IoC (控制反转)，对于 spring 框架来说，就是由 spring 来负责控制对象的生命周期和对象间的关系。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ioc优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ioc优点&#34;&gt;#&lt;/a&gt; IOC 优点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;降低代码量&lt;/li&gt;
+&lt;li&gt;易于测试&lt;/li&gt;
+&lt;li&gt;轻松实现耦合&lt;/li&gt;
+&lt;li&gt;支持饿汉式初始化和懒加载&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;依赖&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#依赖&#34;&gt;#&lt;/a&gt; 依赖&lt;/h2&gt;
+&lt;h3 id=&#34;什么是依赖注入&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是依赖注入&#34;&gt;#&lt;/a&gt; 什么是依赖注入&lt;/h3&gt;
+&lt;p&gt;spring 使用 javaBean 对象的 set 方法或者带参数的构造方法为我们在创建所需对象时将其属性自动设置所需要的值的过程，就是依赖注入的思想。&lt;/p&gt;
+&lt;h3 id=&#34;依赖注入方式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#依赖注入方式&#34;&gt;#&lt;/a&gt; 依赖注入方式&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;setter 属性注入&lt;/li&gt;
+&lt;li&gt;构造方法注入&lt;/li&gt;
+&lt;li&gt;接口注入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;特性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#特性&#34;&gt;#&lt;/a&gt; 特性&lt;/h2&gt;
+&lt;h3 id=&#34;spring优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#spring优点&#34;&gt;#&lt;/a&gt; Spring 优点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;方便解耦 ——Spring 提供的 IoC 容器实现了对象依赖关系的管理，避免了硬编码导致的耦合。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持 AOP——Spring 提供的 AOP 功能，方便进行面向切面编程。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;集成了多种优秀框架 ——Spring 提供了对各种优秀框架（如 Struts、Hibernate、Hessian、Quartz 等）的直接支持。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;降低对 API 依赖&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt;</content>
+        <category term="框架" />
+        <updated>2020-10-13T13:01:03.426Z</updated>
+    </entry>
+    <entry>
+        <id>https://www.baocai-blog.cn/2020/10/13/SpringMVC/</id>
+        <title>SpringMVC</title>
+        <link rel="alternate" href="https://www.baocai-blog.cn/2020/10/13/SpringMVC/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;springmvc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springmvc&#34;&gt;#&lt;/a&gt; SpringMVC&lt;/h1&gt;
+&lt;h2 id=&#34;概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h2&gt;
+&lt;h3 id=&#34;什么是springmvc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是springmvc&#34;&gt;#&lt;/a&gt; 什么是 SpringMVC&lt;/h3&gt;
+&lt;p&gt;SpringMvc 是 spring 的一个模块，基于 MVC 的一个框架，无需中间整合层来整合。 简化开发，减少出错。&lt;/p&gt;
+&lt;h2 id=&#34;特性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#特性&#34;&gt;#&lt;/a&gt; 特性&lt;/h2&gt;
+&lt;h3 id=&#34;springmvc的优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springmvc的优点&#34;&gt;#&lt;/a&gt; SpringMVC 的优点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;它是基于组件技术的。全部的应用对象，无论控制器和视图，还是业务对象之类的都是 java 组件。并且和 Spring 提供的其他基础结构紧密集成.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不依赖于 Servlet API (目标虽是如此，但是在实现的时候确实是依赖于 Servlet 的)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;可以任意使用各种视图技术，而不仅仅局限于 JSP&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持各种请求资源的映射策略&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;它应是易于扩展的&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;工作原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#工作原理&#34;&gt;#&lt;/a&gt; 工作原理&lt;/h2&gt;
+&lt;h3 id=&#34;springmvc的工作原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springmvc的工作原理&#34;&gt;#&lt;/a&gt; SpringMVC 的工作原理&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;客户端发送请求 DispatcherServlet&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DispatcherServlet 查询 handlerMapping 找到处理请求的 Controller&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Controller 调用业务逻辑后，返回 ModelAndView&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DispatcherServlet 查询 ModelAndView，找到指定视图&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;视图将结果返回到客户端&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;springmvc常用注解&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springmvc常用注解&#34;&gt;#&lt;/a&gt; SpringMVC 常用注解&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;@requestMapping 用于请求 url 映射。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;@RequestBody 注解实现接收 http 请求的 json 数据，将 json 数据转换为 java 对象。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;@ResponseBody 注解实现将 controller 方法返回对象转化为 json 响应给客户。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常见问题&#34;&gt;#&lt;/a&gt; 常见问题&lt;/h2&gt;
+&lt;h3 id=&#34;如何解决getpost乱码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#如何解决getpost乱码&#34;&gt;#&lt;/a&gt; 如何解决 get/post 乱码&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;解决 post 请求乱码：我们可以在 web.xml 里边配置一个 CharacterEncodingFilter 过滤器。 设置为 utf-8，解决 get 请求的乱码：有两种方法。&lt;/li&gt;
+&lt;li&gt;get 请求中文参数出现乱码解决方法有两个:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;修改 tomcat 配置文件添加编码与工程编码一致。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;另 外 一 种 方 法 对 参 数 进 行 重 新 编 码 String userName = New String (Request.getParameter (“userName”).getBytes (“ISO8859-1”), “utf-8”);&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt;</content>
+        <category term="框架" />
+        <updated>2020-10-13T12:08:53.439Z</updated>
+    </entry>
+</feed>

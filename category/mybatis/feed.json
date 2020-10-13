@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "手撕包菜 • All posts by \"mybatis\" category",
+    "description": "",
+    "home_page_url": "https://www.baocai-blog.cn",
+    "items": [
+        {
+            "id": "https://www.baocai-blog.cn/2020/10/13/MyBatis/",
+            "url": "https://www.baocai-blog.cn/2020/10/13/MyBatis/",
+            "title": "MyBatis",
+            "date_published": "2020-10-13T13:17:48.784Z",
+            "content_html": "<link rel=\"stylesheet\" class=\"aplayer-secondary-style-marker\" href=\"\\assets\\css\\APlayer.min.css\"><script src=\"\\assets\\js\\APlayer.min.js\" class=\"aplayer-secondary-script-marker\"></script><h1 id=\"mybatis\"><a class=\"anchor\" href=\"#mybatis\">#</a> MyBatis</h1>\n<h2 id=\"概念\"><a class=\"anchor\" href=\"#概念\">#</a> 概念</h2>\n<h3 id=\"什么是mybatis\"><a class=\"anchor\" href=\"#什么是mybatis\">#</a> 什么是 MyBatis</h3>\n<p>MyBatis 是一个可以自定义 SQL、存储过程和高级映射的持久层框架。</p>\n<h3 id=\"mybatis优点\"><a class=\"anchor\" href=\"#mybatis优点\">#</a> MyBatis 优点</h3>\n<ol>\n<li>基于 SQL 语句，灵活</li>\n<li>降低代码量</li>\n<li>与数据库兼容</li>\n<li>与 Spring 集成</li>\n</ol>\n<h2 id=\"基础\"><a class=\"anchor\" href=\"#基础\">#</a> 基础</h2>\n<h3 id=\"mybatis缓存\"><a class=\"anchor\" href=\"#mybatis缓存\">#</a> MyBatis 缓存</h3>\n<p>MyBatis 的缓存分为一级缓存和二级存，一级缓存放在 session 里面，默认就有，二级缓 存放在它的命名空间里，默认是不打开的，使用二级缓存属性类需要实现 Serializable 序列化 接口 (可用来保存对象的状态), 可在它的映射文件中配置 &lt; cache/&gt;</p>\n<h3 id=\"mybatis分页\"><a class=\"anchor\" href=\"#mybatis分页\">#</a> MyBatis 分页</h3>\n<ul>\n<li>\n<p>分页方式：Mybatis 使用 RowBounds 对象进行分页，也可以直接编写 sql 实现分页，也可以使用 Mybatis 的分页插件。</p>\n</li>\n<li>\n<p>分页插件的原理：实现 Mybatis 提供的接口，实现自定义插件，在插件的拦截方法内拦 截待执行的 sql，然后重写 sql</p>\n</li>\n</ul>\n<h3 id=\"和的区别是什么\"><a class=\"anchor\" href=\"#和的区别是什么\">#</a> #{} 和 ${} 的区别是什么？</h3>\n<ol>\n<li>\n<p>#{} 是预编译处理，${} 是字符串替换。</p>\n</li>\n<li>\n<p>Mybatis 在处理 #{} 时，会将 sql 中的 #{} 替换为？号，调用 PreparedStatement 的 set 方法 来赋值；</p>\n</li>\n<li>\n<p>Mybatis 在处理<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow></mrow><mtext>时，就是把</mtext></mrow><annotation encoding=\"application/x-tex\">{}时，就是把</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.68333em;vertical-align:0em;\"></span><span class=\"mord\"></span><span class=\"mord cjk_fallback\">时</span><span class=\"mord cjk_fallback\">，</span><span class=\"mord cjk_fallback\">就</span><span class=\"mord cjk_fallback\">是</span><span class=\"mord cjk_fallback\">把</span></span></span></span> {} 替换成变量的值。</p>\n</li>\n<li>\n<p>使用 #{} 可以有效的防止 SQL 注入，提高系统安全性</p>\n</li>\n</ol>\n<h3 id=\"mybatis编程步骤\"><a class=\"anchor\" href=\"#mybatis编程步骤\">#</a> Mybatis 编程步骤</h3>\n<ol>\n<li>创建 SqlSessionFactory</li>\n<li>通过 SqlSessionFactory 创建 SqlSession</li>\n<li>通过 sqlsession 执行数据库操作</li>\n<li>调用 session.commit () 提交事务</li>\n<li>调用 session.close () 关闭会话</li>\n</ol>\n<script>\n        document.querySelectorAll('.github-emoji')\n          .forEach(el => {\n            if (!el.dataset.src) { return; }\n            const img = document.createElement('img');\n            img.style = 'display:none !important;';\n            img.src = el.dataset.src;\n            img.addEventListener('error', () => {\n              img.remove();\n              el.style.color = 'inherit';\n              el.style.backgroundImage = 'none';\n              el.style.background = 'none';\n            });\n            img.addEventListener('load', () => {\n              img.remove();\n            });\n            document.body.appendChild(img);\n          });\n      </script>",
+            "tags": [
+                "框架"
+            ]
+        }
+    ]
+}

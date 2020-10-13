@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "手撕包菜 • All posts by \"spring\" category",
+    "description": "",
+    "home_page_url": "https://www.baocai-blog.cn",
+    "items": [
+        {
+            "id": "https://www.baocai-blog.cn/2020/10/13/Spring/",
+            "url": "https://www.baocai-blog.cn/2020/10/13/Spring/",
+            "title": "Spring",
+            "date_published": "2020-10-13T13:01:03.426Z",
+            "content_html": "<link rel=\"stylesheet\" class=\"aplayer-secondary-style-marker\" href=\"\\assets\\css\\APlayer.min.css\"><script src=\"\\assets\\js\\APlayer.min.js\" class=\"aplayer-secondary-script-marker\"></script><h1 id=\"spring\"><a class=\"anchor\" href=\"#spring\">#</a> Spring</h1>\n<h2 id=\"概念\"><a class=\"anchor\" href=\"#概念\">#</a> 概念</h2>\n<h3 id=\"什么是spring\"><a class=\"anchor\" href=\"#什么是spring\">#</a> 什么是 Spring</h3>\n<p>Spring 是个 java 企业级应用的开源开发框架。Spring 框架目标是简化 Java 企业级应用开发，并通过 POJO 为基础的编程模型促进良好的编程习惯。</p>\n<h2 id=\"aop\"><a class=\"anchor\" href=\"#aop\">#</a> AOP</h2>\n<h3 id=\"什么是aop\"><a class=\"anchor\" href=\"#什么是aop\">#</a> 什么是 AOP</h3>\n<p>aop 是面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。</p>\n<h2 id=\"ioc\"><a class=\"anchor\" href=\"#ioc\">#</a> IOC</h2>\n<h3 id=\"什么是ioc\"><a class=\"anchor\" href=\"#什么是ioc\">#</a> 什么是 IOC</h3>\n<ul>\n<li>IOC 容器负责实例化、配置程序中的对象及建立对象间的依赖。\"控制反转\" 是指 new 实例工作交给 Spring 容器来做。</li>\n<li>所谓 IoC (控制反转)，对于 spring 框架来说，就是由 spring 来负责控制对象的生命周期和对象间的关系。</li>\n</ul>\n<h3 id=\"ioc优点\"><a class=\"anchor\" href=\"#ioc优点\">#</a> IOC 优点</h3>\n<ol>\n<li>降低代码量</li>\n<li>易于测试</li>\n<li>轻松实现耦合</li>\n<li>支持饿汉式初始化和懒加载</li>\n</ol>\n<h2 id=\"依赖\"><a class=\"anchor\" href=\"#依赖\">#</a> 依赖</h2>\n<h3 id=\"什么是依赖注入\"><a class=\"anchor\" href=\"#什么是依赖注入\">#</a> 什么是依赖注入</h3>\n<p>spring 使用 javaBean 对象的 set 方法或者带参数的构造方法为我们在创建所需对象时将其属性自动设置所需要的值的过程，就是依赖注入的思想。</p>\n<h3 id=\"依赖注入方式\"><a class=\"anchor\" href=\"#依赖注入方式\">#</a> 依赖注入方式</h3>\n<ul>\n<li>setter 属性注入</li>\n<li>构造方法注入</li>\n<li>接口注入</li>\n</ul>\n<h2 id=\"特性\"><a class=\"anchor\" href=\"#特性\">#</a> 特性</h2>\n<h3 id=\"spring优点\"><a class=\"anchor\" href=\"#spring优点\">#</a> Spring 优点</h3>\n<ol>\n<li>\n<p>方便解耦 ——Spring 提供的 IoC 容器实现了对象依赖关系的管理，避免了硬编码导致的耦合。</p>\n</li>\n<li>\n<p>支持 AOP——Spring 提供的 AOP 功能，方便进行面向切面编程。</p>\n</li>\n<li>\n<p>集成了多种优秀框架 ——Spring 提供了对各种优秀框架（如 Struts、Hibernate、Hessian、Quartz 等）的直接支持。</p>\n</li>\n<li>\n<p>降低对 API 依赖</p>\n</li>\n</ol>\n<script>\n        document.querySelectorAll('.github-emoji')\n          .forEach(el => {\n            if (!el.dataset.src) { return; }\n            const img = document.createElement('img');\n            img.style = 'display:none !important;';\n            img.src = el.dataset.src;\n            img.addEventListener('error', () => {\n              img.remove();\n              el.style.color = 'inherit';\n              el.style.backgroundImage = 'none';\n              el.style.background = 'none';\n            });\n            img.addEventListener('load', () => {\n              img.remove();\n            });\n            document.body.appendChild(img);\n          });\n      </script>",
+            "tags": [
+                "框架"
+            ]
+        }
+    ]
+}

@@ -5,10 +5,447 @@
         <link>https://www.baocai-blog.cn</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sat, 10 Oct 2020 12:45:31 +0800</pubDate>
-        <lastBuildDate>Sat, 10 Oct 2020 12:45:31 +0800</lastBuildDate>
-        <category>面向对象</category>
+        <pubDate>Tue, 13 Oct 2020 21:46:19 +0800</pubDate>
+        <lastBuildDate>Tue, 13 Oct 2020 21:46:19 +0800</lastBuildDate>
         <category>Java基础</category>
+        <category>框架</category>
+        <category>数据库</category>
+        <category>面向对象</category>
+        <item>
+            <guid isPermalink="true">https://www.baocai-blog.cn/2020/10/13/SpringBoot/</guid>
+            <title>SpringBoot</title>
+            <link>https://www.baocai-blog.cn/2020/10/13/SpringBoot/</link>
+            <category>框架</category>
+            <pubDate>Tue, 13 Oct 2020 21:46:19 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;springboot&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springboot&#34;&gt;#&lt;/a&gt; SpringBoot&lt;/h1&gt;
+&lt;h2 id=&#34;概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h2&gt;
+&lt;h3 id=&#34;什么是springboot&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是springboot&#34;&gt;#&lt;/a&gt; 什么是 SpringBoot&lt;/h3&gt;
+&lt;p&gt;spring boot 为 spring 服务，用来简化新 spring 应用的初始搭建以及开发过程&lt;/p&gt;
+&lt;h3 id=&#34;优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#优点&#34;&gt;#&lt;/a&gt; 优点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;减少开发，测试时间和努力。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 JavaConfig 有助于避免使用 XML。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;避免大量的 Maven 导入和各种版本冲突。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;提供意见发展方法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过提供默认值快速开始开发。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;没有单独的 Web 服务器需要。这意味着你不再需要启动 Tomcat，Glassfish 或其他任何东西。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;需要更少的配置 因为没有 web.xml 文件。只需添加用 @ Configuration 注释的类，然后添加用 @Bean 注释的方法，Spring 将自动加载对象并像以前一样对其进行管理。您甚至可以将 @Autowired 添加到 bean 方法中，以使 Spring 自动装入需要的依赖关系中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;基于环境的配置 使用这些属性，您可以将您正在使用的环境传递到应用程序：-Dspring.profiles.active = {enviornment}。在加载主应用程序属性文件后，Spring 将在（application {environment} .properties）中加载后续的应用程序属性文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常见问题&#34;&gt;#&lt;/a&gt; 常见问题&lt;/h2&gt;
+&lt;h3 id=&#34;springboot核心配置文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springboot核心配置文件&#34;&gt;#&lt;/a&gt; SpringBoot 核心配置文件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;bootstrap (. yml 或者 . properties)：boostrap 由父 ApplicationContext 加载的，比 applicaton 优先加载，且 boostrap 里面的属性不能被覆盖；&lt;/li&gt;
+&lt;li&gt;application (. yml 或者 . properties)：用于 spring boot 项目的自动化配置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt; ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://www.baocai-blog.cn/2020/10/13/JavaWeb/</guid>
+            <title>JavaWeb</title>
+            <link>https://www.baocai-blog.cn/2020/10/13/JavaWeb/</link>
+            <category>Java基础</category>
+            <pubDate>Tue, 13 Oct 2020 21:44:14 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;javaweb&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#javaweb&#34;&gt;#&lt;/a&gt; JavaWeb&lt;/h1&gt;
+&lt;h3 id=&#34;说下原生jdbc操作数据库流程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#说下原生jdbc操作数据库流程&#34;&gt;#&lt;/a&gt; 说下原生 jdbc 操作数据库流程？&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;第一步：Class.forName () 加载数据库连接驱动；&lt;/li&gt;
+&lt;li&gt;第二步：DriverManager.getConnection () 获取数据连接对象；&lt;/li&gt;
+&lt;li&gt;第三步：根据 SQL 获取 sql 会话对象，有 2 种方式 Statement、PreparedStatement ;&lt;/li&gt;
+&lt;li&gt;第四步：执行 SQL 处理结果集，执行 SQL 前如果有参数值就设置参数值 setXXX ();&lt;/li&gt;
+&lt;li&gt;第五步：关闭结果集、关闭会话、关闭连接。&lt;br&gt;
+详细代码请看（封装）：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjk1NDI2MTEvYXJ0aWNsZS9kZXRhaWxzLzUyNDI2MDA2&#34;&gt;http://blog.csdn.net/qq_29542611/article/details/52426006&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;session-和-cookie-有什么区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#session-和-cookie-有什么区别&#34;&gt;#&lt;/a&gt; session 和 cookie 有什么区别？&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;存储位置不同：session 存储在服务器端；cookie 存储在浏览器端。&lt;/li&gt;
+&lt;li&gt;安全性不同：cookie 安全性一般，在浏览器存储，可以被伪造和修改。&lt;/li&gt;
+&lt;li&gt;容量和个数限制：cookie 有容量限制，每个站点下的 cookie 也有个数限制。&lt;/li&gt;
+&lt;li&gt;存储的多样性：session 可以存储在 Redis 中、数据库中、应用程序中；而 cookie 只能存储在浏览器中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;简述-tcp-和-udp的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#简述-tcp-和-udp的区别&#34;&gt;#&lt;/a&gt; 简述 tcp 和 udp 的区别？&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;tcp&lt;/strong&gt; 和 &lt;strong&gt;udp&lt;/strong&gt; 是 OSI 模型中的运输层中的协议。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;tcp&lt;/strong&gt; 提供可靠的通信传输    &lt;strong&gt;udp&lt;/strong&gt; 则常被用于让广播和细节控制交给应用的通信传输。&lt;/p&gt;
+&lt;p&gt;两者的区别大致如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;tcp &lt;strong&gt;面向连接&lt;/strong&gt;，udp &lt;strong&gt;面向非连接&lt;/strong&gt;即发送数据前不需要建立链接；&lt;/li&gt;
+&lt;li&gt;tcp 提供可靠的服务（数据传输），udp 无法保证；&lt;/li&gt;
+&lt;li&gt;tcp 面向字节流，udp 面向报文；&lt;/li&gt;
+&lt;li&gt;tcp 数据传输慢，udp 数据传输快；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;tcp三次握手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tcp三次握手&#34;&gt;#&lt;/a&gt; tcp 三次握手&lt;/h3&gt;
+&lt;p&gt;第一次&lt;/p&gt;
+&lt;p&gt;第一次握手：建立连接时，客户端  发送&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9zeW4=&#34;&gt; syn&lt;/span&gt; 包（seq=j）到  服务器，并进入 SYN_SENT 状态，等待  服务器确认；SYN：同步序列编号（Synchronize Sequence Numbers）。 [3]&lt;/p&gt;
+&lt;p&gt;第二次&lt;/p&gt;
+&lt;p&gt;第二次握手：服务器  收到&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9zeW4=&#34;&gt; syn&lt;/span&gt; 包，必须确认  客户端  的 SYN（&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9hY2s=&#34;&gt;ack&lt;/span&gt;=j+1），同时自己也发送一个 SYN 包（seq=k），即 SYN+ACK 包，此时服务器进入 SYN_RECV 状态。 [3]&lt;/p&gt;
+&lt;p&gt;第三次&lt;/p&gt;
+&lt;p&gt;第三次握手：客户端  收到  服务器  的 SYN+ACK 包，向  服务器  发送确认包 ACK (&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9hY2s=&#34;&gt;ack&lt;/span&gt;=k+1），此包发送完毕，客户端和服务器进入&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9FU1RBQkxJU0hFRA==&#34;&gt; ESTABLISHED&lt;/span&gt;（TCP 连接成功）状态，完成三次握手。&lt;/p&gt;
+&lt;h3 id=&#34;为什么要三次握手两次不行吗为什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#为什么要三次握手两次不行吗为什么&#34;&gt;#&lt;/a&gt; 为什么要三次握手，两次不行吗？为什么？&lt;/h3&gt;
+&lt;p&gt;如果采用两次握手，那么只要&lt;strong&gt;服务器&lt;/strong&gt;发出确认数据包就会建立连接，但由于&lt;strong&gt;客户端&lt;/strong&gt;此时并未响应服务器端的请求，那此时&lt;strong&gt;服务器端&lt;/strong&gt;就会一直在等待客户端，这样服务器端就白白浪费了一定的资源。&lt;/p&gt;
+&lt;p&gt;若采用三次握手，服务器端没有收到来自客户端的再此确认，则就会知道客户端并没有要求建立请求，就不会浪费服务器的资源。&lt;/p&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt; ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://www.baocai-blog.cn/2020/10/13/MySQL/</guid>
+            <title>MySQL</title>
+            <link>https://www.baocai-blog.cn/2020/10/13/MySQL/</link>
+            <category>数据库</category>
+            <pubDate>Tue, 13 Oct 2020 21:43:55 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;mysql&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mysql&#34;&gt;#&lt;/a&gt; MySQL&lt;/h1&gt;
+&lt;h2 id=&#34;基础&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基础&#34;&gt;#&lt;/a&gt; 基础&lt;/h2&gt;
+&lt;h3 id=&#34;数据库的三范式是什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库的三范式是什么&#34;&gt;#&lt;/a&gt; 数据库的三范式是什么？&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;第一范式：强调的是原子性，即数据库表的每一列都是不可分割的原子数据项。&lt;/li&gt;
+&lt;li&gt;第二范式：要求实体的属性完全依赖于主关键字。所谓完全依赖是指不能存在仅依赖主关键字一部分的属性。&lt;/li&gt;
+&lt;li&gt;第三范式：任何非主属性不依赖于其它非主属性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;mysql-的内连接-左连接-右连接有什么区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mysql-的内连接-左连接-右连接有什么区别&#34;&gt;#&lt;/a&gt; MySQL 的内连接、左连接、右连接有什么区别？&lt;/h3&gt;
+&lt;p&gt;内连接关键字：inner join；左连接：left join；右连接：right join。&lt;/p&gt;
+&lt;p&gt;内连接是把匹配的关联数 据显示出来；左连接是左边的表全部显示出来，右边的表显示出符合条件的数据；右连接正好相反。&lt;/p&gt;
+&lt;h3 id=&#34;数据库基本操作语句&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库基本操作语句&#34;&gt;#&lt;/a&gt; 数据库基本操作语句&lt;/h3&gt;
+&lt;p&gt;主键约束 (primary key)  唯一约束 (unique) 非空约束 (not null) 外键约束 (foreign key)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;select&lt;/strong&gt; ... from 表名  where 条件  group by  分组字段  having 条件  order by  排序字段 ase|desc&lt;/p&gt;
+&lt;p&gt;去重操作&lt;strong&gt; distinct&lt;/strong&gt;             select distinct 字段名，字段名 2 from 表名&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;insert  into  &amp;lt;表名&amp;gt;  [列名]  values  &amp;lt; 列值 &amp;gt;                delete  from  &amp;lt; 表名 &amp;gt;  where  &amp;lt; 删除条件 &amp;gt;&lt;/strong&gt;**&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;update 表名 set  字段名 = 字段值，字段名 = 字段值   [where 修改条件];&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;数据库特性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库特性&#34;&gt;#&lt;/a&gt; 数据库特性&lt;/h2&gt;
+&lt;h3 id=&#34;数据库4个特性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库4个特性&#34;&gt;#&lt;/a&gt; 数据库 4 个特性：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Atomicity（&lt;strong&gt;原子性&lt;/strong&gt;）：事务不可分割、不可约简。&lt;/li&gt;
+&lt;li&gt;Consistency（&lt;strong&gt;一致性&lt;/strong&gt;）：在事务开始前和事务结束后，&lt;strong&gt;数据库的完整性&lt;/strong&gt;没有被破坏。&lt;/li&gt;
+&lt;li&gt;Isolation（&lt;strong&gt;隔离性&lt;/strong&gt;）：数据库允许多个事务同时对数据处理，隔离性可以&lt;strong&gt;防止&lt;/strong&gt;多个事务并发执行时由于交叉执行而&lt;strong&gt;导致数据的不一致&lt;/strong&gt;。事务隔离分为不同级别，包括读未提交（Read uncommitted）、读提交（read committed）、可重复读（repeatable read）和串行化（Serializable）。&lt;/li&gt;
+&lt;li&gt;Durability（&lt;strong&gt;持久性&lt;/strong&gt;）：事务处理结束后，对数据的修改就是永久，不会丢失。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;事务隔离&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#事务隔离&#34;&gt;#&lt;/a&gt; 事务隔离&lt;/h2&gt;
+&lt;h3 id=&#34;数据库的事务隔离&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库的事务隔离&#34;&gt;#&lt;/a&gt; 数据库的事务隔离：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;READ-UNCOMMITTED：&lt;strong&gt;未提交读&lt;/strong&gt;，最低隔离级别、事务未提交前，就可被其他事务读取（会出现幻读、脏读、不可重复读）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;READ-COMMITTED：&lt;strong&gt;提交读&lt;/strong&gt;，一个事务提交后才能被其他事务读取到（会造成幻读、不可重复读）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;REPEATABLE-READ：&lt;strong&gt;可重复读&lt;/strong&gt;，&lt;strong&gt;默认&lt;/strong&gt;级别，保证多次读取同一个数据，值和内容一致。禁止读取到别的事务未提交的数据（会造成幻读）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SERIALIZABLE：&lt;strong&gt;序列化&lt;/strong&gt;，代价最高最可靠的隔离级别，该隔离级别能防止脏读、不可重复读、幻读。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;脏读&lt;/strong&gt; ：表示一个事务能够读取另一个事务中还未提交的数据。&lt;strong&gt;不可重复读&lt;/strong&gt; ：是指在一个事务内，多次读同一数据。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;分页查询&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#分页查询&#34;&gt;#&lt;/a&gt; 分页查询&lt;/h2&gt;
+&lt;h3 id=&#34;oracle页查询&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#oracle页查询&#34;&gt;#&lt;/a&gt; &lt;strong&gt;Oracle 页查询&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Oracle 中使用 rownum 来进行分页，&lt;/p&gt;
+&lt;p&gt;select * from    ( select rownum r,a from tabName where rownum &amp;lt;= 20 )  where r &amp;gt; 10&lt;/p&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt; ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://www.baocai-blog.cn/2020/10/13/MyBatis/</guid>
+            <title>MyBatis</title>
+            <link>https://www.baocai-blog.cn/2020/10/13/MyBatis/</link>
+            <category>框架</category>
+            <pubDate>Tue, 13 Oct 2020 21:17:48 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;mybatis&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mybatis&#34;&gt;#&lt;/a&gt; MyBatis&lt;/h1&gt;
+&lt;h2 id=&#34;概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h2&gt;
+&lt;h3 id=&#34;什么是mybatis&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是mybatis&#34;&gt;#&lt;/a&gt; 什么是 MyBatis&lt;/h3&gt;
+&lt;p&gt;MyBatis 是一个可以自定义 SQL、存储过程和高级映射的持久层框架。&lt;/p&gt;
+&lt;h3 id=&#34;mybatis优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mybatis优点&#34;&gt;#&lt;/a&gt; MyBatis 优点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;基于 SQL 语句，灵活&lt;/li&gt;
+&lt;li&gt;降低代码量&lt;/li&gt;
+&lt;li&gt;与数据库兼容&lt;/li&gt;
+&lt;li&gt;与 Spring 集成&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;基础&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基础&#34;&gt;#&lt;/a&gt; 基础&lt;/h2&gt;
+&lt;h3 id=&#34;mybatis缓存&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mybatis缓存&#34;&gt;#&lt;/a&gt; MyBatis 缓存&lt;/h3&gt;
+&lt;p&gt;MyBatis 的缓存分为一级缓存和二级存，一级缓存放在 session 里面，默认就有，二级缓 存放在它的命名空间里，默认是不打开的，使用二级缓存属性类需要实现 Serializable 序列化 接口 (可用来保存对象的状态), 可在它的映射文件中配置 &amp;lt; cache/&amp;gt;&lt;/p&gt;
+&lt;h3 id=&#34;mybatis分页&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mybatis分页&#34;&gt;#&lt;/a&gt; MyBatis 分页&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;分页方式：Mybatis 使用 RowBounds 对象进行分页，也可以直接编写 sql 实现分页，也可以使用 Mybatis 的分页插件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;分页插件的原理：实现 Mybatis 提供的接口，实现自定义插件，在插件的拦截方法内拦 截待执行的 sql，然后重写 sql&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;和的区别是什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#和的区别是什么&#34;&gt;#&lt;/a&gt; #{} 和 ${} 的区别是什么？&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;#{} 是预编译处理，${} 是字符串替换。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mybatis 在处理 #{} 时，会将 sql 中的 #{} 替换为？号，调用 PreparedStatement 的 set 方法 来赋值；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mybatis 在处理&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mtext&gt;时，就是把&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;{}时，就是把&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;时&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;就&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;是&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;把&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; {} 替换成变量的值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 #{} 可以有效的防止 SQL 注入，提高系统安全性&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;mybatis编程步骤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mybatis编程步骤&#34;&gt;#&lt;/a&gt; Mybatis 编程步骤&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;创建 SqlSessionFactory&lt;/li&gt;
+&lt;li&gt;通过 SqlSessionFactory 创建 SqlSession&lt;/li&gt;
+&lt;li&gt;通过 sqlsession 执行数据库操作&lt;/li&gt;
+&lt;li&gt;调用 session.commit () 提交事务&lt;/li&gt;
+&lt;li&gt;调用 session.close () 关闭会话&lt;/li&gt;
+&lt;/ol&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt; ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://www.baocai-blog.cn/2020/10/13/Spring/</guid>
+            <title>Spring</title>
+            <link>https://www.baocai-blog.cn/2020/10/13/Spring/</link>
+            <category>框架</category>
+            <pubDate>Tue, 13 Oct 2020 21:01:03 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;spring&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#spring&#34;&gt;#&lt;/a&gt; Spring&lt;/h1&gt;
+&lt;h2 id=&#34;概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h2&gt;
+&lt;h3 id=&#34;什么是spring&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是spring&#34;&gt;#&lt;/a&gt; 什么是 Spring&lt;/h3&gt;
+&lt;p&gt;Spring 是个 java 企业级应用的开源开发框架。Spring 框架目标是简化 Java 企业级应用开发，并通过 POJO 为基础的编程模型促进良好的编程习惯。&lt;/p&gt;
+&lt;h2 id=&#34;aop&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#aop&#34;&gt;#&lt;/a&gt; AOP&lt;/h2&gt;
+&lt;h3 id=&#34;什么是aop&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是aop&#34;&gt;#&lt;/a&gt; 什么是 AOP&lt;/h3&gt;
+&lt;p&gt;aop 是面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。&lt;/p&gt;
+&lt;h2 id=&#34;ioc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ioc&#34;&gt;#&lt;/a&gt; IOC&lt;/h2&gt;
+&lt;h3 id=&#34;什么是ioc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是ioc&#34;&gt;#&lt;/a&gt; 什么是 IOC&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;IOC 容器负责实例化、配置程序中的对象及建立对象间的依赖。&#34;控制反转&#34; 是指 new 实例工作交给 Spring 容器来做。&lt;/li&gt;
+&lt;li&gt;所谓 IoC (控制反转)，对于 spring 框架来说，就是由 spring 来负责控制对象的生命周期和对象间的关系。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ioc优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ioc优点&#34;&gt;#&lt;/a&gt; IOC 优点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;降低代码量&lt;/li&gt;
+&lt;li&gt;易于测试&lt;/li&gt;
+&lt;li&gt;轻松实现耦合&lt;/li&gt;
+&lt;li&gt;支持饿汉式初始化和懒加载&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;依赖&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#依赖&#34;&gt;#&lt;/a&gt; 依赖&lt;/h2&gt;
+&lt;h3 id=&#34;什么是依赖注入&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是依赖注入&#34;&gt;#&lt;/a&gt; 什么是依赖注入&lt;/h3&gt;
+&lt;p&gt;spring 使用 javaBean 对象的 set 方法或者带参数的构造方法为我们在创建所需对象时将其属性自动设置所需要的值的过程，就是依赖注入的思想。&lt;/p&gt;
+&lt;h3 id=&#34;依赖注入方式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#依赖注入方式&#34;&gt;#&lt;/a&gt; 依赖注入方式&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;setter 属性注入&lt;/li&gt;
+&lt;li&gt;构造方法注入&lt;/li&gt;
+&lt;li&gt;接口注入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;特性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#特性&#34;&gt;#&lt;/a&gt; 特性&lt;/h2&gt;
+&lt;h3 id=&#34;spring优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#spring优点&#34;&gt;#&lt;/a&gt; Spring 优点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;方便解耦 ——Spring 提供的 IoC 容器实现了对象依赖关系的管理，避免了硬编码导致的耦合。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持 AOP——Spring 提供的 AOP 功能，方便进行面向切面编程。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;集成了多种优秀框架 ——Spring 提供了对各种优秀框架（如 Struts、Hibernate、Hessian、Quartz 等）的直接支持。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;降低对 API 依赖&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt; ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://www.baocai-blog.cn/2020/10/13/SpringMVC/</guid>
+            <title>SpringMVC</title>
+            <link>https://www.baocai-blog.cn/2020/10/13/SpringMVC/</link>
+            <category>框架</category>
+            <pubDate>Tue, 13 Oct 2020 20:08:53 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;springmvc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springmvc&#34;&gt;#&lt;/a&gt; SpringMVC&lt;/h1&gt;
+&lt;h2 id=&#34;概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h2&gt;
+&lt;h3 id=&#34;什么是springmvc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是springmvc&#34;&gt;#&lt;/a&gt; 什么是 SpringMVC&lt;/h3&gt;
+&lt;p&gt;SpringMvc 是 spring 的一个模块，基于 MVC 的一个框架，无需中间整合层来整合。 简化开发，减少出错。&lt;/p&gt;
+&lt;h2 id=&#34;特性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#特性&#34;&gt;#&lt;/a&gt; 特性&lt;/h2&gt;
+&lt;h3 id=&#34;springmvc的优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springmvc的优点&#34;&gt;#&lt;/a&gt; SpringMVC 的优点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;它是基于组件技术的。全部的应用对象，无论控制器和视图，还是业务对象之类的都是 java 组件。并且和 Spring 提供的其他基础结构紧密集成.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不依赖于 Servlet API (目标虽是如此，但是在实现的时候确实是依赖于 Servlet 的)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;可以任意使用各种视图技术，而不仅仅局限于 JSP&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持各种请求资源的映射策略&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;它应是易于扩展的&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;工作原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#工作原理&#34;&gt;#&lt;/a&gt; 工作原理&lt;/h2&gt;
+&lt;h3 id=&#34;springmvc的工作原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springmvc的工作原理&#34;&gt;#&lt;/a&gt; SpringMVC 的工作原理&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;客户端发送请求 DispatcherServlet&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DispatcherServlet 查询 handlerMapping 找到处理请求的 Controller&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Controller 调用业务逻辑后，返回 ModelAndView&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DispatcherServlet 查询 ModelAndView，找到指定视图&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;视图将结果返回到客户端&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;springmvc常用注解&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springmvc常用注解&#34;&gt;#&lt;/a&gt; SpringMVC 常用注解&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;@requestMapping 用于请求 url 映射。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;@RequestBody 注解实现接收 http 请求的 json 数据，将 json 数据转换为 java 对象。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;@ResponseBody 注解实现将 controller 方法返回对象转化为 json 响应给客户。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常见问题&#34;&gt;#&lt;/a&gt; 常见问题&lt;/h2&gt;
+&lt;h3 id=&#34;如何解决getpost乱码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#如何解决getpost乱码&#34;&gt;#&lt;/a&gt; 如何解决 get/post 乱码&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;解决 post 请求乱码：我们可以在 web.xml 里边配置一个 CharacterEncodingFilter 过滤器。 设置为 utf-8，解决 get 请求的乱码：有两种方法。&lt;/li&gt;
+&lt;li&gt;get 请求中文参数出现乱码解决方法有两个:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;修改 tomcat 配置文件添加编码与工程编码一致。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;另 外 一 种 方 法 对 参 数 进 行 重 新 编 码 String userName = New String (Request.getParameter (“userName”).getBytes (“ISO8859-1”), “utf-8”);&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt; ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://www.baocai-blog.cn/2020/10/10/JAVA%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
             <title>Java基础语法</title>

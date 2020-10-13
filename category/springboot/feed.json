@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "手撕包菜 • All posts by \"springboot\" category",
+    "description": "",
+    "home_page_url": "https://www.baocai-blog.cn",
+    "items": [
+        {
+            "id": "https://www.baocai-blog.cn/2020/10/13/SpringBoot/",
+            "url": "https://www.baocai-blog.cn/2020/10/13/SpringBoot/",
+            "title": "SpringBoot",
+            "date_published": "2020-10-13T13:46:19.631Z",
+            "content_html": "<link rel=\"stylesheet\" class=\"aplayer-secondary-style-marker\" href=\"\\assets\\css\\APlayer.min.css\"><script src=\"\\assets\\js\\APlayer.min.js\" class=\"aplayer-secondary-script-marker\"></script><h1 id=\"springboot\"><a class=\"anchor\" href=\"#springboot\">#</a> SpringBoot</h1>\n<h2 id=\"概念\"><a class=\"anchor\" href=\"#概念\">#</a> 概念</h2>\n<h3 id=\"什么是springboot\"><a class=\"anchor\" href=\"#什么是springboot\">#</a> 什么是 SpringBoot</h3>\n<p>spring boot 为 spring 服务，用来简化新 spring 应用的初始搭建以及开发过程</p>\n<h3 id=\"优点\"><a class=\"anchor\" href=\"#优点\">#</a> 优点</h3>\n<ol>\n<li>\n<p>减少开发，测试时间和努力。</p>\n</li>\n<li>\n<p>使用 JavaConfig 有助于避免使用 XML。</p>\n</li>\n<li>\n<p>避免大量的 Maven 导入和各种版本冲突。</p>\n</li>\n<li>\n<p>提供意见发展方法。</p>\n</li>\n<li>\n<p>通过提供默认值快速开始开发。</p>\n</li>\n<li>\n<p>没有单独的 Web 服务器需要。这意味着你不再需要启动 Tomcat，Glassfish 或其他任何东西。</p>\n</li>\n<li>\n<p>需要更少的配置 因为没有 web.xml 文件。只需添加用 @ Configuration 注释的类，然后添加用 @Bean 注释的方法，Spring 将自动加载对象并像以前一样对其进行管理。您甚至可以将 @Autowired 添加到 bean 方法中，以使 Spring 自动装入需要的依赖关系中。</p>\n</li>\n<li>\n<p>基于环境的配置 使用这些属性，您可以将您正在使用的环境传递到应用程序：-Dspring.profiles.active = {enviornment}。在加载主应用程序属性文件后，Spring 将在（application {environment} .properties）中加载后续的应用程序属性文件。</p>\n</li>\n</ol>\n<h2 id=\"常见问题\"><a class=\"anchor\" href=\"#常见问题\">#</a> 常见问题</h2>\n<h3 id=\"springboot核心配置文件\"><a class=\"anchor\" href=\"#springboot核心配置文件\">#</a> SpringBoot 核心配置文件</h3>\n<ul>\n<li>bootstrap (. yml 或者 . properties)：boostrap 由父 ApplicationContext 加载的，比 applicaton 优先加载，且 boostrap 里面的属性不能被覆盖；</li>\n<li>application (. yml 或者 . properties)：用于 spring boot 项目的自动化配置。</li>\n</ul>\n<script>\n        document.querySelectorAll('.github-emoji')\n          .forEach(el => {\n            if (!el.dataset.src) { return; }\n            const img = document.createElement('img');\n            img.style = 'display:none !important;';\n            img.src = el.dataset.src;\n            img.addEventListener('error', () => {\n              img.remove();\n              el.style.color = 'inherit';\n              el.style.backgroundImage = 'none';\n              el.style.background = 'none';\n            });\n            img.addEventListener('load', () => {\n              img.remove();\n            });\n            document.body.appendChild(img);\n          });\n      </script>",
+            "tags": [
+                "框架"
+            ]
+        }
+    ]
+}

@@ -3,9 +3,74 @@
     <id>https://www.baocai-blog.cn</id>
     <title>手撕包菜 • Posts by &#34;java基础&#34; tag</title>
     <link href="https://www.baocai-blog.cn" />
-    <updated>2020-10-10T04:45:31.957Z</updated>
-    <category term="面向对象" />
+    <updated>2020-10-13T13:44:14.924Z</updated>
     <category term="Java基础" />
+    <category term="框架" />
+    <category term="数据库" />
+    <category term="面向对象" />
+    <entry>
+        <id>https://www.baocai-blog.cn/2020/10/13/JavaWeb/</id>
+        <title>JavaWeb</title>
+        <link rel="alternate" href="https://www.baocai-blog.cn/2020/10/13/JavaWeb/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;javaweb&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#javaweb&#34;&gt;#&lt;/a&gt; JavaWeb&lt;/h1&gt;
+&lt;h3 id=&#34;说下原生jdbc操作数据库流程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#说下原生jdbc操作数据库流程&#34;&gt;#&lt;/a&gt; 说下原生 jdbc 操作数据库流程？&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;第一步：Class.forName () 加载数据库连接驱动；&lt;/li&gt;
+&lt;li&gt;第二步：DriverManager.getConnection () 获取数据连接对象；&lt;/li&gt;
+&lt;li&gt;第三步：根据 SQL 获取 sql 会话对象，有 2 种方式 Statement、PreparedStatement ;&lt;/li&gt;
+&lt;li&gt;第四步：执行 SQL 处理结果集，执行 SQL 前如果有参数值就设置参数值 setXXX ();&lt;/li&gt;
+&lt;li&gt;第五步：关闭结果集、关闭会话、关闭连接。&lt;br&gt;
+详细代码请看（封装）：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjk1NDI2MTEvYXJ0aWNsZS9kZXRhaWxzLzUyNDI2MDA2&#34;&gt;http://blog.csdn.net/qq_29542611/article/details/52426006&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;session-和-cookie-有什么区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#session-和-cookie-有什么区别&#34;&gt;#&lt;/a&gt; session 和 cookie 有什么区别？&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;存储位置不同：session 存储在服务器端；cookie 存储在浏览器端。&lt;/li&gt;
+&lt;li&gt;安全性不同：cookie 安全性一般，在浏览器存储，可以被伪造和修改。&lt;/li&gt;
+&lt;li&gt;容量和个数限制：cookie 有容量限制，每个站点下的 cookie 也有个数限制。&lt;/li&gt;
+&lt;li&gt;存储的多样性：session 可以存储在 Redis 中、数据库中、应用程序中；而 cookie 只能存储在浏览器中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;简述-tcp-和-udp的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#简述-tcp-和-udp的区别&#34;&gt;#&lt;/a&gt; 简述 tcp 和 udp 的区别？&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;tcp&lt;/strong&gt; 和 &lt;strong&gt;udp&lt;/strong&gt; 是 OSI 模型中的运输层中的协议。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;tcp&lt;/strong&gt; 提供可靠的通信传输    &lt;strong&gt;udp&lt;/strong&gt; 则常被用于让广播和细节控制交给应用的通信传输。&lt;/p&gt;
+&lt;p&gt;两者的区别大致如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;tcp &lt;strong&gt;面向连接&lt;/strong&gt;，udp &lt;strong&gt;面向非连接&lt;/strong&gt;即发送数据前不需要建立链接；&lt;/li&gt;
+&lt;li&gt;tcp 提供可靠的服务（数据传输），udp 无法保证；&lt;/li&gt;
+&lt;li&gt;tcp 面向字节流，udp 面向报文；&lt;/li&gt;
+&lt;li&gt;tcp 数据传输慢，udp 数据传输快；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;tcp三次握手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tcp三次握手&#34;&gt;#&lt;/a&gt; tcp 三次握手&lt;/h3&gt;
+&lt;p&gt;第一次&lt;/p&gt;
+&lt;p&gt;第一次握手：建立连接时，客户端  发送&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9zeW4=&#34;&gt; syn&lt;/span&gt; 包（seq=j）到  服务器，并进入 SYN_SENT 状态，等待  服务器确认；SYN：同步序列编号（Synchronize Sequence Numbers）。 [3]&lt;/p&gt;
+&lt;p&gt;第二次&lt;/p&gt;
+&lt;p&gt;第二次握手：服务器  收到&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9zeW4=&#34;&gt; syn&lt;/span&gt; 包，必须确认  客户端  的 SYN（&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9hY2s=&#34;&gt;ack&lt;/span&gt;=j+1），同时自己也发送一个 SYN 包（seq=k），即 SYN+ACK 包，此时服务器进入 SYN_RECV 状态。 [3]&lt;/p&gt;
+&lt;p&gt;第三次&lt;/p&gt;
+&lt;p&gt;第三次握手：客户端  收到  服务器  的 SYN+ACK 包，向  服务器  发送确认包 ACK (&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9hY2s=&#34;&gt;ack&lt;/span&gt;=k+1），此包发送完毕，客户端和服务器进入&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9FU1RBQkxJU0hFRA==&#34;&gt; ESTABLISHED&lt;/span&gt;（TCP 连接成功）状态，完成三次握手。&lt;/p&gt;
+&lt;h3 id=&#34;为什么要三次握手两次不行吗为什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#为什么要三次握手两次不行吗为什么&#34;&gt;#&lt;/a&gt; 为什么要三次握手，两次不行吗？为什么？&lt;/h3&gt;
+&lt;p&gt;如果采用两次握手，那么只要&lt;strong&gt;服务器&lt;/strong&gt;发出确认数据包就会建立连接，但由于&lt;strong&gt;客户端&lt;/strong&gt;此时并未响应服务器端的请求，那此时&lt;strong&gt;服务器端&lt;/strong&gt;就会一直在等待客户端，这样服务器端就白白浪费了一定的资源。&lt;/p&gt;
+&lt;p&gt;若采用三次握手，服务器端没有收到来自客户端的再此确认，则就会知道客户端并没有要求建立请求，就不会浪费服务器的资源。&lt;/p&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt;</content>
+        <category term="Java基础" />
+        <updated>2020-10-13T13:44:14.924Z</updated>
+    </entry>
     <entry>
         <id>https://www.baocai-blog.cn/2020/10/10/JAVA%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</id>
         <title>Java基础语法</title>

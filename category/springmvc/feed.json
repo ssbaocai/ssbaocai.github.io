@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "手撕包菜 • All posts by \"springmvc\" category",
+    "description": "",
+    "home_page_url": "https://www.baocai-blog.cn",
+    "items": [
+        {
+            "id": "https://www.baocai-blog.cn/2020/10/13/SpringMVC/",
+            "url": "https://www.baocai-blog.cn/2020/10/13/SpringMVC/",
+            "title": "SpringMVC",
+            "date_published": "2020-10-13T12:08:53.439Z",
+            "content_html": "<link rel=\"stylesheet\" class=\"aplayer-secondary-style-marker\" href=\"\\assets\\css\\APlayer.min.css\"><script src=\"\\assets\\js\\APlayer.min.js\" class=\"aplayer-secondary-script-marker\"></script><h1 id=\"springmvc\"><a class=\"anchor\" href=\"#springmvc\">#</a> SpringMVC</h1>\n<h2 id=\"概念\"><a class=\"anchor\" href=\"#概念\">#</a> 概念</h2>\n<h3 id=\"什么是springmvc\"><a class=\"anchor\" href=\"#什么是springmvc\">#</a> 什么是 SpringMVC</h3>\n<p>SpringMvc 是 spring 的一个模块，基于 MVC 的一个框架，无需中间整合层来整合。 简化开发，减少出错。</p>\n<h2 id=\"特性\"><a class=\"anchor\" href=\"#特性\">#</a> 特性</h2>\n<h3 id=\"springmvc的优点\"><a class=\"anchor\" href=\"#springmvc的优点\">#</a> SpringMVC 的优点</h3>\n<ol>\n<li>\n<p>它是基于组件技术的。全部的应用对象，无论控制器和视图，还是业务对象之类的都是 java 组件。并且和 Spring 提供的其他基础结构紧密集成.</p>\n</li>\n<li>\n<p>不依赖于 Servlet API (目标虽是如此，但是在实现的时候确实是依赖于 Servlet 的)</p>\n</li>\n<li>\n<p>可以任意使用各种视图技术，而不仅仅局限于 JSP</p>\n</li>\n<li>\n<p>支持各种请求资源的映射策略</p>\n</li>\n<li>\n<p>它应是易于扩展的</p>\n</li>\n</ol>\n<h2 id=\"工作原理\"><a class=\"anchor\" href=\"#工作原理\">#</a> 工作原理</h2>\n<h3 id=\"springmvc的工作原理\"><a class=\"anchor\" href=\"#springmvc的工作原理\">#</a> SpringMVC 的工作原理</h3>\n<ol>\n<li>\n<p>客户端发送请求 DispatcherServlet</p>\n</li>\n<li>\n<p>DispatcherServlet 查询 handlerMapping 找到处理请求的 Controller</p>\n</li>\n<li>\n<p>Controller 调用业务逻辑后，返回 ModelAndView</p>\n</li>\n<li>\n<p>DispatcherServlet 查询 ModelAndView，找到指定视图</p>\n</li>\n<li>\n<p>视图将结果返回到客户端</p>\n</li>\n</ol>\n<h3 id=\"springmvc常用注解\"><a class=\"anchor\" href=\"#springmvc常用注解\">#</a> SpringMVC 常用注解</h3>\n<ol>\n<li>\n<p>@requestMapping 用于请求 url 映射。</p>\n</li>\n<li>\n<p>@RequestBody 注解实现接收 http 请求的 json 数据，将 json 数据转换为 java 对象。</p>\n</li>\n<li>\n<p>@ResponseBody 注解实现将 controller 方法返回对象转化为 json 响应给客户。</p>\n</li>\n</ol>\n<h2 id=\"常见问题\"><a class=\"anchor\" href=\"#常见问题\">#</a> 常见问题</h2>\n<h3 id=\"如何解决getpost乱码\"><a class=\"anchor\" href=\"#如何解决getpost乱码\">#</a> 如何解决 get/post 乱码</h3>\n<ul>\n<li>解决 post 请求乱码：我们可以在 web.xml 里边配置一个 CharacterEncodingFilter 过滤器。 设置为 utf-8，解决 get 请求的乱码：有两种方法。</li>\n<li>get 请求中文参数出现乱码解决方法有两个:</li>\n</ul>\n<ol>\n<li>\n<p>修改 tomcat 配置文件添加编码与工程编码一致。</p>\n</li>\n<li>\n<p>另 外 一 种 方 法 对 参 数 进 行 重 新 编 码 String userName = New String (Request.getParameter (“userName”).getBytes (“ISO8859-1”), “utf-8”);</p>\n</li>\n</ol>\n<script>\n        document.querySelectorAll('.github-emoji')\n          .forEach(el => {\n            if (!el.dataset.src) { return; }\n            const img = document.createElement('img');\n            img.style = 'display:none !important;';\n            img.src = el.dataset.src;\n            img.addEventListener('error', () => {\n              img.remove();\n              el.style.color = 'inherit';\n              el.style.backgroundImage = 'none';\n              el.style.background = 'none';\n            });\n            img.addEventListener('load', () => {\n              img.remove();\n            });\n            document.body.appendChild(img);\n          });\n      </script>",
+            "tags": [
+                "框架"
+            ]
+        }
+    ]
+}

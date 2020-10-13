@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://www.baocai-blog.cn</id>
+    <title>手撕包菜 • Posts by &#34;springmvc&#34; category</title>
+    <link href="https://www.baocai-blog.cn" />
+    <updated>2020-10-13T12:08:53.439Z</updated>
+    <category term="Java基础" />
+    <category term="框架" />
+    <category term="数据库" />
+    <category term="面向对象" />
+    <entry>
+        <id>https://www.baocai-blog.cn/2020/10/13/SpringMVC/</id>
+        <title>SpringMVC</title>
+        <link rel="alternate" href="https://www.baocai-blog.cn/2020/10/13/SpringMVC/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;springmvc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springmvc&#34;&gt;#&lt;/a&gt; SpringMVC&lt;/h1&gt;
+&lt;h2 id=&#34;概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h2&gt;
+&lt;h3 id=&#34;什么是springmvc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是springmvc&#34;&gt;#&lt;/a&gt; 什么是 SpringMVC&lt;/h3&gt;
+&lt;p&gt;SpringMvc 是 spring 的一个模块，基于 MVC 的一个框架，无需中间整合层来整合。 简化开发，减少出错。&lt;/p&gt;
+&lt;h2 id=&#34;特性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#特性&#34;&gt;#&lt;/a&gt; 特性&lt;/h2&gt;
+&lt;h3 id=&#34;springmvc的优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springmvc的优点&#34;&gt;#&lt;/a&gt; SpringMVC 的优点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;它是基于组件技术的。全部的应用对象，无论控制器和视图，还是业务对象之类的都是 java 组件。并且和 Spring 提供的其他基础结构紧密集成.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不依赖于 Servlet API (目标虽是如此，但是在实现的时候确实是依赖于 Servlet 的)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;可以任意使用各种视图技术，而不仅仅局限于 JSP&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持各种请求资源的映射策略&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;它应是易于扩展的&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;工作原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#工作原理&#34;&gt;#&lt;/a&gt; 工作原理&lt;/h2&gt;
+&lt;h3 id=&#34;springmvc的工作原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springmvc的工作原理&#34;&gt;#&lt;/a&gt; SpringMVC 的工作原理&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;客户端发送请求 DispatcherServlet&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DispatcherServlet 查询 handlerMapping 找到处理请求的 Controller&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Controller 调用业务逻辑后，返回 ModelAndView&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DispatcherServlet 查询 ModelAndView，找到指定视图&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;视图将结果返回到客户端&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;springmvc常用注解&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#springmvc常用注解&#34;&gt;#&lt;/a&gt; SpringMVC 常用注解&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;@requestMapping 用于请求 url 映射。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;@RequestBody 注解实现接收 http 请求的 json 数据，将 json 数据转换为 java 对象。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;@ResponseBody 注解实现将 controller 方法返回对象转化为 json 响应给客户。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常见问题&#34;&gt;#&lt;/a&gt; 常见问题&lt;/h2&gt;
+&lt;h3 id=&#34;如何解决getpost乱码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#如何解决getpost乱码&#34;&gt;#&lt;/a&gt; 如何解决 get/post 乱码&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;解决 post 请求乱码：我们可以在 web.xml 里边配置一个 CharacterEncodingFilter 过滤器。 设置为 utf-8，解决 get 请求的乱码：有两种方法。&lt;/li&gt;
+&lt;li&gt;get 请求中文参数出现乱码解决方法有两个:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;修改 tomcat 配置文件添加编码与工程编码一致。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;另 外 一 种 方 法 对 参 数 进 行 重 新 编 码 String userName = New String (Request.getParameter (“userName”).getBytes (“ISO8859-1”), “utf-8”);&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt;</content>
+        <category term="框架" />
+        <updated>2020-10-13T12:08:53.439Z</updated>
+    </entry>
+</feed>

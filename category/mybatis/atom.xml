@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://www.baocai-blog.cn</id>
+    <title>手撕包菜 • Posts by &#34;mybatis&#34; category</title>
+    <link href="https://www.baocai-blog.cn" />
+    <updated>2020-10-13T13:17:48.784Z</updated>
+    <category term="Java基础" />
+    <category term="框架" />
+    <category term="数据库" />
+    <category term="面向对象" />
+    <entry>
+        <id>https://www.baocai-blog.cn/2020/10/13/MyBatis/</id>
+        <title>MyBatis</title>
+        <link rel="alternate" href="https://www.baocai-blog.cn/2020/10/13/MyBatis/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;mybatis&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mybatis&#34;&gt;#&lt;/a&gt; MyBatis&lt;/h1&gt;
+&lt;h2 id=&#34;概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h2&gt;
+&lt;h3 id=&#34;什么是mybatis&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是mybatis&#34;&gt;#&lt;/a&gt; 什么是 MyBatis&lt;/h3&gt;
+&lt;p&gt;MyBatis 是一个可以自定义 SQL、存储过程和高级映射的持久层框架。&lt;/p&gt;
+&lt;h3 id=&#34;mybatis优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mybatis优点&#34;&gt;#&lt;/a&gt; MyBatis 优点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;基于 SQL 语句，灵活&lt;/li&gt;
+&lt;li&gt;降低代码量&lt;/li&gt;
+&lt;li&gt;与数据库兼容&lt;/li&gt;
+&lt;li&gt;与 Spring 集成&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;基础&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基础&#34;&gt;#&lt;/a&gt; 基础&lt;/h2&gt;
+&lt;h3 id=&#34;mybatis缓存&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mybatis缓存&#34;&gt;#&lt;/a&gt; MyBatis 缓存&lt;/h3&gt;
+&lt;p&gt;MyBatis 的缓存分为一级缓存和二级存，一级缓存放在 session 里面，默认就有，二级缓 存放在它的命名空间里，默认是不打开的，使用二级缓存属性类需要实现 Serializable 序列化 接口 (可用来保存对象的状态), 可在它的映射文件中配置 &amp;lt; cache/&amp;gt;&lt;/p&gt;
+&lt;h3 id=&#34;mybatis分页&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mybatis分页&#34;&gt;#&lt;/a&gt; MyBatis 分页&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;分页方式：Mybatis 使用 RowBounds 对象进行分页，也可以直接编写 sql 实现分页，也可以使用 Mybatis 的分页插件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;分页插件的原理：实现 Mybatis 提供的接口，实现自定义插件，在插件的拦截方法内拦 截待执行的 sql，然后重写 sql&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;和的区别是什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#和的区别是什么&#34;&gt;#&lt;/a&gt; #{} 和 ${} 的区别是什么？&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;#{} 是预编译处理，${} 是字符串替换。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mybatis 在处理 #{} 时，会将 sql 中的 #{} 替换为？号，调用 PreparedStatement 的 set 方法 来赋值；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mybatis 在处理&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mtext&gt;时，就是把&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;{}时，就是把&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;时&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;就&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;是&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;把&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; {} 替换成变量的值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 #{} 可以有效的防止 SQL 注入，提高系统安全性&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;mybatis编程步骤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mybatis编程步骤&#34;&gt;#&lt;/a&gt; Mybatis 编程步骤&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;创建 SqlSessionFactory&lt;/li&gt;
+&lt;li&gt;通过 SqlSessionFactory 创建 SqlSession&lt;/li&gt;
+&lt;li&gt;通过 sqlsession 执行数据库操作&lt;/li&gt;
+&lt;li&gt;调用 session.commit () 提交事务&lt;/li&gt;
+&lt;li&gt;调用 session.close () 关闭会话&lt;/li&gt;
+&lt;/ol&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt;</content>
+        <category term="框架" />
+        <updated>2020-10-13T13:17:48.784Z</updated>
+    </entry>
+</feed>

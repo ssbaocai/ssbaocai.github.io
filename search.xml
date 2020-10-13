@@ -4,6 +4,156 @@
   
     
     <entry>
+      <title>SpringBoot</title>
+      <link href="2020/10/13/SpringBoot/"/>
+      <url>2020/10/13/SpringBoot/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="springboot"><a class="anchor" href="#springboot">#</a> SpringBoot</h1><h2 id="概念"><a class="anchor" href="#概念">#</a> 概念</h2><h3 id="什么是springboot"><a class="anchor" href="#什么是springboot">#</a> 什么是 SpringBoot</h3><p>spring boot 为 spring 服务，用来简化新 spring 应用的初始搭建以及开发过程</p><h3 id="优点"><a class="anchor" href="#优点">#</a> 优点</h3><ol><li><p>减少开发，测试时间和努力。</p></li><li><p>使用 JavaConfig 有助于避免使用 XML。</p></li><li><p>避免大量的 Maven 导入和各种版本冲突。</p></li><li><p>提供意见发展方法。</p></li><li><p>通过提供默认值快速开始开发。</p></li><li><p>没有单独的 Web 服务器需要。这意味着你不再需要启动 Tomcat，Glassfish 或其他任何东西。</p></li><li><p>需要更少的配置 因为没有 web.xml 文件。只需添加用 @ Configuration 注释的类，然后添加用 @Bean 注释的方法，Spring 将自动加载对象并像以前一样对其进行管理。您甚至可以将 @Autowired 添加到 bean 方法中，以使 Spring 自动装入需要的依赖关系中。</p></li><li><p>基于环境的配置 使用这些属性，您可以将您正在使用的环境传递到应用程序：-Dspring.profiles.active = {enviornment}。在加载主应用程序属性文件后，Spring 将在（application {environment} .properties）中加载后续的应用程序属性文件。</p></li></ol><h2 id="常见问题"><a class="anchor" href="#常见问题">#</a> 常见问题</h2><h3 id="springboot核心配置文件"><a class="anchor" href="#springboot核心配置文件">#</a> SpringBoot 核心配置文件</h3><ul><li>bootstrap (. yml 或者 . properties)：boostrap 由父 ApplicationContext 加载的，比 applicaton 优先加载，且 boostrap 里面的属性不能被覆盖；</li><li>application (. yml 或者 . properties)：用于 spring boot 项目的自动化配置。</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> SpringBoot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 框架 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaWeb</title>
+      <link href="2020/10/13/JavaWeb/"/>
+      <url>2020/10/13/JavaWeb/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="javaweb"><a class="anchor" href="#javaweb">#</a> JavaWeb</h1><h3 id="说下原生jdbc操作数据库流程"><a class="anchor" href="#说下原生jdbc操作数据库流程">#</a> 说下原生 jdbc 操作数据库流程？</h3><ul><li>第一步：Class.forName () 加载数据库连接驱动；</li><li>第二步：DriverManager.getConnection () 获取数据连接对象；</li><li>第三步：根据 SQL 获取 sql 会话对象，有 2 种方式 Statement、PreparedStatement ;</li><li>第四步：执行 SQL 处理结果集，执行 SQL 前如果有参数值就设置参数值 setXXX ();</li><li>第五步：关闭结果集、关闭会话、关闭连接。<br>详细代码请看（封装）：<span class="exturl" data-url="aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjk1NDI2MTEvYXJ0aWNsZS9kZXRhaWxzLzUyNDI2MDA2">http://blog.csdn.net/qq_29542611/article/details/52426006</span></li></ul><h3 id="session-和-cookie-有什么区别"><a class="anchor" href="#session-和-cookie-有什么区别">#</a> session 和 cookie 有什么区别？</h3><ul><li>存储位置不同：session 存储在服务器端；cookie 存储在浏览器端。</li><li>安全性不同：cookie 安全性一般，在浏览器存储，可以被伪造和修改。</li><li>容量和个数限制：cookie 有容量限制，每个站点下的 cookie 也有个数限制。</li><li>存储的多样性：session 可以存储在 Redis 中、数据库中、应用程序中；而 cookie 只能存储在浏览器中。</li></ul><h3 id="简述-tcp-和-udp的区别"><a class="anchor" href="#简述-tcp-和-udp的区别">#</a> 简述 tcp 和 udp 的区别？</h3><p><strong>tcp</strong> 和 <strong>udp</strong> 是 OSI 模型中的运输层中的协议。</p><p><strong>tcp</strong> 提供可靠的通信传输    <strong>udp</strong> 则常被用于让广播和细节控制交给应用的通信传输。</p><p>两者的区别大致如下：</p><ul><li>tcp <strong>面向连接</strong>，udp <strong>面向非连接</strong>即发送数据前不需要建立链接；</li><li>tcp 提供可靠的服务（数据传输），udp 无法保证；</li><li>tcp 面向字节流，udp 面向报文；</li><li>tcp 数据传输慢，udp 数据传输快；</li></ul><h3 id="tcp三次握手"><a class="anchor" href="#tcp三次握手">#</a> tcp 三次握手</h3><p>第一次</p><p>第一次握手：建立连接时，客户端  发送<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9zeW4="> syn</span> 包（seq=j）到  服务器，并进入 SYN_SENT 状态，等待  服务器确认；SYN：同步序列编号（Synchronize Sequence Numbers）。 [3]</p><p>第二次</p><p>第二次握手：服务器  收到<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9zeW4="> syn</span> 包，必须确认  客户端  的 SYN（<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9hY2s=">ack</span>=j+1），同时自己也发送一个 SYN 包（seq=k），即 SYN+ACK 包，此时服务器进入 SYN_RECV 状态。 [3]</p><p>第三次</p><p>第三次握手：客户端  收到  服务器  的 SYN+ACK 包，向  服务器  发送确认包 ACK (<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9hY2s=">ack</span>=k+1），此包发送完毕，客户端和服务器进入<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9FU1RBQkxJU0hFRA=="> ESTABLISHED</span>（TCP 连接成功）状态，完成三次握手。</p><h3 id="为什么要三次握手两次不行吗为什么"><a class="anchor" href="#为什么要三次握手两次不行吗为什么">#</a> 为什么要三次握手，两次不行吗？为什么？</h3><p>如果采用两次握手，那么只要<strong>服务器</strong>发出确认数据包就会建立连接，但由于<strong>客户端</strong>此时并未响应服务器端的请求，那此时<strong>服务器端</strong>就会一直在等待客户端，这样服务器端就白白浪费了一定的资源。</p><p>若采用三次握手，服务器端没有收到来自客户端的再此确认，则就会知道客户端并没有要求建立请求，就不会浪费服务器的资源。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL</title>
+      <link href="2020/10/13/MySQL/"/>
+      <url>2020/10/13/MySQL/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="mysql"><a class="anchor" href="#mysql">#</a> MySQL</h1><h2 id="基础"><a class="anchor" href="#基础">#</a> 基础</h2><h3 id="数据库的三范式是什么"><a class="anchor" href="#数据库的三范式是什么">#</a> 数据库的三范式是什么？</h3><ul><li>第一范式：强调的是原子性，即数据库表的每一列都是不可分割的原子数据项。</li><li>第二范式：要求实体的属性完全依赖于主关键字。所谓完全依赖是指不能存在仅依赖主关键字一部分的属性。</li><li>第三范式：任何非主属性不依赖于其它非主属性。</li></ul><h3 id="mysql-的内连接-左连接-右连接有什么区别"><a class="anchor" href="#mysql-的内连接-左连接-右连接有什么区别">#</a> MySQL 的内连接、左连接、右连接有什么区别？</h3><p>内连接关键字：inner join；左连接：left join；右连接：right join。</p><p>内连接是把匹配的关联数 据显示出来；左连接是左边的表全部显示出来，右边的表显示出符合条件的数据；右连接正好相反。</p><h3 id="数据库基本操作语句"><a class="anchor" href="#数据库基本操作语句">#</a> 数据库基本操作语句</h3><p>主键约束 (primary key)  唯一约束 (unique) 非空约束 (not null) 外键约束 (foreign key)</p><p><strong>select</strong> ... from 表名  where 条件  group by  分组字段  having 条件  order by  排序字段 ase|desc</p><p>去重操作<strong> distinct</strong>             select distinct 字段名，字段名 2 from 表名</p><p><strong>insert  into  &lt;表名&gt;  [列名]  values  &lt; 列值 &gt;                delete  from  &lt; 表名 &gt;  where  &lt; 删除条件 &gt;</strong>**</p><p><strong>update 表名 set  字段名 = 字段值，字段名 = 字段值   [where 修改条件];</strong></p><h2 id="数据库特性"><a class="anchor" href="#数据库特性">#</a> 数据库特性</h2><h3 id="数据库4个特性"><a class="anchor" href="#数据库4个特性">#</a> 数据库 4 个特性：</h3><ul><li>Atomicity（<strong>原子性</strong>）：事务不可分割、不可约简。</li><li>Consistency（<strong>一致性</strong>）：在事务开始前和事务结束后，<strong>数据库的完整性</strong>没有被破坏。</li><li>Isolation（<strong>隔离性</strong>）：数据库允许多个事务同时对数据处理，隔离性可以<strong>防止</strong>多个事务并发执行时由于交叉执行而<strong>导致数据的不一致</strong>。事务隔离分为不同级别，包括读未提交（Read uncommitted）、读提交（read committed）、可重复读（repeatable read）和串行化（Serializable）。</li><li>Durability（<strong>持久性</strong>）：事务处理结束后，对数据的修改就是永久，不会丢失。</li></ul><h2 id="事务隔离"><a class="anchor" href="#事务隔离">#</a> 事务隔离</h2><h3 id="数据库的事务隔离"><a class="anchor" href="#数据库的事务隔离">#</a> 数据库的事务隔离：</h3><ul><li><p>READ-UNCOMMITTED：<strong>未提交读</strong>，最低隔离级别、事务未提交前，就可被其他事务读取（会出现幻读、脏读、不可重复读）。</p></li><li><p>READ-COMMITTED：<strong>提交读</strong>，一个事务提交后才能被其他事务读取到（会造成幻读、不可重复读）。</p></li><li><p>REPEATABLE-READ：<strong>可重复读</strong>，<strong>默认</strong>级别，保证多次读取同一个数据，值和内容一致。禁止读取到别的事务未提交的数据（会造成幻读）。</p></li><li><p>SERIALIZABLE：<strong>序列化</strong>，代价最高最可靠的隔离级别，该隔离级别能防止脏读、不可重复读、幻读。</p><p><strong>脏读</strong> ：表示一个事务能够读取另一个事务中还未提交的数据。<strong>不可重复读</strong> ：是指在一个事务内，多次读同一数据。</p></li></ul><h2 id="分页查询"><a class="anchor" href="#分页查询">#</a> 分页查询</h2><h3 id="oracle页查询"><a class="anchor" href="#oracle页查询">#</a> <strong>Oracle 页查询</strong></h3><p>Oracle 中使用 rownum 来进行分页，</p><p>select * from    ( select rownum r,a from tabName where rownum &lt;= 20 )  where r &gt; 10</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MyBatis</title>
+      <link href="2020/10/13/MyBatis/"/>
+      <url>2020/10/13/MyBatis/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="mybatis"><a class="anchor" href="#mybatis">#</a> MyBatis</h1><h2 id="概念"><a class="anchor" href="#概念">#</a> 概念</h2><h3 id="什么是mybatis"><a class="anchor" href="#什么是mybatis">#</a> 什么是 MyBatis</h3><p>MyBatis 是一个可以自定义 SQL、存储过程和高级映射的持久层框架。</p><h3 id="mybatis优点"><a class="anchor" href="#mybatis优点">#</a> MyBatis 优点</h3><ol><li>基于 SQL 语句，灵活</li><li>降低代码量</li><li>与数据库兼容</li><li>与 Spring 集成</li></ol><h2 id="基础"><a class="anchor" href="#基础">#</a> 基础</h2><h3 id="mybatis缓存"><a class="anchor" href="#mybatis缓存">#</a> MyBatis 缓存</h3><p>MyBatis 的缓存分为一级缓存和二级存，一级缓存放在 session 里面，默认就有，二级缓 存放在它的命名空间里，默认是不打开的，使用二级缓存属性类需要实现 Serializable 序列化 接口 (可用来保存对象的状态), 可在它的映射文件中配置 &lt; cache/&gt;</p><h3 id="mybatis分页"><a class="anchor" href="#mybatis分页">#</a> MyBatis 分页</h3><ul><li><p>分页方式：Mybatis 使用 RowBounds 对象进行分页，也可以直接编写 sql 实现分页，也可以使用 Mybatis 的分页插件。</p></li><li><p>分页插件的原理：实现 Mybatis 提供的接口，实现自定义插件，在插件的拦截方法内拦 截待执行的 sql，然后重写 sql</p></li></ul><h3 id="和的区别是什么"><a class="anchor" href="#和的区别是什么">#</a> #{} 和 ${} 的区别是什么？</h3><ol><li><p>#{} 是预编译处理，${} 是字符串替换。</p></li><li><p>Mybatis 在处理 #{} 时，会将 sql 中的 #{} 替换为？号，调用 PreparedStatement 的 set 方法 来赋值；</p></li><li><p>Mybatis 在处理<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow></mrow><mtext>时，就是把</mtext></mrow><annotation encoding="application/x-tex">{}时，就是把</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"></span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">，</span><span class="mord cjk_fallback">就</span><span class="mord cjk_fallback">是</span><span class="mord cjk_fallback">把</span></span></span></span> {} 替换成变量的值。</p></li><li><p>使用 #{} 可以有效的防止 SQL 注入，提高系统安全性</p></li></ol><h3 id="mybatis编程步骤"><a class="anchor" href="#mybatis编程步骤">#</a> Mybatis 编程步骤</h3><ol><li>创建 SqlSessionFactory</li><li>通过 SqlSessionFactory 创建 SqlSession</li><li>通过 sqlsession 执行数据库操作</li><li>调用 session.commit () 提交事务</li><li>调用 session.close () 关闭会话</li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> MyBatis </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 框架 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring</title>
+      <link href="2020/10/13/Spring/"/>
+      <url>2020/10/13/Spring/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="spring"><a class="anchor" href="#spring">#</a> Spring</h1><h2 id="概念"><a class="anchor" href="#概念">#</a> 概念</h2><h3 id="什么是spring"><a class="anchor" href="#什么是spring">#</a> 什么是 Spring</h3><p>Spring 是个 java 企业级应用的开源开发框架。Spring 框架目标是简化 Java 企业级应用开发，并通过 POJO 为基础的编程模型促进良好的编程习惯。</p><h2 id="aop"><a class="anchor" href="#aop">#</a> AOP</h2><h3 id="什么是aop"><a class="anchor" href="#什么是aop">#</a> 什么是 AOP</h3><p>aop 是面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。</p><h2 id="ioc"><a class="anchor" href="#ioc">#</a> IOC</h2><h3 id="什么是ioc"><a class="anchor" href="#什么是ioc">#</a> 什么是 IOC</h3><ul><li>IOC 容器负责实例化、配置程序中的对象及建立对象间的依赖。"控制反转" 是指 new 实例工作交给 Spring 容器来做。</li><li>所谓 IoC (控制反转)，对于 spring 框架来说，就是由 spring 来负责控制对象的生命周期和对象间的关系。</li></ul><h3 id="ioc优点"><a class="anchor" href="#ioc优点">#</a> IOC 优点</h3><ol><li>降低代码量</li><li>易于测试</li><li>轻松实现耦合</li><li>支持饿汉式初始化和懒加载</li></ol><h2 id="依赖"><a class="anchor" href="#依赖">#</a> 依赖</h2><h3 id="什么是依赖注入"><a class="anchor" href="#什么是依赖注入">#</a> 什么是依赖注入</h3><p>spring 使用 javaBean 对象的 set 方法或者带参数的构造方法为我们在创建所需对象时将其属性自动设置所需要的值的过程，就是依赖注入的思想。</p><h3 id="依赖注入方式"><a class="anchor" href="#依赖注入方式">#</a> 依赖注入方式</h3><ul><li>setter 属性注入</li><li>构造方法注入</li><li>接口注入</li></ul><h2 id="特性"><a class="anchor" href="#特性">#</a> 特性</h2><h3 id="spring优点"><a class="anchor" href="#spring优点">#</a> Spring 优点</h3><ol><li><p>方便解耦 ——Spring 提供的 IoC 容器实现了对象依赖关系的管理，避免了硬编码导致的耦合。</p></li><li><p>支持 AOP——Spring 提供的 AOP 功能，方便进行面向切面编程。</p></li><li><p>集成了多种优秀框架 ——Spring 提供了对各种优秀框架（如 Struts、Hibernate、Hessian、Quartz 等）的直接支持。</p></li><li><p>降低对 API 依赖</p></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 框架 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SpringMVC</title>
+      <link href="2020/10/13/SpringMVC/"/>
+      <url>2020/10/13/SpringMVC/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="springmvc"><a class="anchor" href="#springmvc">#</a> SpringMVC</h1><h2 id="概念"><a class="anchor" href="#概念">#</a> 概念</h2><h3 id="什么是springmvc"><a class="anchor" href="#什么是springmvc">#</a> 什么是 SpringMVC</h3><p>SpringMvc 是 spring 的一个模块，基于 MVC 的一个框架，无需中间整合层来整合。 简化开发，减少出错。</p><h2 id="特性"><a class="anchor" href="#特性">#</a> 特性</h2><h3 id="springmvc的优点"><a class="anchor" href="#springmvc的优点">#</a> SpringMVC 的优点</h3><ol><li><p>它是基于组件技术的。全部的应用对象，无论控制器和视图，还是业务对象之类的都是 java 组件。并且和 Spring 提供的其他基础结构紧密集成.</p></li><li><p>不依赖于 Servlet API (目标虽是如此，但是在实现的时候确实是依赖于 Servlet 的)</p></li><li><p>可以任意使用各种视图技术，而不仅仅局限于 JSP</p></li><li><p>支持各种请求资源的映射策略</p></li><li><p>它应是易于扩展的</p></li></ol><h2 id="工作原理"><a class="anchor" href="#工作原理">#</a> 工作原理</h2><h3 id="springmvc的工作原理"><a class="anchor" href="#springmvc的工作原理">#</a> SpringMVC 的工作原理</h3><ol><li><p>客户端发送请求 DispatcherServlet</p></li><li><p>DispatcherServlet 查询 handlerMapping 找到处理请求的 Controller</p></li><li><p>Controller 调用业务逻辑后，返回 ModelAndView</p></li><li><p>DispatcherServlet 查询 ModelAndView，找到指定视图</p></li><li><p>视图将结果返回到客户端</p></li></ol><h3 id="springmvc常用注解"><a class="anchor" href="#springmvc常用注解">#</a> SpringMVC 常用注解</h3><ol><li><p>@requestMapping 用于请求 url 映射。</p></li><li><p>@RequestBody 注解实现接收 http 请求的 json 数据，将 json 数据转换为 java 对象。</p></li><li><p>@ResponseBody 注解实现将 controller 方法返回对象转化为 json 响应给客户。</p></li></ol><h2 id="常见问题"><a class="anchor" href="#常见问题">#</a> 常见问题</h2><h3 id="如何解决getpost乱码"><a class="anchor" href="#如何解决getpost乱码">#</a> 如何解决 get/post 乱码</h3><ul><li>解决 post 请求乱码：我们可以在 web.xml 里边配置一个 CharacterEncodingFilter 过滤器。 设置为 utf-8，解决 get 请求的乱码：有两种方法。</li><li>get 请求中文参数出现乱码解决方法有两个:</li></ul><ol><li><p>修改 tomcat 配置文件添加编码与工程编码一致。</p></li><li><p>另 外 一 种 方 法 对 参 数 进 行 重 新 编 码 String userName = New String (Request.getParameter (“userName”).getBytes (“ISO8859-1”), “utf-8”);</p></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> SpringMVC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 框架 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java基础语法</title>
       <link href="2020/10/10/JAVA%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
       <url>2020/10/10/JAVA%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
