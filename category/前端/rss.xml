@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>手撕包菜 • Posts by &#34;前端&#34; category</title>
+        <link>https://www.baocai-blog.cn</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Fri, 30 Oct 2020 18:48:44 +0800</pubDate>
+        <lastBuildDate>Fri, 30 Oct 2020 18:48:44 +0800</lastBuildDate>
+        <category>Java基础</category>
+        <category>框架</category>
+        <category>数据库</category>
+        <category>面向对象</category>
+        <category>XML，JSON</category>
+        <category>html</category>
+        <item>
+            <guid isPermalink="true">https://www.baocai-blog.cn/2020/10/30/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
+            <title>html标签</title>
+            <link>https://www.baocai-blog.cn/2020/10/30/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
+            <category>html</category>
+            <pubDate>Fri, 30 Oct 2020 18:48:44 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;html常用标签&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#html常用标签&#34;&gt;#&lt;/a&gt; html 常用标签&lt;/h1&gt;
+&lt;h2 id=&#34;格式化标签&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#格式化标签&#34;&gt;#&lt;/a&gt; 格式化标签&lt;/h2&gt;
+&lt;p&gt;格式标签：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;		&amp;lt;br /&amp;gt;  换行
+		&amp;lt;p&amp;gt;   &amp;lt;/p&amp;gt;  换段
+		&amp;lt;hr /&amp;gt;   水平线分割
+		列表：
+		&amp;lt;ul&amp;gt;   &amp;lt;/ul&amp;gt;  无序列表
+		&amp;lt;ol&amp;gt;   &amp;lt;/ol&amp;gt;  有序列表，type类型值：A a I i 1 start属性表示起始值
+		&amp;lt;li&amp;gt;   &amp;lt;/li&amp;gt;  列表项
+		      &amp;lt;dl&amp;gt;   &amp;lt;/dl&amp;gt;   自定义列表
+			  &amp;lt;dt&amp;gt;   &amp;lt;/dt&amp;gt;   自定义列表头
+			  &amp;lt;dd&amp;gt;   &amp;lt;/dd&amp;gt;   自定义列表内容
+	    &amp;lt;div&amp;gt;   &amp;lt;/div&amp;gt;  常用于组合块级元素 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;图像标签&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#图像标签&#34;&gt;#&lt;/a&gt; 图像标签&lt;/h2&gt;
+&lt;p&gt;图像标签：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src=&#34;#&#34; alt=&#34;加载失败&#34; title=&#34;这是一张图片&#34; width=&#34;200&#34;
+		height=&#34;200&#34; border=&#34;0&#34;/&amp;gt;
+		src: 图片路径
+		alt: 加载失败信息
+		title: 文字提示属性
+		width: 宽度
+		height: 高度
+		border: 边框线粗细
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;超链接标签&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#超链接标签&#34;&gt;#&lt;/a&gt; 超链接标签&lt;/h2&gt;
+&lt;p&gt;超链接标签:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;		&amp;lt;a href=&#34;#&#34; target=&#34;_blank&#34;&amp;gt;&amp;lt;/a&amp;gt;
+		href: 链接跳转地址
+		target: 链接打开方式
+			_blank 新窗口
+			_parent 父窗口
+			_self 本窗口（默认）
+			_top 顶级窗口
+			framename 窗口名
+			title: 文字提示属性
+		锚点链接：
+			定义：
+			&amp;lt;a id=&#34;ab&#34;&amp;gt;&amp;lt;/a&amp;gt; 旧方法: &amp;lt;a name=&#34;ab&#34;&amp;gt;&amp;lt;/a&amp;gt;
+			使用:
+			&amp;lt;a href=&#34;#ab&#34;&amp;gt;&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;表格标签&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#表格标签&#34;&gt;#&lt;/a&gt; 表格标签&lt;/h2&gt;
+&lt;p&gt;表格标签：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;table cellpadding=&#34;单元格边距&#34; cellspacing=&#34;单元格间距&#34;&amp;gt;
+			&amp;lt;caption&amp;gt;标题&amp;lt;/caption&amp;gt;
+			&amp;lt;th colspan=&#34;2&#34;&amp;gt;表头,占据两列单元格&amp;lt;/th&amp;gt;
+			&amp;lt;th rowspan=&#34;2&#34;&amp;gt;表头,据两行单元格&amp;lt;/th&amp;gt;
+			&amp;lt;td&amp;gt;表格内容&amp;lt;/td&amp;gt;
+&amp;lt;/table&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;表单标签&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#表单标签&#34;&gt;#&lt;/a&gt; 表单标签&lt;/h2&gt;
+&lt;p&gt;表单标签：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;form action=&#34;#&#34; method=&#34;get/post&#34;&amp;gt;
+			action:提交的目标地址
+			method: 提交方式
+				get: URL地址可见，长度限制，不安全
+				post: URL地址不可见，安全
+			&amp;lt;input type=&#34;text&#34; name=&#34;&#34; /&amp;gt;
+			input定义输入字段。
+				type属性:
+					text: 文本
+					password: 密码
+					checkbox: 多选
+					radio: 单选
+					file: 文件上传
+					button: 普通按钮
+					submit: 提交按钮
+					image: 提交图片
+					...
+			&amp;lt;select name=&#34;&#34; size=&#34;3&#34; disabled=&#34;false&#34; multiple=&#34;multiple&#34;&amp;gt;
+				&amp;lt;option value=&#34;1&#34; selected=&#34;selected&#34;&amp;gt; &amp;lt;/option&amp;gt;
+				value: 下拉属性的值
+				sekected: 默认下拉指定项
+				&amp;lt;textarea&amp;gt;多行文本输入&amp;lt;/textarea&amp;gt;
+				name: 定义名称，存储文本域中的值
+				cols: 可见列数
+				rows: 可见行数
+				diabled: 是否禁用
+				readonly: 只读
+			&amp;lt;/select&amp;gt;
+			name: 定义名称，存储下拉值
+			size: 菜单项目的数目 
+			disabled: 禁用菜单
+			multiple: 多选
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;框架标签&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#框架标签&#34;&gt;#&lt;/a&gt; 框架标签&lt;/h2&gt;
+&lt;p&gt;框架标签：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;iframe src=&#34;&#34; name=&#34;&#34; width=&#34;&#34; height=&#34;&#34;&amp;gt;&amp;lt;/iframe&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;多媒体标签&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#多媒体标签&#34;&gt;#&lt;/a&gt; 多媒体标签&lt;/h2&gt;
+&lt;p&gt;音频标签：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;audio src=&#34;&#34; &amp;gt;
+			当前浏览器不支持audio
+		&amp;lt;/audio&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;视频标签：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;	&amp;lt;video width=&#34;800&#34; height=&#34;&#34;&amp;gt;
+		&amp;lt;source src=&#34;myvideo.mp4&#34; type=&#34;video/mp4&#34;&amp;gt;&amp;lt;/source&amp;gt;
+		&amp;lt;source src=&#34;myvideo.ogv&#34; type=&#34;video/ogg&#34;&amp;gt;&amp;lt;/source&amp;gt;
+		&amp;lt;source src=&#34;myvideo.webm&#34; type=&#34;video/webm&#34;&amp;gt;&amp;lt;/source&amp;gt;
+		&amp;lt;object width=&#34;&#34; height=&#34;&#34; type=&#34;application/x-shockwave-flash&#34; data=&#34;myvideo.swf&#34;&amp;gt;
+			&amp;lt;param name=&#34;movie&#34; value=&#34;myvideo.swf&#34; /&amp;gt;
+			&amp;lt;param name=&#34;flashvars&#34; value=&#34;autostart=true&amp;amp;amp;file=myvideo.swf&#34; /&amp;gt;
+		&amp;lt;/object&amp;gt;
+		当前浏览器不支持 video直接播放，点击这里下载视频： &amp;lt;a href=&#34;myvideo.webm&#34;&amp;gt;下载视频&amp;lt;/a&amp;gt;
+	&amp;lt;/video&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt; ]]></description>
+        </item>
+    </channel>
+</rss>

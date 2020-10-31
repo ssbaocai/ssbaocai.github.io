@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>手撕包菜 • Posts by &#34;java核心类&#34; category</title>
+        <link>https://www.baocai-blog.cn</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Tue, 27 Oct 2020 21:06:54 +0800</pubDate>
+        <lastBuildDate>Tue, 27 Oct 2020 21:06:54 +0800</lastBuildDate>
+        <category>Java基础</category>
+        <category>框架</category>
+        <category>数据库</category>
+        <category>面向对象</category>
+        <category>XML，JSON</category>
+        <category>html</category>
+        <item>
+            <guid isPermalink="true">https://www.baocai-blog.cn/2020/10/27/XML%E5%92%8CJSON/</guid>
+            <title>XML和JSON</title>
+            <link>https://www.baocai-blog.cn/2020/10/27/XML%E5%92%8CJSON/</link>
+            <category>XML，JSON</category>
+            <pubDate>Tue, 27 Oct 2020 21:06:54 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;xml和json&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#xml和json&#34;&gt;#&lt;/a&gt; XML 和 JSON&lt;/h1&gt;
+&lt;h2 id=&#34;xml&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#xml&#34;&gt;#&lt;/a&gt; XML&lt;/h2&gt;
+&lt;h3 id=&#34;声明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#声明&#34;&gt;#&lt;/a&gt; 声明&lt;/h3&gt;
+&lt;p&gt;&amp;lt;?xml version=&#34;1.0&#34;encoding=&#34;UTF-8&#34;?&amp;gt;&lt;/p&gt;
+&lt;h3 id=&#34;概念和作用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#概念和作用&#34;&gt;#&lt;/a&gt; 概念和作用&lt;/h3&gt;
+&lt;p&gt;可扩展标记语言（eXtensible Markup Language）。&lt;br&gt;
+特性:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;xml 具有平台无关性，是一门独立的标记语言.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;xml 具有自我描述性&lt;/p&gt;
+&lt;p&gt;.XML 文件是保存 XML 数据的一种方式&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;标记&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#标记&#34;&gt;#&lt;/a&gt; 标记&lt;/h3&gt;
+&lt;p&gt;标记名称: &amp;nbsp;&lt;br&gt;
+自定义名称，必须遵循以下命名规则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;名称可以含字母、数字以及其他的字符&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;名称不能以数字或者标点符号开始&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;名称不能以字符 “xml”（或者 XML、Xml）开始&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;名称不能包含空格，不能包含冒（:）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;名称区分大小写&lt;br&gt;
+例如:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;lt;persons&amp;gt;&lt;br&gt;
+&amp;lt;person&amp;gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;      &amp;lt;name&amp;gt;李四&amp;lt;/name&amp;gt;
+
+      &amp;lt;length&amp;gt;180cm&amp;lt;/length&amp;gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+
+&amp;lt;/person&amp;gt; 
+   &amp;lt;person&amp;gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;           、
+
+       &amp;lt;name&amp;gt;李四&amp;lt;/name&amp;gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+
+       &amp;lt;length&amp;gt;200cm&amp;lt;/length&amp;gt; &amp;nbsp; &amp;nbsp; &amp;nbsp;  
+
+    &amp;lt;/person&amp;gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;/persons&amp;gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+
+
+### 标记中添加属性
+
+标记中的属性, 在标记开始时 描述, 由属性名和属性值 组成. &amp;nbsp; &amp;nbsp; &amp;nbsp;  
+格式: &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+1. 在开始标记中, 描述属性. &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+
+2. 可以包含0-n个属性, 每一个属性是一个键值对! &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+
+3. 属性名不允许重复 , 键与值之间使用等号连接, 多个属性之间使用空格分割. 
+
+4. 属性值 必须被引号引住.
+ 案例: &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  
+
+  ```
+   &amp;lt;persons&amp;gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  
+           &amp;lt;person id=&#34;10001&#34; groupid=&#34;1&#34;&amp;gt; &amp;nbsp; &amp;nbsp;
+  
+    ​                 &amp;lt;name&amp;gt;李四&amp;lt;/name&amp;gt;
+  
+    ​                 &amp;lt;age&amp;gt;18&amp;lt;/age&amp;gt; 
+  
+    ​         &amp;lt;/person&amp;gt;
+    ​         &amp;lt;person id=&#34;10002&#34; groupid=&#34;1&#34;&amp;gt; &amp;nbsp; &amp;nbsp; 
+  
+    ​                &amp;lt;name&amp;gt;李四&amp;lt;/name&amp;gt; &amp;nbsp; &amp;nbsp;
+  
+    ​                &amp;lt;age&amp;gt;20&amp;lt;/age&amp;gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  
+  
+    ​         &amp;lt;/person&amp;gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  
+  
+    &amp;lt;/persons&amp;gt;
+  ```
+ 
+  
+
+
+### 注释
+
+格式: &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  
+   注释开始: &amp;nbsp; &amp;lt;!- &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  
+   注释结束: &amp;nbsp; --&amp;gt;
+
+## XML解析
+
+### SAX解析
+
+解析方式是事件驱动机制! &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  
+
+SAX解析器, 逐行读取XML文件解析 , 每当解析到一个标签的开始/结束/内容/属性时,触发事件.
+优点: 
+
+1. 分析能够立即开始，而不是等待所有的数据被处理
+2. 逐行加载,节省内存.有助于解析大于系统内存的文档
+3. 有时不必解析整个文档,它可以在某个条件得到满足时停止解析.
+
+缺点: 
+1. 单向解析，无法定位文档层次，无法同时访问同一文档的不同部分数据(因为逐 行解析, 当解析第n行是, 第n-1行已经被释放了, 无法在进行操作了). &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+2. 无法得知事件发生时元素的层次, 只能自己维护节点的父/子关系. &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+3. 只读解析方式, 无法修改XML文档的内容.
+
+### DOM解析
+
+是用与平台和语言无关的方式表示XML文档的官方W3C标准，分析该结构通常需要加载整个文档和内存中建立文档树模型.程序员可以通过操作文档树, 来完成数据的获取 修改 删除等.
+
+优点: 
+1. 文档在内存中加载, 允许对数据和结构做出更改.
+2. 访问是双向的，可以在任何时候在树中双向解析数据。
+
+缺点:
+   文档全部加载在内存中 , 消耗资源大.
+
+
+### JDOM解析
+
+目的是成为Java特定文档模型，它简化与XML的交互并且比使用DOM实现更快。由于是第一 个Java特定模型，JDOM一直得到大力推广和促进。
+JDOM文档声明其目的是“使用20%（或更少）的精力解决80%（或更多）Java/XML问题” （根据学习曲线假定为20%）     优点: 
+1. 使用具体类而不是接口，简化了DOM的API。
+2. 大量使用了Java集合类，方便了Java开发人员。
+
+缺点:
+1. 没有较好的灵活性。                
+2. 性能不是那么优异
+
+### DOM4J解析
+
+它是JDOM的一种智能分支。它合并了许多超出基本XML文档表示的功能，包括集成的XPath 支持、XML Schema支持以及用于大文档或流化文档的基于事件的处理。它还提供了构建文档表示的选项， DOM4J是一个非常优秀的Java XML API，具有性能优异、功能强大和极端易用使用的特点，同时它也是一 个开放源代码的软件。如今你可以看到越来越多的Java软件都在使用DOM4J来读写XML。
+目前许多开源项目中大量采用DOM4J , 例如:Hibernate
+步骤:
+1.  引入jar文件 dom4j.jar &amp;nbsp;  
+2.  创建一个指向XML文件的输入流 &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; FileInputStream fis = new FileInputStream(&#34;xml文件的地址&#34;); 
+3.  创建一个XML读取工具对象 &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; SAXReader sr = new SAXReader(); &amp;nbsp; 
+4.  使用读取工具对象, 读取XML文档的输入流 , 并得到文档对象 &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;  Document doc = sr.read(fis); &amp;nbsp; &amp;nbsp; 
+5.   通过文档对象, 获取XML文档中的根元素对象   &amp;nbsp;Element root = doc.getRootElement();
+
+## JSON
+
+### 概念
+
+JSON: JavaScript Object Notation 
+JS对象简谱 , 是一种轻量级的数据交换格式.
+
+
+### 对象格式
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;js:&lt;/p&gt;
+&lt;p&gt;​	var b = new Object();&lt;/p&gt;
+&lt;p&gt;​	&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2IubmFtZQ==&#34;&gt;b.name&lt;/span&gt; = &#34;金苹果&#34;;&lt;/p&gt;
+&lt;p&gt;​	&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2IuaW5mbw==&#34;&gt;b.info&lt;/span&gt; = &#34;种苹果&#34;;&lt;/p&gt;
+&lt;p&gt;XML:&lt;/p&gt;
+&lt;p&gt;​		&amp;lt;book&amp;gt;&lt;/p&gt;
+&lt;p&gt;​				 &amp;lt;name&amp;gt; 金苹果 &amp;lt;/name&amp;gt;&lt;/p&gt;
+&lt;p&gt;​				&amp;lt;info&amp;gt; 种苹果 &amp;lt;/info&amp;gt;&lt;/p&gt;
+&lt;p&gt;​		&amp;lt;/book&amp;gt;&lt;/p&gt;
+&lt;p  =&#34;&#34; name:金苹果, info:种苹果 =&#34;&#34;&gt;JSON: &amp;nbsp;     &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+
+ 一个对象, 由一个大括号表示. &amp;nbsp; &amp;nbsp; &amp;nbsp;  
+
+括号中 描述对象的属性 .  通过键值对来描述对象的属性(可以理解为, 大括号中, 包含的是一个个的键值对.) &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+
+ 格式:            
+ 1. 键与值之间使用冒号连接, 多个键值对之间使用逗号分隔.            
+ 2. 键值对的键 应使用引号引住 (通常Java解析时, 键不使用引号会报错. 而JS能正确解 析.)            
+ 3. 键值对的值, 可以是JS中的任意类型的数据
+
+
+### GSON
+
+- 将对象转换为JSON字符串
+转换JSON字符串的步骤: &amp;nbsp; 
+1. 引入JAR包 &amp;nbsp; &amp;nbsp;
+
+2. 在需要转换JSON字符串的位置编写如下代码即可: &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;String json = new Gson().toJSON(要转换的对象);   
+   案例: &amp;nbsp;  
+       Book b = BookDao.find();   
+       String json = new Gson().toJson(b); &amp;nbsp; 
+
+      &amp;nbsp;System.out.println(json);
+- 将JSON字符串转换为对象
+1. &amp;nbsp;引入JAR包 &amp;nbsp; &amp;nbsp;
+2. &amp;nbsp;在需要转换Java对象的位置, 编写如下代码: &amp;nbsp; &amp;nbsp; &amp;nbsp; 对象 = new Gson().fromJson(JSON字符串,对象类型.class);
+
+案例: &amp;nbsp; &amp;nbsp;
+
+​      String json = &#34;{\&#34;id\&#34;:1,\&#34;name\&#34;:\&#34;金苹果\&#34;,\&#34;author\&#34;:\&#34;李伟杰 \&#34;,\&#34;info\&#34;:\&#34;嘿嘿嘿嘿嘿嘿\&#34;,\&#34;price\&#34;:198.0}&#34;; &amp;nbsp; &amp;nbsp;
+
+​      Book book = new Gson().fromJson(json, Book.class); &amp;nbsp; &amp;nbsp;
+
+​      System.out.println(book);
+
+
+### FastJson
+
+- 将对象转换为JSON字符串
+转换JSON字符串的步骤: &amp;nbsp; &amp;nbsp;
+1. 引入JAR包 &amp;nbsp; &amp;nbsp;
+
+2. &amp;nbsp;在需要转换JSON字符串的位置编写如下代码即可: &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;
+String json=JSON.toJSONString(要转换的对象); &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+
+   案例: &amp;nbsp;  
+   
+    Book b = BookDao.find(); &amp;nbsp; &amp;nbsp;
+
+​        String json=JSON.toJSONString(b); &amp;nbsp; &amp;nbsp;
+
+​        System.out.println(json);
+
+- 将JSON字符串转换为对象
+1. &amp;nbsp;引入JAR包 &amp;nbsp; 
+2. &amp;nbsp;在需要转换Java对象的位置, 编写如下代码: &amp;nbsp; &amp;nbsp; &amp;nbsp;     类型 对象名=JSON.parseObject(JSON字符串, 类型.class);                或 &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;List&amp;lt;类型&amp;gt; list=JSON.parseArray(JSON字符串,类型.class); 
+
+   案例: &amp;nbsp; &amp;nbsp;
+
+​         String json = &#34;{\&#34;id\&#34;:1,\&#34;name\&#34;:\&#34;金苹果\&#34;,\&#34;author\&#34;:\&#34;李伟杰 \&#34;,\&#34;info\&#34;:\&#34;嘿嘿嘿嘿嘿嘿\&#34;,\&#34;price\&#34;:198.0}&#34;; &amp;nbsp; &amp;nbsp;
+
+​         Book book = JSON.parseObject(json, Book.class); &amp;nbsp; &amp;nbsp;System.out.println(book);&lt;/code&gt;&lt;/pre&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt; ]]></description>
+        </item>
+    </channel>
+</rss>
