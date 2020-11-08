@@ -5,14 +5,256 @@
         <link>https://www.baocai-blog.cn</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Fri, 30 Oct 2020 18:48:44 +0800</pubDate>
-        <lastBuildDate>Fri, 30 Oct 2020 18:48:44 +0800</lastBuildDate>
+        <pubDate>Sun, 08 Nov 2020 15:10:22 +0800</pubDate>
+        <lastBuildDate>Sun, 08 Nov 2020 15:10:22 +0800</lastBuildDate>
         <category>Java基础</category>
         <category>框架</category>
         <category>数据库</category>
         <category>面向对象</category>
         <category>XML，JSON</category>
         <category>html</category>
+        <category>Java应用</category>
+        <item>
+            <guid isPermalink="true">https://www.baocai-blog.cn/2020/11/08/Java%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95/</guid>
+            <title>Java中的常用算法</title>
+            <link>https://www.baocai-blog.cn/2020/11/08/Java%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95/</link>
+            <category>Java应用</category>
+            <pubDate>Sun, 08 Nov 2020 15:10:22 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;java中的常用算法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#java中的常用算法&#34;&gt;#&lt;/a&gt; Java 中的常用算法&lt;/h1&gt;
+&lt;h2 id=&#34;冒泡排序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#冒泡排序&#34;&gt;#&lt;/a&gt; 冒泡排序&lt;/h2&gt;
+&lt;p&gt;冒泡排序算法是把较小的元素往前调或者把较大的元素往后调。这种方法主要是通过对相邻两个元素进行大小的比较，根据比较结果和算法规则对该二元素的位置进行交换，这样逐个依次进行比较和交换，就能达到排序目的。&lt;br&gt;
+&amp;lt;img src=&#34;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMTg0MS8yMDE5MDUvMTAzMTg0MS0yMDE5MDUzMTE2MzcwODE4Ni0xNzAzNjAxNDQ4LmdpZg==&#34;&gt;https://img2018.cnblogs.com/blog/1031841/201905/1031841-20190531163708186-1703601448.gif&lt;/span&gt;&#34; alt=&#34;alt&#34; style=&#34;zoom:80%;&#34; /&amp;gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;通过每一次遍历获取最大 / 最小值&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将最大值 / 最小值放在尾部 / 头部&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后除开最大值 / 最小值，剩下的数据在进行遍历获取最大 / 最小值&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;代码实现&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public static void main(String[] args) {
+   int arr[] = {8, 5, 3, 2, 4};
+    //冒泡
+    for (int i = 0; i &amp;lt; arr.length; i++) {
+        //外层循环，遍历次数
+        for (int j = 0; j &amp;lt; arr.length - i - 1; j++) {
+            //内层循环，升序（如果前一个值比后一个值大，则交换）
+            //内层循环一次，获取一个最大值
+            if (arr[j] &amp;gt; arr[j + 1]) {
+                int temp = arr[j + 1];
+                arr[j + 1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;排序过程（红色：移动的数据）&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src=&#34;D:\Program Files\blog\hexo\source\images\maopao.jpg&#34; alt=&#34;alt&#34; style=&#34;zoom: 80%;&#34; /&amp;gt;&lt;/p&gt;
+&lt;p&gt;选择排序&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;选择排序算法的基本思路是为每一个位置选择当前最小的元素。选择排序的基本思想是，基于直接选择排序和堆排序这两种基本的简单排序方法。首先从第 1 个位置开始对全部元素进行选择，选出全部元素中最小的给该位置，再对第 2 个位置进行选择，在剩余元素中选择最小的给该位置即可；&lt;br&gt;
+&amp;lt;img src=&#34;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMTg0MS8yMDE5MDUvMTAzMTg0MS0yMDE5MDUzMTE3MDIwNTgyMS0xOTgzNjc4NjQzLmdpZg==&#34;&gt;https://img2018.cnblogs.com/blog/1031841/201905/1031841-20190531170205821-1983678643.gif&lt;/span&gt;&#34; alt=&#34;alt&#34; style=&#34;zoom:80%;&#34; /&amp;gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;将第一个值看成最小值&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后和后续的比较找出最小值和下标&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;交换本次遍历的起始值和最小值&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;说明：每次遍历的时候，将前面找出的最小值，看成一个有序的列表，后面的看成无序的列表，然后每次遍历无序列表找出最小值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;代码实现&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public static void main(String[] args) {
+   int arr[] = {6, 5, 3, 2, 4};
+    //选择
+    for (int i = 0; i &amp;lt; arr.length; i++) {
+        //默认第一个是最小的。
+        int min = arr[i];
+        //记录最小的下标
+        int index = i;
+        //通过与后面的数据进行比较得出，最小值和下标
+        for (int j = i + 1; j &amp;lt; arr.length; j++) {
+            if (min &amp;gt; arr[j]) {
+                min = arr[j];
+                index = j;
+            }
+        }
+        //然后将最小值与本次循环的，开始值交换
+        int temp = arr[i];
+        arr[i] = min;
+        arr[index] = temp;
+        //说明：将i前面的数据看成一个排好的队列，i后面的看成一个无序队列。每次只需要找无需的最小值，做替换
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;排序过程（红色：移动的数据）&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src=&#34;D:\Program Files\blog\hexo\source\images\xuanze.jpg&#34; alt=&#34;alt&#34; style=&#34;zoom:80%;&#34; /&amp;gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;插入排序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#插入排序&#34;&gt;#&lt;/a&gt; 插入排序&lt;/h2&gt;
+&lt;p&gt;插入排序算法是基于某序列已经有序排列的情况下，通过一次插入一个元素的方式按照原有排序方式增加元素。&lt;br&gt;
+&amp;lt;img src=&#34;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMTg0MS8yMDE5MDUvMTAzMTg0MS0yMDE5MDUzMTE3MDk1MzI4My0xODA2MTUzMzMxLmdpZg==&#34;&gt;https://img2018.cnblogs.com/blog/1031841/201905/1031841-20190531170953283-1806153331.gif&lt;/span&gt;&#34; alt=&#34;alt&#34; style=&#34;zoom:80%;&#34; /&amp;gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;默认从第二个数据开始比较。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果第二个数据比第一个小，则交换。然后在用第三个数据比较，如果比前面小，则插入（狡猾）。否则，退出循环&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;说明：默认将第一数据看成有序列表，后面无序的列表循环每一个数据，如果比前面的数据小则插入（交换）。否则退出。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;代码实现&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public static void main(String[] args) {
+ int arr[] = {7, 5, 3, 2, 4};
+
+//插入排序
+for (int i = 1; i &amp;lt; arr.length; i++) {
+    //外层循环，从第二个开始比较
+    for (int j = i; j &amp;gt; 0; j--) {
+        //内存循环，与前面排好序的数据比较，如果后面的数据小于前面的则交换
+        if (arr[j] &amp;lt; arr[j - 1]) {
+            int temp = arr[j - 1];
+            arr[j - 1] = arr[j];
+            arr[j] = temp;
+        } else {
+            //如果不小于，说明插入完毕，退出内层循环
+            break;
+        }
+    }
+}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;排序过程（红色：有序，黑色：无序）&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src=&#34;D:\Program Files\blog\hexo\source\images\charu.jpg&#34; alt=&#34;alt&#34; style=&#34;zoom:80%;&#34; /&amp;gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;快速排序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#快速排序&#34;&gt;#&lt;/a&gt; 快速排序&lt;/h2&gt;
+&lt;p&gt;快速排序的基本思想是：通过一趟排序算法把所需要排序的序列的元素分割成两大块，其中，一部分的元素都要小于或等于另外一部分的序列元素，然后仍根据该种方法对划分后的这两块序列的元素分别再次实行快速排序算法，排序实现的整个过程可以是递归的来进行调用，最终能够实现将所需排序的无序序列元素变为一个有序的序列。&lt;br&gt;
+&amp;lt;img src=&#34;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMTg0MS8yMDE5MDUvMTAzMTg0MS0yMDE5MDUzMTE3NTcwOTUxNS0xNjk2MDI2MjkuZ2lm&#34;&gt;https://img2018.cnblogs.com/blog/1031841/201905/1031841-20190531175709515-169602629.gif&lt;/span&gt;&#34; alt=&#34;alt&#34; style=&#34;zoom:80%;&#34; /&amp;gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;确认列表第一个数据为中间值，第一个值看成空缺（低指针空缺）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后在剩下的队列中，看成有左右两个指针（高低）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;开始高指针向左移动，如果遇到小于中间值的数据，则将这个数据赋值到低指针空缺，并且将高指针的数据看成空缺值（高指针空缺）。然后先向右移动一下低指针，并且切换低指针移动。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;当低指针移动到大于中间值的时候，赋值到高指针空缺的地方。然后先高指针向左移动，并且切换高指针移动。重复 c、d 操作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;直到高指针和低指针相等时退出，并且将中间值赋值给对应指针位置。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后将中间值的左右两边看成行的列表，进行快速排序操作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;代码实现&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public static void main(String[] args) {
+
+    int arr[] = {7, 5, 3, 2, 4, 1, 8, 9, 6};
+
+    //快速排序
+    int low = 0;
+    int high = arr.length - 1;
+    quickSort(arr, low, high);  
+}
+
+public static void quickSort(int[] arr, int low, int high) {
+    //如果指针在同一位置(只有一个数据时)，退出
+    if (high - low &amp;lt; 1) {
+        return;
+    }
+    //标记，从高指针开始，还是低指针（默认高指针）
+    boolean flag = true;
+    //记录指针的其实位置
+    int start = low;
+    int end = high;
+    //默认中间值为低指针的第一个值
+    int midValue = arr[low];
+    while (true) {
+        //高指针移动
+        if (flag) {
+            //如果列表右方的数据大于中间值，则向左移动
+            if (arr[high] &amp;gt; midValue) {
+                high--;
+            } else if (arr[high] &amp;lt; midValue) {
+                //如果小于，则覆盖最开始的低指针值，并且移动低指针，标志位改成从低指针开始移动
+                arr[low] = arr[high];
+                low++;
+                flag = false;
+            }
+        } else {
+            //如果低指针数据小于中间值，则低指针向右移动
+            if (arr[low] &amp;lt; midValue) {
+                low++;
+            } else if (arr[low] &amp;gt; midValue) {
+            	//如果低指针的值大于中间值，则覆盖高指针停留时的数据，并向左移动高指针。切换为高指针移动
+                arr[high] = arr[low];
+                high--;
+                flag = true;
+            }
+        }
+        //当两个指针的位置相同时，则找到了中间值的位置，并退出循环
+        if (low == high) {
+            arr[low] = midValue;
+            break;
+        }
+    }
+    //然后出现有，中间值左边的小于中间值。右边的大于中间值。
+    //然后在对左右两边的列表在进行快速排序
+    quickSort(arr, start, low -1);
+    quickSort(arr, low + 1, end);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;排序过程 (橙色：中间值，蓝色：确认位置的数据，红色：移动的数据)&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src=&#34;D:\Program Files\blog\hexo\source\images\kuaisu.jpg&#34; alt=&#34;alt&#34; style=&#34;zoom:80%;&#34; /&amp;gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;转载出处：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vbGw0MDk1NDYyOTcvcC8xMDk1Njk2MC5odG1s&#34;&gt;https://www.cnblogs.com/ll409546297/p/10956960.html&lt;/span&gt;&lt;/p&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement(&#39;img&#39;);
+            img.style = &#39;display:none !important;&#39;;
+            img.src = el.dataset.src;
+            img.addEventListener(&#39;error&#39;, () =&gt; {
+              img.remove();
+              el.style.color = &#39;inherit&#39;;
+              el.style.backgroundImage = &#39;none&#39;;
+              el.style.background = &#39;none&#39;;
+            });
+            img.addEventListener(&#39;load&#39;, () =&gt; {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      &lt;/script&gt; ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://www.baocai-blog.cn/2020/10/30/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
             <title>html标签</title>

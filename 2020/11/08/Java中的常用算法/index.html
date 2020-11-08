@@ -1,0 +1,647 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="手撕包菜" href="https://www.baocai-blog.cn/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="手撕包菜" href="https://www.baocai-blog.cn/atom.xml" />
+<link rel="alternate" type="application/json" title="手撕包菜" href="https://www.baocai-blog.cn/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2">
+
+  
+  <meta name="keywords" content="Java应用" />
+
+
+
+<meta name="description" content="" >
+
+
+<link rel="canonical" href="https://www.baocai-blog.cn/2020/11/08/Java%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95/">
+
+
+
+  <title>
+Java中的常用算法 - Java |
+baocai's blog = 手撕包菜 = 学习笔记</title>
+<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Java中的常用算法
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2020-11-08 15:10:22">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2020-11-08T15:10:22+08:00">2020-11-08</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>4.3k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>4 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">baocai's blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicitcxhpij20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclxp31goj20zk0m8qv5.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicliierfjj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipewkhf1zj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicis3attqj20zk0m8k7l.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main id="main">
+      <div class="inner">
+        <div id="content" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/Java/" itemprop="item" rel="index" title="分类于 Java"><span itemprop="name">Java</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://www.baocai-blog.cn/2020/11/08/Java%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="手撕包菜">
+    <meta itemprop="description" content="学习笔记, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="手撕包菜">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="java中的常用算法"><a class="anchor" href="#java中的常用算法">#</a> Java 中的常用算法</h1>
+<h2 id="冒泡排序"><a class="anchor" href="#冒泡排序">#</a> 冒泡排序</h2>
+<p>冒泡排序算法是把较小的元素往前调或者把较大的元素往后调。这种方法主要是通过对相邻两个元素进行大小的比较，根据比较结果和算法规则对该二元素的位置进行交换，这样逐个依次进行比较和交换，就能达到排序目的。<br>
+&lt;img src="<span class="exturl" data-url="aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMTg0MS8yMDE5MDUvMTAzMTg0MS0yMDE5MDUzMTE2MzcwODE4Ni0xNzAzNjAxNDQ4LmdpZg==">https://img2018.cnblogs.com/blog/1031841/201905/1031841-20190531163708186-1703601448.gif</span>" alt="alt" style="zoom:80%;" /&gt;</p>
+<ol>
+<li>
+<p>通过每一次遍历获取最大 / 最小值</p>
+</li>
+<li>
+<p>将最大值 / 最小值放在尾部 / 头部</p>
+</li>
+<li>
+<p>然后除开最大值 / 最小值，剩下的数据在进行遍历获取最大 / 最小值</p>
+</li>
+<li>
+<p>代码实现</p>
+<pre><code>public static void main(String[] args) {
+   int arr[] = {8, 5, 3, 2, 4};
+    //冒泡
+    for (int i = 0; i &lt; arr.length; i++) {
+        //外层循环，遍历次数
+        for (int j = 0; j &lt; arr.length - i - 1; j++) {
+            //内层循环，升序（如果前一个值比后一个值大，则交换）
+            //内层循环一次，获取一个最大值
+            if (arr[j] &gt; arr[j + 1]) {
+                int temp = arr[j + 1];
+                arr[j + 1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+</code></pre>
+</li>
+<li>
+<p>排序过程（红色：移动的数据）</p>
+<p>&lt;img src="D:\Program Files\blog\hexo\source\images\maopao.jpg" alt="alt" style="zoom: 80%;" /&gt;</p>
+<p>选择排序</p>
+</li>
+</ol>
+<p>选择排序算法的基本思路是为每一个位置选择当前最小的元素。选择排序的基本思想是，基于直接选择排序和堆排序这两种基本的简单排序方法。首先从第 1 个位置开始对全部元素进行选择，选出全部元素中最小的给该位置，再对第 2 个位置进行选择，在剩余元素中选择最小的给该位置即可；<br>
+&lt;img src="<span class="exturl" data-url="aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMTg0MS8yMDE5MDUvMTAzMTg0MS0yMDE5MDUzMTE3MDIwNTgyMS0xOTgzNjc4NjQzLmdpZg==">https://img2018.cnblogs.com/blog/1031841/201905/1031841-20190531170205821-1983678643.gif</span>" alt="alt" style="zoom:80%;" /&gt;</p>
+<ol>
+<li>
+<p>将第一个值看成最小值</p>
+</li>
+<li>
+<p>然后和后续的比较找出最小值和下标</p>
+</li>
+<li>
+<p>交换本次遍历的起始值和最小值</p>
+</li>
+<li>
+<p>说明：每次遍历的时候，将前面找出的最小值，看成一个有序的列表，后面的看成无序的列表，然后每次遍历无序列表找出最小值。</p>
+</li>
+<li>
+<p>代码实现</p>
+<pre><code>public static void main(String[] args) {
+   int arr[] = {6, 5, 3, 2, 4};
+    //选择
+    for (int i = 0; i &lt; arr.length; i++) {
+        //默认第一个是最小的。
+        int min = arr[i];
+        //记录最小的下标
+        int index = i;
+        //通过与后面的数据进行比较得出，最小值和下标
+        for (int j = i + 1; j &lt; arr.length; j++) {
+            if (min &gt; arr[j]) {
+                min = arr[j];
+                index = j;
+            }
+        }
+        //然后将最小值与本次循环的，开始值交换
+        int temp = arr[i];
+        arr[i] = min;
+        arr[index] = temp;
+        //说明：将i前面的数据看成一个排好的队列，i后面的看成一个无序队列。每次只需要找无需的最小值，做替换
+    }
+}
+</code></pre>
+</li>
+<li>
+<p>排序过程（红色：移动的数据）</p>
+<p>&lt;img src="D:\Program Files\blog\hexo\source\images\xuanze.jpg" alt="alt" style="zoom:80%;" /&gt;</p>
+</li>
+</ol>
+<h2 id="插入排序"><a class="anchor" href="#插入排序">#</a> 插入排序</h2>
+<p>插入排序算法是基于某序列已经有序排列的情况下，通过一次插入一个元素的方式按照原有排序方式增加元素。<br>
+&lt;img src="<span class="exturl" data-url="aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMTg0MS8yMDE5MDUvMTAzMTg0MS0yMDE5MDUzMTE3MDk1MzI4My0xODA2MTUzMzMxLmdpZg==">https://img2018.cnblogs.com/blog/1031841/201905/1031841-20190531170953283-1806153331.gif</span>" alt="alt" style="zoom:80%;" /&gt;</p>
+<ol>
+<li>
+<p>默认从第二个数据开始比较。</p>
+</li>
+<li>
+<p>如果第二个数据比第一个小，则交换。然后在用第三个数据比较，如果比前面小，则插入（狡猾）。否则，退出循环</p>
+</li>
+<li>
+<p>说明：默认将第一数据看成有序列表，后面无序的列表循环每一个数据，如果比前面的数据小则插入（交换）。否则退出。</p>
+</li>
+<li>
+<p>代码实现</p>
+<pre><code>public static void main(String[] args) {
+ int arr[] = {7, 5, 3, 2, 4};
+
+//插入排序
+for (int i = 1; i &lt; arr.length; i++) {
+    //外层循环，从第二个开始比较
+    for (int j = i; j &gt; 0; j--) {
+        //内存循环，与前面排好序的数据比较，如果后面的数据小于前面的则交换
+        if (arr[j] &lt; arr[j - 1]) {
+            int temp = arr[j - 1];
+            arr[j - 1] = arr[j];
+            arr[j] = temp;
+        } else {
+            //如果不小于，说明插入完毕，退出内层循环
+            break;
+        }
+    }
+}
+}
+</code></pre>
+</li>
+<li>
+<p>排序过程（红色：有序，黑色：无序）</p>
+<p>&lt;img src="D:\Program Files\blog\hexo\source\images\charu.jpg" alt="alt" style="zoom:80%;" /&gt;</p>
+</li>
+</ol>
+<h2 id="快速排序"><a class="anchor" href="#快速排序">#</a> 快速排序</h2>
+<p>快速排序的基本思想是：通过一趟排序算法把所需要排序的序列的元素分割成两大块，其中，一部分的元素都要小于或等于另外一部分的序列元素，然后仍根据该种方法对划分后的这两块序列的元素分别再次实行快速排序算法，排序实现的整个过程可以是递归的来进行调用，最终能够实现将所需排序的无序序列元素变为一个有序的序列。<br>
+&lt;img src="<span class="exturl" data-url="aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMTg0MS8yMDE5MDUvMTAzMTg0MS0yMDE5MDUzMTE3NTcwOTUxNS0xNjk2MDI2MjkuZ2lm">https://img2018.cnblogs.com/blog/1031841/201905/1031841-20190531175709515-169602629.gif</span>" alt="alt" style="zoom:80%;" /&gt;</p>
+<ol>
+<li>
+<p>确认列表第一个数据为中间值，第一个值看成空缺（低指针空缺）。</p>
+</li>
+<li>
+<p>然后在剩下的队列中，看成有左右两个指针（高低）。</p>
+</li>
+<li>
+<p>开始高指针向左移动，如果遇到小于中间值的数据，则将这个数据赋值到低指针空缺，并且将高指针的数据看成空缺值（高指针空缺）。然后先向右移动一下低指针，并且切换低指针移动。</p>
+</li>
+<li>
+<p>当低指针移动到大于中间值的时候，赋值到高指针空缺的地方。然后先高指针向左移动，并且切换高指针移动。重复 c、d 操作。</p>
+</li>
+<li>
+<p>直到高指针和低指针相等时退出，并且将中间值赋值给对应指针位置。</p>
+</li>
+<li>
+<p>然后将中间值的左右两边看成行的列表，进行快速排序操作。</p>
+</li>
+<li>
+<p>代码实现</p>
+<pre><code>public static void main(String[] args) {
+
+    int arr[] = {7, 5, 3, 2, 4, 1, 8, 9, 6};
+
+    //快速排序
+    int low = 0;
+    int high = arr.length - 1;
+    quickSort(arr, low, high);  
+}
+
+public static void quickSort(int[] arr, int low, int high) {
+    //如果指针在同一位置(只有一个数据时)，退出
+    if (high - low &lt; 1) {
+        return;
+    }
+    //标记，从高指针开始，还是低指针（默认高指针）
+    boolean flag = true;
+    //记录指针的其实位置
+    int start = low;
+    int end = high;
+    //默认中间值为低指针的第一个值
+    int midValue = arr[low];
+    while (true) {
+        //高指针移动
+        if (flag) {
+            //如果列表右方的数据大于中间值，则向左移动
+            if (arr[high] &gt; midValue) {
+                high--;
+            } else if (arr[high] &lt; midValue) {
+                //如果小于，则覆盖最开始的低指针值，并且移动低指针，标志位改成从低指针开始移动
+                arr[low] = arr[high];
+                low++;
+                flag = false;
+            }
+        } else {
+            //如果低指针数据小于中间值，则低指针向右移动
+            if (arr[low] &lt; midValue) {
+                low++;
+            } else if (arr[low] &gt; midValue) {
+            	//如果低指针的值大于中间值，则覆盖高指针停留时的数据，并向左移动高指针。切换为高指针移动
+                arr[high] = arr[low];
+                high--;
+                flag = true;
+            }
+        }
+        //当两个指针的位置相同时，则找到了中间值的位置，并退出循环
+        if (low == high) {
+            arr[low] = midValue;
+            break;
+        }
+    }
+    //然后出现有，中间值左边的小于中间值。右边的大于中间值。
+    //然后在对左右两边的列表在进行快速排序
+    quickSort(arr, start, low -1);
+    quickSort(arr, low + 1, end);
+}
+</code></pre>
+</li>
+<li>
+<p>排序过程 (橙色：中间值，蓝色：确认位置的数据，红色：移动的数据)</p>
+<p>&lt;img src="D:\Program Files\blog\hexo\source\images\kuaisu.jpg" alt="alt" style="zoom:80%;" /&gt;</p>
+</li>
+</ol>
+<p>转载出处：<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vbGw0MDk1NDYyOTcvcC8xMDk1Njk2MC5odG1s">https://www.cnblogs.com/ll409546297/p/10956960.html</span></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+      <div class="tags">
+          <a href="/tags/Java%E5%BA%94%E7%94%A8/" rel="tag"><i class="ic i-tag"></i> Java应用</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2020-11-08 16:53:42" itemprop="dateModified" datetime="2020-11-08T16:53:42+08:00">2020-11-08</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>手撕包菜 <i class="ic i-at"><em>@</em></i>手撕包菜
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://www.baocai-blog.cn/2020/11/08/Java%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95/" title="Java中的常用算法">https://www.baocai-blog.cn/2020/11/08/Java中的常用算法/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="nav">
+    <div class="item left">
+      
+
+  <a href="/2020/10/30/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicivghyooj20zk0m8dir.jpg" title="html标签">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 前端</span>
+  <h3>html标签</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#java%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text"> Java 中的常用算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="toc-number">1.1.</span> <span class="toc-text"> 冒泡排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="toc-number">1.2.</span> <span class="toc-text"> 插入排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="toc-number">1.3.</span> <span class="toc-text"> 快速排序</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2020/10/13/JavaWeb/" rel="bookmark" title="JavaWeb">JavaWeb</a></li><li class="active"><a href="/2020/11/08/Java%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95/" rel="bookmark" title="Java中的常用算法">Java中的常用算法</a></li><li><a href="/2020/10/10/JAVA%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" rel="bookmark" title="Java基础语法">Java基础语法</a></li><li><a href="/2020/10/10/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="bookmark" title="面向对象">面向对象</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="手撕包菜"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">手撕包菜</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">11</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">8</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">7</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3NzYmFvY2Fp" title="https:&#x2F;&#x2F;github.com&#x2F;ssbaocai"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPXlvdXJpZA==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;yourid"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2020</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">手撕包菜 @ baocai's blog</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">19k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">17 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2020/11/08/Java中的常用算法/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 ${query} ，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2"></script>
+
+
+
+
+</body>
+</html>
