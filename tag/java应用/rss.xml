@@ -57,9 +57,9 @@
 &lt;li&gt;
 &lt;p&gt;排序过程（红色：移动的数据）&lt;/p&gt;
 &lt;p&gt;&amp;lt;img src=&#34;D:\Program Files\blog\hexo\source\images\maopao.jpg&#34; alt=&#34;alt&#34; style=&#34;zoom: 80%;&#34; /&amp;gt;&lt;/p&gt;
-&lt;p&gt;选择排序&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;h2 id=&#34;选择排序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#选择排序&#34;&gt;#&lt;/a&gt; 选择排序&lt;/h2&gt;
 &lt;p&gt;选择排序算法的基本思路是为每一个位置选择当前最小的元素。选择排序的基本思想是，基于直接选择排序和堆排序这两种基本的简单排序方法。首先从第 1 个位置开始对全部元素进行选择，选出全部元素中最小的给该位置，再对第 2 个位置进行选择，在剩余元素中选择最小的给该位置即可；&lt;br&gt;
 &amp;lt;img src=&#34;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pbWcyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvMTAzMTg0MS8yMDE5MDUvMTAzMTg0MS0yMDE5MDUzMTE3MDIwNTgyMS0xOTgzNjc4NjQzLmdpZg==&#34;&gt;https://img2018.cnblogs.com/blog/1031841/201905/1031841-20190531170205821-1983678643.gif&lt;/span&gt;&#34; alt=&#34;alt&#34; style=&#34;zoom:80%;&#34; /&amp;gt;&lt;/p&gt;
 &lt;ol&gt;
