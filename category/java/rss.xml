@@ -96,7 +96,8 @@
         int temp = arr[i];
         arr[i] = min;
         arr[index] = temp;
-        //说明：将i前面的数据看成一个排好的队列，i后面的看成一个无序队列。每次只需要找无需的最小值，做替换
+        //说明：将i前面的数据看成一个排好的队列，i后面的看成一个无序队列。
+        //每次只需要找无需的最小值，做替换
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -128,7 +129,8 @@
 for (int i = 1; i &amp;lt; arr.length; i++) {
     //外层循环，从第二个开始比较
     for (int j = i; j &amp;gt; 0; j--) {
-        //内存循环，与前面排好序的数据比较，如果后面的数据小于前面的则交换
+        //内存循环，与前面排好序的数据比较，
+        //如果后面的数据小于前面的则交换
         if (arr[j] &amp;lt; arr[j - 1]) {
             int temp = arr[j - 1];
             arr[j - 1] = arr[j];
@@ -200,7 +202,8 @@ public static void quickSort(int[] arr, int low, int high) {
             if (arr[high] &amp;gt; midValue) {
                 high--;
             } else if (arr[high] &amp;lt; midValue) {
-                //如果小于，则覆盖最开始的低指针值，并且移动低指针，标志位改成从低指针开始移动
+                //如果小于，则覆盖最开始的低指针值，并且移动低指针，
+                //标志位改成从低指针开始移动
                 arr[low] = arr[high];
                 low++;
                 flag = false;
@@ -210,7 +213,8 @@ public static void quickSort(int[] arr, int low, int high) {
             if (arr[low] &amp;lt; midValue) {
                 low++;
             } else if (arr[low] &amp;gt; midValue) {
-            	//如果低指针的值大于中间值，则覆盖高指针停留时的数据，并向左移动高指针。切换为高指针移动
+            	//如果低指针的值大于中间值，则覆盖高指针停留时的数据，
+            	//并向左移动高指针。切换为高指针移动
                 arr[high] = arr[low];
                 high--;
                 flag = true;

@@ -31,12 +31,12 @@
 <meta name="description" content="" >
 
 
-<link rel="canonical" href="https://www.baocai-blog.cn/2020/10/13/MySQL/">
+<link rel="canonical" href="https://www.baocai-blog.cn/2020/11/14/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/">
 
 
 
   <title>
-MySQL - MySQL |
+MySql基础笔记 - MySQL |
 baocai's blog = 手撕包菜 = 学习笔记</title>
 <meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -64,23 +64,23 @@ baocai's blog = 手撕包菜 = 学习笔记</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">MySQL
+  <h1 itemprop="name headline">MySql基础笔记
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2020-10-13 21:43:55">
+  <span class="item" title="创建时间：2020-11-14 16:40:27">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2020-10-13T21:43:55+08:00">2020-10-13</time>
+    <time itemprop="dateCreated datePublished" datetime="2020-11-14T16:40:27+08:00">2020-11-14</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>1.2k</span>
+    <span>4.1k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -88,7 +88,7 @@ baocai's blog = 手撕包菜 = 学习笔记</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">阅读时长</span>
-    <span>1 分钟</span>
+    <span>4 分钟</span>
   </span>
 </div>
 
@@ -121,12 +121,12 @@ baocai's blog = 手撕包菜 = 学习笔记</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciusoyjnj219g0u0x56.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicm0fdw5cj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipewf5l51j20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeyhsblkj20zk0m81kx.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipewr8iypj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclxfdlttj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeuv80yoj20zk0m8kjl.jpg"></li>
           <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicljitigmj20zk0m87fp.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicm0n457cj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicm0fdw5cj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciub8ja1j20zk0m81ky.jpg"></li>
         </ul>
       </div>
     </header>
@@ -157,7 +157,7 @@ baocai's blog = 手撕包菜 = 学习笔记</title>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="https://www.baocai-blog.cn/2020/10/13/MySQL/">
+  <link itemprop="mainEntityOfPage" href="https://www.baocai-blog.cn/2020/11/14/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
@@ -172,52 +172,278 @@ baocai's blog = 手撕包菜 = 学习笔记</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="mysql"><a class="anchor" href="#mysql">#</a> MySQL</h1>
-<h2 id="基础"><a class="anchor" href="#基础">#</a> 基础</h2>
-<h3 id="数据库的三范式是什么"><a class="anchor" href="#数据库的三范式是什么">#</a> 数据库的三范式是什么？</h3>
-<ul>
-<li>第一范式：强调的是原子性，即数据库表的每一列都是不可分割的原子数据项。</li>
-<li>第二范式：要求实体的属性完全依赖于主关键字。所谓完全依赖是指不能存在仅依赖主关键字一部分的属性。</li>
-<li>第三范式：任何非主属性不依赖于其它非主属性。</li>
-</ul>
-<h3 id="mysql-的内连接-左连接-右连接有什么区别"><a class="anchor" href="#mysql-的内连接-左连接-右连接有什么区别">#</a> MySQL 的内连接、左连接、右连接有什么区别？</h3>
-<p>内连接关键字：inner join；左连接：left join；右连接：right join。</p>
-<p>内连接是把匹配的关联数 据显示出来；左连接是左边的表全部显示出来，右边的表显示出符合条件的数据；右连接正好相反。</p>
-<h3 id="数据库基本操作语句"><a class="anchor" href="#数据库基本操作语句">#</a> 数据库基本操作语句</h3>
-<p>主键约束 (primary key)  唯一约束 (unique) 非空约束 (not null) 外键约束 (foreign key)</p>
-<p><strong>select</strong> ... from 表名  where 条件  group by  分组字段  having 条件  order by  排序字段 ase|desc</p>
-<p>去重操作<strong> distinct</strong>             select distinct 字段名，字段名 2 from 表名</p>
-<p><strong>insert  into  &lt;表名&gt;  [列名]  values  &lt; 列值 &gt;                delete  from  &lt; 表名 &gt;  where  &lt; 删除条件 &gt;</strong>**</p>
-<p><strong>update 表名 set  字段名 = 字段值，字段名 = 字段值   [where 修改条件];</strong></p>
-<h2 id="数据库特性"><a class="anchor" href="#数据库特性">#</a> 数据库特性</h2>
-<h3 id="数据库4个特性"><a class="anchor" href="#数据库4个特性">#</a> 数据库 4 个特性：</h3>
-<ul>
-<li>Atomicity（<strong>原子性</strong>）：事务不可分割、不可约简。</li>
-<li>Consistency（<strong>一致性</strong>）：在事务开始前和事务结束后，<strong>数据库的完整性</strong>没有被破坏。</li>
-<li>Isolation（<strong>隔离性</strong>）：数据库允许多个事务同时对数据处理，隔离性可以<strong>防止</strong>多个事务并发执行时由于交叉执行而<strong>导致数据的不一致</strong>。事务隔离分为不同级别，包括读未提交（Read uncommitted）、读提交（read committed）、可重复读（repeatable read）和串行化（Serializable）。</li>
-<li>Durability（<strong>持久性</strong>）：事务处理结束后，对数据的修改就是永久，不会丢失。</li>
-</ul>
-<h2 id="事务隔离"><a class="anchor" href="#事务隔离">#</a> 事务隔离</h2>
-<h3 id="数据库的事务隔离"><a class="anchor" href="#数据库的事务隔离">#</a> 数据库的事务隔离：</h3>
-<ul>
-<li>
-<p>READ-UNCOMMITTED：<strong>未提交读</strong>，最低隔离级别、事务未提交前，就可被其他事务读取（会出现幻读、脏读、不可重复读）。</p>
-</li>
-<li>
-<p>READ-COMMITTED：<strong>提交读</strong>，一个事务提交后才能被其他事务读取到（会造成幻读、不可重复读）。</p>
-</li>
-<li>
-<p>REPEATABLE-READ：<strong>可重复读</strong>，<strong>默认</strong>级别，保证多次读取同一个数据，值和内容一致。禁止读取到别的事务未提交的数据（会造成幻读）。</p>
-</li>
-<li>
-<p>SERIALIZABLE：<strong>序列化</strong>，代价最高最可靠的隔离级别，该隔离级别能防止脏读、不可重复读、幻读。</p>
-<p><strong>脏读</strong> ：表示一个事务能够读取另一个事务中还未提交的数据。<strong>不可重复读</strong> ：是指在一个事务内，多次读同一数据。</p>
-</li>
-</ul>
-<h2 id="分页查询"><a class="anchor" href="#分页查询">#</a> 分页查询</h2>
-<h3 id="oracle页查询"><a class="anchor" href="#oracle页查询">#</a> <strong>Oracle 页查询</strong></h3>
-<p>Oracle 中使用 rownum 来进行分页，</p>
-<p>select * from    ( select rownum r,a from tabName where rownum &lt;= 20 )  where r &gt; 10</p>
+    <h2 id="数据库的基本概念"><a class="anchor" href="#数据库的基本概念">#</a> 数据库的基本概念</h2>
+<pre><code>1. 数据库的英文单词： DataBase 简称 ： DB
+2. 什么数据库？
+	* 用于存储和管理数据的仓库。
+
+3. 数据库的特点：
+	1. 持久化存储数据的。其实数据库就是一个文件系统
+	2. 方便存储和管理数据
+	3. 使用了统一的方式操作数据库 -- SQL
+</code></pre>
+<h2 id="mysql数据库软件"><a class="anchor" href="#mysql数据库软件">#</a> MySQL 数据库软件</h2>
+<pre><code>1. 安装
+
+2. 卸载
+	1. 去mysql的安装目录找到my.ini文件
+		* 复制 datadir="C:/ProgramData/MySQL/MySQL Server 5.5/Data/"
+	2. 卸载MySQL
+	3. 删除C:/ProgramData目录下的MySQL文件夹。
+	
+3. 配置
+	* MySQL服务启动
+		1. 手动。
+		2. cmd--&gt; services.msc 打开服务的窗口
+		3. 使用管理员打开cmd
+			* net start mysql : 启动mysql的服务
+			* net stop mysql:关闭mysql服务
+	* MySQL登录
+		1. mysql -uroot -p密码
+		2. mysql -hip -uroot -p连接目标的密码
+		3. mysql --host=ip --user=root --password=连接目标的密码
+	* MySQL退出
+		1. exit
+		2. quit
+
+	* MySQL目录结构
+		1. MySQL安装目录：basedir="D:/develop/MySQL/"
+			* 配置文件 my.ini
+		2. MySQL数据目录：datadir="C:/ProgramData/MySQL/MySQL Server 5.5/Data/"
+			* 几个概念
+				* 数据库：文件夹
+				* 表：文件
+				* 数据：数据
+</code></pre>
+<h2 id="sql"><a class="anchor" href="#sql">#</a> SQL</h2>
+<pre><code>1.什么是SQL？
+	Structured Query Language：结构化查询语言
+	其实就是定义了操作所有关系型数据库的规则。每一种数据库操作的方式存在不一样的地方，称为“方言”。
+	
+2.SQL通用语法
+	1. SQL 语句可以单行或多行书写，以分号结尾。
+	2. 可使用空格和缩进来增强语句的可读性。
+	3. MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。
+	4. 3 种注释
+		* 单行注释: -- 注释内容 或 # 注释内容(mysql 特有) 
+		* 多行注释: /* 注释 */
+	
+3. SQL分类
+	1) DDL(Data Definition Language)数据定义语言
+		用来定义数据库对象：数据库，表，列等。关键字：create, drop,alter 等
+	2) DML(Data Manipulation Language)数据操作语言
+		用来对数据库中表的数据进行增删改。关键字：insert, delete, update 等
+	3) DQL(Data Query Language)数据查询语言
+		用来查询数据库中表的记录(数据)。关键字：select, where 等
+	4) DCL(Data Control Language)数据控制语言(了解)
+		用来定义数据库的访问权限和安全级别，及创建用户。关键字：GRANT， REVOKE 等
+</code></pre>
+<h2 id="ddl操作数据库-表"><a class="anchor" href="#ddl操作数据库-表">#</a> DDL: 操作数据库、表</h2>
+<pre><code>1. 操作数据库：CRUD
+	1. C(Create):创建
+		* 创建数据库：
+			* create database 数据库名称;
+		* 创建数据库，判断不存在，再创建：
+			* create database if not exists 数据库名称;
+		* 创建数据库，并指定字符集
+			* create database 数据库名称 character set 字符集名;
+
+		* 练习： 创建db4数据库，判断是否存在，并制定字符集为gbk
+			* create database if not exists db4 character set gbk;
+	2. R(Retrieve)：查询
+		* 查询所有数据库的名称:
+			* show databases;
+		* 查询某个数据库的字符集:查询某个数据库的创建语句
+			* show create database 数据库名称;
+	3. U(Update):修改
+		* 修改数据库的字符集
+			* alter database 数据库名称 character set 字符集名称;
+	4. D(Delete):删除
+		* 删除数据库
+			* drop database 数据库名称;
+		* 判断数据库存在，存在再删除
+			* drop database if exists 数据库名称;
+	5. 使用数据库
+		* 查询当前正在使用的数据库名称
+			* select database();
+		* 使用数据库
+			* use 数据库名称;
+
+
+2. 操作表
+	1. C(Create):创建
+		1. 语法：
+			create table 表名(
+				列名1 数据类型1,
+				列名2 数据类型2,
+				....
+				列名n 数据类型n
+			);
+			* 注意：最后一列，不需要加逗号（,）
+			* 数据库类型：
+				1. int：整数类型
+					* age int,
+				2. double:小数类型
+					* score double(5,2)
+				3. date:日期，只包含年月日，yyyy-MM-dd
+				4. datetime:日期，包含年月日时分秒	 yyyy-MM-dd HH:mm:ss
+				5. timestamp:时间错类型	包含年月日时分秒	 yyyy-MM-dd HH:mm:ss	
+					* 如果将来不给这个字段赋值，或赋值为null，则默认使用当前的系统时间，来自动赋值
+
+				6. varchar：字符串
+					* name varchar(20):姓名最大20个字符
+					* zhangsan 8个字符  张三 2个字符
+
+
+		* 创建表
+			create table student(
+				id int,
+				name varchar(32),
+				age int ,
+				score double(4,1),
+				birthday date,
+				insert_time timestamp
+			);
+		* 复制表：
+			* create table 表名 like 被复制的表名;	  	
+	2. R(Retrieve)：查询
+		* 查询某个数据库中所有的表名称
+			* show tables;
+		* 查询表结构
+			* desc 表名;
+	3. U(Update):修改
+		1. 修改表名
+			alter table 表名 rename to 新的表名;
+		2. 修改表的字符集
+			alter table 表名 character set 字符集名称;
+		3. 添加一列
+			alter table 表名 add 列名 数据类型;
+		4. 修改列名称 类型
+			alter table 表名 change 列名 新列别 新数据类型;
+			alter table 表名 modify 列名 新数据类型;
+		5. 删除列
+			alter table 表名 drop 列名;
+	4. D(Delete):删除
+		* drop table 表名;
+		* drop table  if exists 表名 ;
+</code></pre>
+<h2 id="dml增删改表中数据"><a class="anchor" href="#dml增删改表中数据">#</a> DML：增删改表中数据</h2>
+<pre><code>1. 添加数据：
+	* 语法：
+		* insert into 表名(列名1,列名2,...列名n) values(值1,值2,...值n);
+	* 注意：
+		1. 列名和值要一一对应。
+		2. 如果表名后，不定义列名，则默认给所有列添加值
+			insert into 表名 values(值1,值2,...值n);
+		3. 除了数字类型，其他类型需要使用引号(单双都可以)引起来
+2. 删除数据：
+	* 语法：
+		* delete from 表名 [where 条件]
+	* 注意：
+		1. 如果不加条件，则删除表中所有记录。
+		2. 如果要删除所有记录
+			1. delete from 表名; -- 不推荐使用。有多少条记录就会执行多少次删除操作
+			2. TRUNCATE TABLE 表名; -- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。
+3. 修改数据：
+	* 语法：
+		* update 表名 set 列名1 = 值1, 列名2 = 值2,... [where 条件];
+
+	* 注意：
+		1. 如果不加任何条件，则会将表中所有记录全部修改。
+</code></pre>
+<h2 id="dql查询表中的记录"><a class="anchor" href="#dql查询表中的记录">#</a> DQL：查询表中的记录</h2>
+<pre><code>* select * from 表名;
+
+1. 语法：
+	select
+		字段列表
+	from
+		表名列表
+	where
+		条件列表
+	group by
+		分组字段
+	having
+		分组之后的条件
+	order by
+		排序
+	limit
+		分页限定
+
+
+2. 基础查询
+	1. 多个字段的查询
+		select 字段名1，字段名2... from 表名；
+		* 注意：
+			* 如果查询所有字段，则可以使用*来替代字段列表。
+	2. 去除重复：
+		* distinct
+	3. 起别名：
+		* as：as也可以省略
+
+
+3. 条件查询
+	1. where子句后跟条件
+	2. 运算符
+		* &gt; 、&lt; 、&lt;= 、&gt;= 、= 、&lt;&gt;
+		* BETWEEN...AND  
+		* IN( 集合) 
+		* LIKE：模糊查询
+			* 占位符：
+				* _:单个任意字符
+				* %：多个任意字符
+		* IS NULL  
+		* and  或 &amp;&amp;
+		* or  或 || 
+		* not  或 !
+		
+			-- 查询年龄大于20岁
+
+			SELECT * FROM student WHERE age &gt; 20;
+			
+			SELECT * FROM student WHERE age &gt;= 20;
+			
+			-- 查询年龄等于20岁
+			SELECT * FROM student WHERE age = 20;
+			
+			-- 查询年龄不等于20岁
+			SELECT * FROM student WHERE age != 20;
+			SELECT * FROM student WHERE age &lt;&gt; 20;
+			
+			-- 查询年龄大于等于20 小于等于30
+			
+			SELECT * FROM student WHERE age &gt;= 20 &amp;&amp;  age &lt;=30;
+			SELECT * FROM student WHERE age &gt;= 20 AND  age &lt;=30;
+			SELECT * FROM student WHERE age BETWEEN 20 AND 30;
+			
+			-- 查询年龄22岁，18岁，25岁的信息
+			SELECT * FROM student WHERE age = 22 OR age = 18 OR age = 25
+			SELECT * FROM student WHERE age IN (22,18,25);
+			
+			-- 查询英语成绩为null
+			SELECT * FROM student WHERE english = NULL; 
+			-- 不对的。null值不能使用 = （!=） 判断
+			
+			SELECT * FROM student WHERE english IS NULL;
+			
+			-- 查询英语成绩不为null
+			SELECT * FROM student WHERE english  IS NOT NULL;
+
+
+
+			-- 查询姓马的有哪些？ like
+			SELECT * FROM student WHERE NAME LIKE '马%';
+			-- 查询姓名第二个字是化的人
+			
+			SELECT * FROM student WHERE NAME LIKE "_化%";
+			
+			-- 查询姓名是3个字的人
+			SELECT * FROM student WHERE NAME LIKE '___';
+			-- 查询姓名中包含德的人
+			SELECT * FROM student WHERE NAME LIKE '%德%';
+</code></pre>
+<p>​</p>
+<p>​</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -250,7 +476,7 @@ baocai's blog = 手撕包菜 = 学习笔记</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2020-10-13 21:48:57" itemprop="dateModified" datetime="2020-10-13T21:48:57+08:00">2020-10-13</time>
+    <time title="修改时间：2020-11-14 17:00:11" itemprop="dateModified" datetime="2020-11-14T17:00:11+08:00">2020-11-14</time>
   </span>
 </div>
 
@@ -263,7 +489,7 @@ baocai's blog = 手撕包菜 = 学习笔记</title>
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://www.baocai-blog.cn/2020/10/13/MySQL/" title="MySQL">https://www.baocai-blog.cn/2020/10/13/MySQL/</a>
+    <a href="https://www.baocai-blog.cn/2020/11/14/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" title="MySql基础笔记">https://www.baocai-blog.cn/2020/11/14/MySQL基础课堂笔记/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -282,22 +508,14 @@ baocai's blog = 手撕包菜 = 学习笔记</title>
     <div class="item left">
       
 
-  <a href="/2020/10/13/MyBatis/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclj61ylzj20zk0m8b29.jpg" title="MyBatis">
+  <a href="/2020/11/08/Java%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeubcbajj20zk0m8h1h.jpg" title="Java中的常用算法">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> MyBatis</span>
-  <h3>MyBatis</h3>
+  <span class="category"><i class="ic i-flag"></i> Java</span>
+  <h3>Java中的常用算法</h3>
   </a>
 
     </div>
     <div class="item right">
-      
-
-  <a href="/2020/10/13/JavaWeb/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicljitigmj20zk0m87fp.jpg" title="JavaWeb">
-  <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> Java</span>
-  <h3>JavaWeb</h3>
-  </a>
-
     </div>
 </div>
 
@@ -314,11 +532,11 @@ baocai's blog = 手撕包菜 = 学习笔记</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql"><span class="toc-number">1.</span> <span class="toc-text"> MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-number">1.1.</span> <span class="toc-text"> 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E8%8C%83%E5%BC%8F%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 数据库的三范式是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql-%E7%9A%84%E5%86%85%E8%BF%9E%E6%8E%A5-%E5%B7%A6%E8%BF%9E%E6%8E%A5-%E5%8F%B3%E8%BF%9E%E6%8E%A5%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="toc-number">1.1.2.</span> <span class="toc-text"> MySQL 的内连接、左连接、右连接有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 数据库基本操作语句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%89%B9%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text"> 数据库特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%934%E4%B8%AA%E7%89%B9%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 数据库 4 个特性：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB"><span class="toc-number">1.3.</span> <span class="toc-text"> 事务隔离</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 数据库的事务隔离：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.4.</span> <span class="toc-text"> 分页查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#oracle%E9%A1%B5%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.4.1.</span> <span class="toc-text"> Oracle 页查询</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text"> 数据库的基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BD%AF%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text"> MySQL 数据库软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql"><span class="toc-number">3.</span> <span class="toc-text"> SQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ddl%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93-%E8%A1%A8"><span class="toc-number">4.</span> <span class="toc-text"> DDL: 操作数据库、表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dml%E5%A2%9E%E5%88%A0%E6%94%B9%E8%A1%A8%E4%B8%AD%E6%95%B0%E6%8D%AE"><span class="toc-number">5.</span> <span class="toc-text"> DML：增删改表中数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dql%E6%9F%A5%E8%AF%A2%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%AE%B0%E5%BD%95"><span class="toc-number">6.</span> <span class="toc-text"> DQL：查询表中的记录</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li class="active"><a href="/2020/10/13/MySQL/" rel="bookmark" title="MySQL">MySQL</a></li><li><a href="/2020/11/14/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" rel="bookmark" title="MySql基础笔记">MySql基础笔记</a></li>
+          <li><a href="/2020/10/13/MySQL/" rel="bookmark" title="MySQL">MySQL</a></li><li class="active"><a href="/2020/11/14/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" rel="bookmark" title="MySql基础笔记">MySql基础笔记</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -401,12 +619,10 @@ baocai's blog = 手撕包菜 = 学习笔记</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2020/10/13/MyBatis/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2020/10/13/JavaWeb/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -455,7 +671,7 @@ baocai's blog = 手撕包菜 = 学习笔记</title>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2020/10/13/MySQL/',
+    path: '2020/11/14/MySQL基础课堂笔记/',
     favicon: {
       show: "（●´3｀●）やれやれだぜ",
       hide: "(´Д｀)大変だ！"
